@@ -198,7 +198,18 @@
         "no"
       ],
       "metadata": {
-        "description": "Provision a machine with Kibana & logstash on it"
+        "description": "Provision a machine with Kibana on it"
+      }
+    },
+    "logstash":{
+      "type":"string",
+      "defaultValue":"yes",
+      "allowedValues": [
+        "yes",
+        "no"
+      ],
+      "metadata": {
+        "description": "Provision a machine with Logstash on it"
       }
     }
   },
@@ -283,6 +294,11 @@
       "no": "empty-resources.json"
     },
     "kibanaTemplateUrl":"[concat(variables('templateBaseUrl'), variables('kibanaTemplates')[parameters('kibana')], '')]",
+    "logstashTemplates": {
+      "yes": "logstash-resources.json",
+      "no": "empty-resources.json"
+    },
+    "logstashTemplateUrl":"[concat(variables('templateBaseUrl'), variables('logstashTemplates')[parameters('logstash')], '')]",
     "scriptParams": [
       "[concat('version=', parameters('esVersion'), ';')]",
       "[concat('clusterName=', parameters('esClusterName'), ';')]",
@@ -293,6 +309,7 @@
     "ubuntuScripts": [
       "[concat(variables('templateBaseUrl'), 'elasticsearch-ubuntu-install.sh')]",
       "[concat(variables('templateBaseUrl'), 'kibana-install.sh')]",
+      "[concat(variables('templateBaseUrl'), 'logstash-install.sh')]",
       "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh"
     ],
     "windowsScripts": [
@@ -332,6 +349,15 @@
           "settings": {
             "fileUris": "[variables('ubuntuScripts')]",
             "commandToExecute": "[concat('bash elasticsearch-ubuntu-install.sh -zn ', variables('esSettings').clusterName, ' -v ', variables('esSettings').version, ' -d ', variables('esSettings').discoveryHosts, variables('marvelParamValue'))]"
+          }
+        },
+        "logstash": {
+          "publisher": "Microsoft.OSTCExtensions",
+          "type": "CustomScriptForLinux",
+          "typeHandlerVersion": "1.2",
+          "settings": {
+            "fileUris": "[variables('ubuntuScripts')]",
+            "commandToExecute": "[concat('bash logstash-install.sh')]"
           }
         },
         "kibana": {
@@ -760,6 +786,41 @@
           },
           "osSettings": {
             "value": "[variables('osSettings')]"
+          }
+        }
+      }
+    },
+    {
+      "name": "logstash",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "[concat('Microsoft.Resources/deployments/', 'data-nodes')]"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('logstashTemplateUrl')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "storageAccountName": {
+            "value": "[variables('storageAccountNameShared')]"
+          },
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "location": {
+            "value": "[variables('location')]"
+          },
+          "subnet": {
+            "value": "[variables('networkSettings').subnet.data]"
+          },
+          "osSettings": {
+            "value": "[variables('ubuntuSettings')]"
           }
         }
       }

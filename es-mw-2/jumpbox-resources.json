@@ -4,7 +4,7 @@
   "parameters": {
     "namespace": {
       "type": "string",
-      "defaultValue": "kibana",
+      "defaultValue": "jumpbox",
       "metadata": {
         "description": "The namespace prefix for resources created by this template"
       }
@@ -42,13 +42,13 @@
     "osSettings": {
       "type": "object",
       "metadata": {
-        "description": "Platform and OS settings"
+        "description": "Elasticsearch deployment platform settings"
       }
     }
   },
   "variables": {
     "vmStorageAccountContainerName": "vhd",
-    "vmSize": "Standard_D3",
+    "vmSize": "Standard_A0",
     "subnetRef": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('subnet').vnet), '/subnets/', parameters('subnet').name)]",
     "vmName": "[concat(parameters('namespace'), '-vm')]",
     "publicIpName": "[concat(parameters('namespace'), '-pip')]",
@@ -66,7 +66,7 @@
           {
             "name": "SSH",
             "properties": {
-              "description": "Allows inbound SSH traffic from anyone",
+              "description": "Allows SSH traffic",
               "protocol": "Tcp",
               "sourcePortRange": "[parameters('osSettings').managementPort]",
               "destinationPortRange": "[parameters('osSettings').managementPort]",
@@ -74,20 +74,6 @@
               "destinationAddressPrefix": "*",
               "access": "Allow",
               "priority": 100,
-              "direction": "Inbound"
-            }
-          },
-		      {
-            "name": "Kibana",
-            "properties": {
-              "description": "Allows inbound Kibana HTTP traffic from anyone",
-              "protocol": "Tcp",
-              "sourcePortRange": "5601",
-              "destinationPortRange": "5601",
-              "sourceAddressPrefix": "*",
-              "destinationAddressPrefix": "*",
-              "access": "Allow",
-              "priority": 200,
               "direction": "Inbound"
             }
           }
@@ -167,19 +153,7 @@
             }
           ]
         }
-      },
-      "resources": [
-        {
-          "type": "Microsoft.Compute/virtualMachines/extensions",
-          "name": "[concat(variables('vmName'), '/installkibana')]",
-          "apiVersion": "2015-06-15",
-          "location": "[parameters('location')]",
-          "dependsOn": [
-            "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
-          ],
-          "properties": "[parameters('osSettings').extentionSettings.kibana]"
-        }   
-      ]
+      }
     }
   ],
   "outputs": {}

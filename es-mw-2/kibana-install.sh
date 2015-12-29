@@ -70,15 +70,3 @@ EOF
 
 chmod +x /etc/init/kibana.conf
 sudo service kibana start
-
-
-# logstash
-
-sudo groupadd -g 999 logstash
-sudo useradd -u 999 -g 999 logstash
-
-sudo mkdir -p /opt/logstash
-curl -o logstash.tar.gz https://download.elastic.co/logstash/logstash/logstash-2.1.1.tar.gz
-tar xvf logstash.tar.gz -C /opt/logstash/ --strip-components=1
-
-sudo chown -R logstash: /opt/logstash

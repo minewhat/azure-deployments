@@ -32,6 +32,9 @@
     "kibana": {
       "value": "yes"
     },
+    "logstash": {
+      "value": "yes"
+    },
     "OS": {
       "value": "ubuntu"
     }
