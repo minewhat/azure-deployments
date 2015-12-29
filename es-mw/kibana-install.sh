@@ -82,3 +82,7 @@ curl -o logstash.tar.gz https://download.elastic.co/logstash/logstash/logstash-2
 tar xvf logstash.tar.gz -C /opt/logstash/ --strip-components=1
 
 sudo chown -R logstash: /opt/logstash
+
+
+#nginx
+apt-get --yes --force-yes install nginx
