@@ -634,7 +634,7 @@
             "value": "[parameters('loadBalancerType')]"
           },
           "ilbIpAddress": {
-            "value": "10.1.0.129"
+            "value": "10.1.0.131"
           }
         }
       }
