@@ -1,0 +1,42 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "ubuntu"
+    },
+    "adminPassword": {
+      "value": "changeme"
+    },
+    "vmDataNodeCount": {
+      "value": 3
+    },
+    "virtualNetworkName": {
+      "value": "esvnet"
+    },
+    "esClusterName": {
+      "value": "mw-es-cluster"
+    },
+    "loadBalancerType": {
+      "value": "internal"
+    },
+    "vmSizeDataNodes": {
+      "value": "Standard_D12_V2"
+    },
+    "vmClientNodeCount": {
+      "value": 0
+    },
+    "marvel": {
+      "value": "no"
+    },
+    "kibana": {
+      "value": "yes"
+    },
+    "logstash": {
+      "value": "yes"
+    },
+    "OS": {
+      "value": "ubuntu"
+    }
+  }
+}
