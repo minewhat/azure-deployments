@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="542c4a0c-801c-488b-87f2-255652540e14" name="Default" comment="">
+    <list default="true" id="542c4a0c-801c-488b-87f2-255652540e14" name="Default" comment="reserved ip range change :sweat: :sweat:">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es-azapp/azuredeploy.json" afterPath="$PROJECT_DIR$/es-azapp/azuredeploy.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -25,21 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="data-nodes-1disk-resources.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/es-azapp/data-nodes-1disk-resources.json">
+      <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.107142">
-              <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.33270678">
+              <caret line="636" column="32" selection-start-line="636" selection-start-column="32" selection-end-line="636" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
+      <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/es-mw/azuredeploy.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33270678">
-              <caret line="636" column="19" selection-start-line="636" selection-start-column="19" selection-end-line="636" selection-end-column="19" />
+            <state vertical-scroll-proportion="-6.785714">
+              <caret line="222" column="24" selection-start-line="222" selection-start-column="5" selection-end-line="222" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="shared-resources.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/es-azapp/shared-resources.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.678572">
-              <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
+            <state vertical-scroll-proportion="-6.678571">
+              <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -98,8 +98,18 @@
       <file leaf-file-name="master-nodes-resources.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/es-azapp/master-nodes-resources.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.678571">
+              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master-nodes-resources.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/es-azapp/test/master-nodes-resources.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.535714">
+              <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -110,16 +120,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.107143">
               <caret line="9" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="elasticsearch-ubuntu-install.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/es-azapp/elasticsearch-ubuntu-install.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.9333334">
-              <caret line="274" column="2" selection-start-line="274" selection-start-column="2" selection-end-line="274" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -200,6 +200,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="azure-deployments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="azure-deployments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="azure-deployments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="es-mw" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -739,7 +753,7 @@
       <created>1451457669376</created>
       <option name="number" value="Default" />
       <updated>1451457669376</updated>
-      <workItem from="1451457671018" duration="10505000" />
+      <workItem from="1451457671018" duration="11635000" />
     </task>
     <task id="LOCAL-00001" summary="new setup for es-azapp :smile:">
       <created>1451460958257</created>
@@ -795,11 +809,17 @@
       <option name="project" value="LOCAL" />
       <updated>1451473419223</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="reserved ip range change :sweat: :sweat:">
+      <created>1451473666662</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1451473666662</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10505000" />
+    <option name="totallyTimeSpent" value="11635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1518" y="21" width="1586" height="1059" extended-state="4" />
@@ -819,7 +839,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967575" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29701686" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -870,14 +890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="114.57143">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/es-mw/azuredeploy.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.142858">
-          <caret line="225" column="36" selection-start-line="225" selection-start-column="33" selection-end-line="225" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -989,14 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/es-azapp/master-nodes-resources.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1005,10 +1009,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/es-mw/azuredeploy.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.785714">
+          <caret line="222" column="24" selection-start-line="222" selection-start-column="5" selection-end-line="222" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es-azapp/test/master-nodes-resources.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.535714">
+          <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es-azapp/master-nodes-resources.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.678571">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/es-azapp/shared-resources.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.678572">
-          <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
+        <state vertical-scroll-proportion="-6.678571">
+          <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1016,7 +1044,7 @@
     <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33270678">
-          <caret line="636" column="19" selection-start-line="636" selection-start-column="19" selection-end-line="636" selection-end-column="19" />
+          <caret line="636" column="32" selection-start-line="636" selection-start-column="32" selection-end-line="636" selection-end-column="32" />
           <folding />
         </state>
       </provider>
