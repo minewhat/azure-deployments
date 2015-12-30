@@ -468,7 +468,7 @@
       },
       "Standard_DS12": {
         "dataDisks":1,
-        "nodesPerStorageAccount":2,
+        "nodesPerStorageAccount":1,
         "storageAccountType":"Premium_LRS"
       },
       "Standard_DS13": {
