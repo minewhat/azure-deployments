@@ -228,12 +228,12 @@
       "subnet": {
         "master": {
           "name": "master",
-          "prefix": "10.1.0.164/29",
+          "prefix": "10.1.0.168/29",
           "vnet": "[parameters('virtualNetworkName')]"
         },
         "data": {
           "name": "data",
-          "prefix": "10.1.0.172/29",
+          "prefix": "10.1.0.176/29",
           "vnet": "[parameters('virtualNetworkName')]"
         }
       }

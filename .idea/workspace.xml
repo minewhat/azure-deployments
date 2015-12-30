@@ -38,8 +38,8 @@
       <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33270678">
-              <caret line="223" column="38" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.7612782">
+              <caret line="235" column="31" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -775,7 +775,7 @@
       <created>1451457669376</created>
       <option name="number" value="Default" />
       <updated>1451457669376</updated>
-      <workItem from="1451457671018" duration="6774000" />
+      <workItem from="1451457671018" duration="8760000" />
     </task>
     <task id="LOCAL-00001" summary="new setup for es-azapp :smile:">
       <created>1451460958257</created>
@@ -807,11 +807,23 @@
       <option name="project" value="LOCAL" />
       <updated>1451466260840</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="reserved ip change :smile:">
+      <created>1451468446849</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1451468446849</updated>
+    </task>
+    <task id="LOCAL-00007" summary="reserved ip range change :sweat:">
+      <created>1451470304167</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1451470304167</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6774000" />
+    <option name="totallyTimeSpent" value="8760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1518" y="21" width="1586" height="1059" extended-state="4" />
@@ -853,7 +865,8 @@
     <MESSAGE value="ip change :smile:" />
     <MESSAGE value="base url change :smile:" />
     <MESSAGE value="reserved ip change :smile:" />
-    <option name="LAST_COMMIT_MESSAGE" value="reserved ip change :smile:" />
+    <MESSAGE value="reserved ip range change :sweat:" />
+    <option name="LAST_COMMIT_MESSAGE" value="reserved ip range change :sweat:" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1025,8 +1038,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33270678">
-          <caret line="223" column="38" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.7612782">
+          <caret line="235" column="31" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
           <folding />
         </state>
       </provider>
