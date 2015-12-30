@@ -26,7 +26,7 @@
 #
 
 # This is temporary - we will change this to use a local client node on this kibana instance
-ELASTICSEARCH_URL="http://10.1.0.127:9200"
+ELASTICSEARCH_URL="http://10.1.100.100:9200"
 
 # Install Oracle Java
 add-apt-repository -y ppa:webupd8team/java
