@@ -221,7 +221,7 @@
     "location":"[variables('locationMap')[parameters('location')]]",
     "storageAccountPrefix": "elastic",
     "storageAccountNameShared": "[concat(variables('storageAccountPrefix'), 's', uniqueString(resourceGroup().id, deployment().name))]",
-    "masterNodesIpPrefix": "10.1.0.129",
+    "masterNodesIpPrefix": "10.1.0.130",
     "networkSettings": {
       "virtualNetworkName": "[parameters('virtualNetworkName')]",
       "addressPrefix": "10.1.0.128/28",
@@ -634,7 +634,7 @@
             "value": "[parameters('loadBalancerType')]"
           },
           "ilbIpAddress": {
-            "value": "10.1.0.127"
+            "value": "10.1.0.129"
           }
         }
       }
