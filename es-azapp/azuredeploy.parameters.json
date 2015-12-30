@@ -3,10 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "adminUsername": {
-      "value": "ubuntu"
+      "value": "changeme"
     },
     "adminPassword": {
-      "value": "mW@1234#"
+      "value": "changeme"
     },
     "vmDataNodeCount": {
       "value": 3
