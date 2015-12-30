@@ -38,8 +38,18 @@
       <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7612782">
-              <caret line="235" column="31" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.6898496">
+              <caret line="233" column="17" selection-start-line="233" selection-start-column="17" selection-end-line="233" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shared-resources.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/es-azapp/shared-resources.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.678572">
+              <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -775,7 +785,7 @@
       <created>1451457669376</created>
       <option name="number" value="Default" />
       <updated>1451457669376</updated>
-      <workItem from="1451457671018" duration="8760000" />
+      <workItem from="1451457671018" duration="10259000" />
     </task>
     <task id="LOCAL-00001" summary="new setup for es-azapp :smile:">
       <created>1451460958257</created>
@@ -819,11 +829,17 @@
       <option name="project" value="LOCAL" />
       <updated>1451470304167</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="reserved ip range change :sweat: :sweat:">
+      <created>1451471925956</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1451471925956</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8760000" />
+    <option name="totallyTimeSpent" value="10259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1518" y="21" width="1586" height="1059" extended-state="4" />
@@ -866,7 +882,8 @@
     <MESSAGE value="base url change :smile:" />
     <MESSAGE value="reserved ip change :smile:" />
     <MESSAGE value="reserved ip range change :sweat:" />
-    <option name="LAST_COMMIT_MESSAGE" value="reserved ip range change :sweat:" />
+    <MESSAGE value="reserved ip range change :sweat: :sweat:" />
+    <option name="LAST_COMMIT_MESSAGE" value="reserved ip range change :sweat: :sweat:" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -901,14 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.142858">
           <caret line="225" column="36" selection-start-line="225" selection-start-column="33" selection-end-line="225" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/es-azapp/shared-resources.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.214286">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1036,10 +1045,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/es-azapp/shared-resources.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.678572">
+          <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7612782">
-          <caret line="235" column="31" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.6898496">
+          <caret line="233" column="17" selection-start-line="233" selection-start-column="17" selection-end-line="233" selection-end-column="17" />
           <folding />
         </state>
       </provider>
