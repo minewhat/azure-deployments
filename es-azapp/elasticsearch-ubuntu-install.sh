@@ -269,6 +269,12 @@ else
 fi
 
 echo "discovery.zen.minimum_master_nodes: 2" >> /etc/elasticsearch/elasticsearch.yml
+echo "script.inline: on" >> /etc/elasticsearch/elasticsearch.yml
+echo "script.indexed: off" >> /etc/elasticsearch/elasticsearch.yml
+echo "script.update: off" >> /etc/elasticsearch/elasticsearch.yml
+echo "script.mapping: off" >> /etc/elasticsearch/elasticsearch.yml
+echo "script.search: on" >> /etc/elasticsearch/elasticsearch.yml
+echo "script.aggs: on" >> /etc/elasticsearch/elasticsearch.yml
 
 if [[ "${ES_VERSION}" == \2* ]]; then
     echo "network.host: _non_loopback_" >> /etc/elasticsearch/elasticsearch.yml
