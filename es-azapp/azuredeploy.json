@@ -204,7 +204,7 @@
     }
   },
   "variables": {
-    "templateBaseUrl": "https://raw.githubusercontent.com/minewhat/azure-deployments/master/es-azapp/",
+    "templateBaseUrl": "https://raw.githubusercontent.com/minewhat/azure-deployments/master/es-mw/",
     "locationMap": {
         "ResourceGroup":"[resourceGroup().location]",
         "West US":"[parameters('location')]",
@@ -221,19 +221,19 @@
     "location":"[variables('locationMap')[parameters('location')]]",
     "storageAccountPrefix": "elastic",
     "storageAccountNameShared": "[concat(variables('storageAccountPrefix'), 's', uniqueString(resourceGroup().id, deployment().name))]",
-    "masterNodesIpPrefix": "10.1.100.1",
+    "masterNodesIpPrefix": "10.1.0.130",
     "networkSettings": {
       "virtualNetworkName": "[parameters('virtualNetworkName')]",
-      "addressPrefix": "10.1.100.0/24",
+      "addressPrefix": "10.1.0.128/28",
       "subnet": {
         "master": {
           "name": "master",
-          "prefix": "10.1.100.0/25",
+          "prefix": "10.1.0.128/29",
           "vnet": "[parameters('virtualNetworkName')]"
         },
         "data": {
           "name": "data",
-          "prefix": "10.1.100.128/25",
+          "prefix": "10.1.0.136/29",
           "vnet": "[parameters('virtualNetworkName')]"
         }
       }
@@ -468,7 +468,7 @@
       },
       "Standard_DS12": {
         "dataDisks":1,
-        "nodesPerStorageAccount":1,
+        "nodesPerStorageAccount":2,
         "storageAccountType":"Premium_LRS"
       },
       "Standard_DS13": {
@@ -634,7 +634,7 @@
             "value": "[parameters('loadBalancerType')]"
           },
           "ilbIpAddress": {
-            "value": "10.1.100.100"
+            "value": "10.1.0.129"
           }
         }
       }
