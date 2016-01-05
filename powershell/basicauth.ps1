@@ -17,12 +17,12 @@ $destVhdName = "mw-arm-host.vhd"
 $destContainerName = "vhds"
 
 # Source Storage Account and Key
-$srcStorageAccount = "mwasmhost"
-$srcStorageKey = "bvwisvZfX4jU08dnPOIAJSaDxZq+sKYyP+2YX4gtsyN0/OhcSSD0qoIR2Edb/3AoD39sX/QD7G36Gnn9x0eXPg=="
+$srcStorageAccount = "sourcesa"
+$srcStorageKey = "sourcesakey"
 
 # Target Storage Account and Key
-$destStorageAccount = "mwarmhost"
-$destStorageKey = "cKUMXfP41zBci0a48k/SAhMBuHa0dn7eMCKeGZDfJlnCfyV8wuRbmIoUUwkhX+uWWY+J/WglY3ET8DYSr9czQA=="
+$destStorageAccount = "destsa"
+$destStorageKey = "destsakey"
 
 # Create the source storage account context (this creates the context, it does not actually create a new storage account)
 $srcContext = New-AzureStorageContext -StorageAccountName $srcStorageAccount -StorageAccountKey $srcStorageKey
@@ -41,9 +41,9 @@ $blob1 | Get-AzureStorageBlobCopyState
 ########################################################################
 
 $resourceGroupName= "armgroup"
-$location= "WestEurope"
-$storageAccountName= "mwarmhost"
-$vmName= "mwarmhost"
+$location= "SouthEastAsia"
+$storageAccountName= "destsa"
+$vmName= "destvm"
 $vmSize="Standard_DS2"
 $vnetName= "newarm"
 
@@ -58,7 +58,7 @@ $OSDiskName="$vmName-C-01"
 $vm = New-AzureRmVMConfig -vmName $vmName -vmSize $vmSize
 $nic = New-AzureRmNetworkInterface -Name $nicName -ResourceGroupName $resourceGroupName -SubnetId $vnet.Subnets[1].Id 
 $vm = Add-AzureRmVMNetworkInterface -VM $vm -Id $nic.Id 
-$destOSDiskUri = "https://mwarmhost.blob.core.windows.net/vhds/mw-arm-host.vhd"
+$destOSDiskUri = "https://destsa.blob.core.windows.net/vhds/mw-arm-host.vhd"
 $vm = Set-AzureRmVMOSDisk -VM $vm -Name $OSDiskName -VhdUri $destOSDiskUri -Windows -CreateOption attach
 New-AzureRmVM -ResourceGroupName $resourceGroupName -VM $vm
 
