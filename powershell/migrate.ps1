@@ -8,7 +8,7 @@ Login-AzureRmAccount
 ########################################################################
 
 # Source VHD
-$srcVhd = "https://mwasmhost.blob.core.windows.net:8080/vhds/mw-asm-ho-mw-asm-host-os-1451493085931.vhd"
+$srcVhd = "https://mwasmhost.blob.core.windows.net/vhds/mw-asm-ho-mw-asm-host-os-1451493085931.vhd"
 
 # Destination VHD name
 $destVhdName = "mw-arm-host.vhd"
