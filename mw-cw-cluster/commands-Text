@@ -1,0 +1,1 @@
+azure group deployment create mw-cw mw-cw-01 -f azuredeploy.json
