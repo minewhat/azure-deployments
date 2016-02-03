@@ -157,20 +157,21 @@
     "storageAccountNameShared": "[concat(variables('storageAccountPrefix'), 's', uniqueString(resourceGroup().id, deployment().name))]",
     "networkSettings": {
       "virtualNetworkName": "[parameters('virtualNetworkName')]",
-      "addressPrefix": "10.1.0.128/27",
+      "addressPrefix": "10.2.0.128/27",
       "subnet": {
         "mongo": {
           "name": "mongo",
-          "prefix": "10.1.0.128/28",
+          "prefix": "10.2.0.128/28",
           "vnet": "[parameters('virtualNetworkName')]"
         },
         "crawler": {
           "name": "crawler",
-          "prefix": "10.1.0.144/28",
+          "prefix": "10.2.0.144/28",
           "vnet": "[parameters('virtualNetworkName')]"
         }
       }
     },
+    "sharedTemplateUrl": "[concat(variables('templateBaseUrl'), 'shared-resources.json')]",
     "mongoTemplateUrl": "[concat(variables('templateBaseUrl'), 'mw-cw-mongo-resources.json')]",
     "crawlerTemplateUrl": "[concat(variables('templateBaseUrl'), 'mw-cw-crawler-resources.json')]",
     "ubuntuSettings": {
@@ -393,6 +394,9 @@
       "name": "mongo-nodes",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "[concat('Microsoft.Resources/deployments/', 'shared')]"
+      ],
       "properties": {
         "mode": "Incremental",
         "templateLink": {
@@ -422,9 +426,35 @@
       }
     },
     {
+      "name": "shared",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('sharedTemplateUrl')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "location": {
+            "value": "[variables('location')]"
+          },
+          "networkSettings": {
+            "value": "[variables('networkSettings')]"
+          },
+          "storageAccountName": {
+            "value": "[variables('storageAccountNameShared')]"
+          }
+        }
+      }
+    },
+    {
       "name": "crawler-nodes",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "[concat('Microsoft.Resources/deployments/', 'shared')]"
+      ],
       "properties": {
         "mode": "Incremental",
         "templateLink": {

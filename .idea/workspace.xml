@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="542c4a0c-801c-488b-87f2-255652540e14" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mw-cw-cluster/shared-resources.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json" afterPath="$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mw-cw-cluster/mw-cw-crawler-resources.json" afterPath="$PROJECT_DIR$/mw-cw-cluster/mw-cw-crawler-resources.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="azure-deployments.iws" />
@@ -26,81 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
+      <file leaf-file-name="shared-resources.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mw-cw-cluster/shared-resources.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4482758">
-              <caret line="36" column="23" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="23" />
-              <folding>
-                <element signature="n#!!block;n#vmClientNodeCount#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#vmSizeClientNodes#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#vmSizeMasterNodes#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#vmSizeDataNodes#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#vmDataNodeCount#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#esClusterName#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#esVersion#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#marvel#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#kibana#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="commands-Text" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mw-cw-cluster/commands-Text">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
+            <state vertical-scroll-proportion="-53.285713">
+              <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4482758">
-              <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mw-cw-mongo-resources.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mw-cw-cluster/mw-cw-mongo-resources.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33224222">
-              <caret line="106" column="26" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mw-cw-crawler-resources.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mw-cw-cluster/mw-cw-crawler-resources.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.1034484">
-              <caret line="84" column="15" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="temp-backup" pinned="false" current-in-tab="false">
+      <file leaf-file-name="temp-backup" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="azuredeploy.parameters.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mw-cw-cluster/azuredeploy.parameters.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.107143">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.09756097">
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -144,8 +84,9 @@
         <option value="$PROJECT_DIR$/test/tests.js" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/azuredeploy.parameters.json" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/mw-cw-mongo-resources.json" />
-        <option value="$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/mw-cw-crawler-resources.json" />
+        <option value="$PROJECT_DIR$/mw-cw-cluster/shared-resources.json" />
+        <option value="$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json" />
       </list>
     </option>
   </component>
@@ -271,8 +212,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/mw-cw-cluster" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/es-azapp" />
     </key>
   </component>
@@ -805,7 +746,7 @@
       <updated>1451457669376</updated>
       <workItem from="1451457671018" duration="15264000" />
       <workItem from="1451975769717" duration="916000" />
-      <workItem from="1454322848316" duration="27276000" />
+      <workItem from="1454322848316" duration="29647000" />
     </task>
     <task id="LOCAL-00001" summary="new setup for es-azapp :smile:">
       <created>1451460958257</created>
@@ -915,20 +856,26 @@
       <option name="project" value="LOCAL" />
       <updated>1454502134319</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="removed lb">
+      <created>1454504319723</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1454504319723</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43456000" />
+    <option name="totallyTimeSpent" value="45827000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1409" y="21" width="1877" height="1059" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25665602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13951011" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44195953" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -977,7 +924,8 @@
     <MESSAGE value="updated readme :smile:" />
     <MESSAGE value="fixed some deployment bugs :smile:" />
     <MESSAGE value="corrected vm name and storage name :smile:" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected vm name and storage name :smile:" />
+    <MESSAGE value="removed lb" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed lb" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1063,14 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="32" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/es-azapp/shared-resources.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-39.357143">
-          <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1305,14 +1245,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/commands-Text">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mw-cw-cluster/azuredeploy.parameters.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.107143">
@@ -1321,18 +1253,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
+    <entry file="file://$PROJECT_DIR$/es-azapp/shared-resources.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="25" />
+        <state vertical-scroll-proportion="22.714285">
+          <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4482758">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="23" />
+        <state vertical-scroll-proportion="-2.9482758">
+          <caret line="575" column="0" selection-start-line="575" selection-start-column="0" selection-end-line="577" selection-end-column="8" />
           <folding>
             <element signature="n#!!block;n#vmClientNodeCount#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
             <element signature="n#!!block;n#vmSizeClientNodes#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
@@ -1349,24 +1281,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4482758">
-          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+        <state vertical-scroll-proportion="-0.030513177">
+          <caret line="456" column="8" selection-start-line="456" selection-start-column="8" selection-end-line="456" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/mw-cw-crawler-resources.json">
+    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/commands-Text">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.1034484">
-          <caret line="84" column="15" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mw-cw-cluster/mw-cw-mongo-resources.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33224222">
-          <caret line="106" column="26" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.43966714">
+          <caret line="112" column="15" selection-start-line="112" selection-start-column="15" selection-end-line="112" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/shared-resources.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-53.285713">
+          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/mw-cw-crawler-resources.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6666666">
+          <caret line="91" column="18" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09756097">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
           <folding />
         </state>
       </provider>
