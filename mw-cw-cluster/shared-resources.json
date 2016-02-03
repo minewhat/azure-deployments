@@ -14,27 +14,10 @@
         "description": "Network settings object"
       }
     },
-    "loadBalancerType": {
-      "type": "string",
-      "defaultValue": "internal",
-      "allowedValues": [
-        "internal",
-        "external"
-      ],
-      "metadata": {
-        "description": "Load balancer setting (internal/external)"
-      }
-    },
     "storageAccountName": {
       "type": "string",
       "metadata": {
         "description": "Storage account used for share virtual machine images"
-      }
-    },
-    "ilbIpAddress": {
-      "type": "string",
-      "metadata": {
-        "description": "The static IP address to use with the internal load balancer configuration"
       }
     }
   },
