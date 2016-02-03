@@ -42,7 +42,7 @@
     },
     "virtualNetworkName": {
       "type": "string",
-      "defaultValue": "verticanet",
+      "defaultValue": "crawlernet",
       "metadata": {
         "description": "Virtual Network"
       }
