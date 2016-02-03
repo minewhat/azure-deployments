@@ -11,7 +11,7 @@ help()
 GIT_AUTH = "username:password"
 MONGO_IP = "127.0.0.1"
 #Loop through options passed
-while getopts :n:d:v:mxyzsh optname; do
+while getopts :git:mongo:h optname; do
     log "Option $optname set with value ${OPTARG}"
   case $optname in
     git) #set cluster name

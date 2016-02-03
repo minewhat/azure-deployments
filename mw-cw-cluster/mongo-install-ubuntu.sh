@@ -1,3 +1,34 @@
+help()
+{
+    echo "This script installs Crawlers on Ubuntu"
+    echo "Parameters:"
+    echo "-git git credentials username:password"
+    echo "-mongo static mongo IP"
+    echo "-h view this help content"
+}
+
+#Script Parameters
+GIT_AUTH = "username:password"
+MONGO_IP = "127.0.0.1"
+#Loop through options passed
+while getopts :git:h optname; do
+    log "Option $optname set with value ${OPTARG}"
+  case $optname in
+    git) #set cluster name
+      GIT_AUTH=${OPTARG}
+      ;;
+    h) #show help
+      help
+      exit 2
+      ;;
+    \?) #unrecognized option - show help
+      echo -e \\n"Option -${BOLD}$OPTARG${NORM} not allowed."
+      help
+      exit 2
+      ;;
+  esac
+done
+
 # installing GIT
 sudo apt-get install git --yes
 
@@ -7,6 +38,11 @@ sudo mkdir -p /raid1
 # give read/write permission to all users
 sudo chmod -R a+w /mnt
 sudo chmod -R a+w /raid1
+cd ~
+mkdir minehwat
+cd ~/minewhat
+gitAuth=$(echo "$GIT_AUTH")
+sudo -u ubuntu git clone https://$gitAuth@github.com/minewhat/Server.git
 
 # mongo install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
