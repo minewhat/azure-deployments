@@ -14,10 +14,10 @@
         "description": "Admin password used when provisioning virtual machines"
       }
     },
-    "storageSettings": {
-      "type": "object",
+    "storageAccountName": {
+      "type": "string",
       "metadata": {
-        "description": "Storage Account Settings"
+        "description": "Existing Storage Account where the Virtual Machine's disks will be placed"
       }
     },
     "location": {
@@ -57,15 +57,10 @@
       "metadata": {
         "description": "The namespace for resources created by this template"
       }
-    },
-    "lbBackendPools": {
-      "type": "object",
-      "metadata": {
-        "description": "loadBalancerBackendAddressPools config object"
-      }
     }
   },
   "variables": {
+    "vmStorageAccountContainerName": "vhd",
     "subnetRef": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('subnet').vnet), '/subnets/', parameters('subnet').name)]",
     "vmName": "[concat(parameters('namespace'), '-vm')]"
   },
@@ -104,13 +99,9 @@
         "count": "[parameters('vmCount')]"
       },
       "dependsOn": [
-        "[concat('Microsoft.Network/networkInterfaces/', parameters('namespace'), 'nic', copyindex())]",
-        "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'), parameters('storageSettings').mapping[copyindex()])]"
+        "[concat('Microsoft.Network/networkInterfaces/', parameters('namespace'), 'nic', copyindex())]"
       ],
       "properties": {
-        "availabilitySet": {
-          "id": "[resourceId('Microsoft.Compute/availabilitySets', concat(parameters('namespace'), '-set'))]"
-        },
         "hardwareProfile": {
           "vmSize": "[parameters('vmSize')]"
         },
@@ -124,7 +115,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat('http://', variables('storageAccountName'), parameters('storageSettings').mapping[copyindex()], '.blob.core.windows.net/vhds/', variables('vmName'), copyindex(), '-osdisk.vhd')]"
+              "uri": "[concat('http://', parameters('storageAccountName'),'.blob.core.windows.net/vhds/', variables('vmName'), '-osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"

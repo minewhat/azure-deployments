@@ -201,7 +201,7 @@
               "fileUris": [
                 "https://raw.githubusercontent.com/minewhat/azure-deployments/master/mw-cw-cluster/crawler-install-ubuntu.sh"
               ],
-              "commandToExecute": "[concat('bash crawler-install-ubuntu.sh -git ', parameters('gitCredentials'), ' -mongo ', variables('mongo_ip')))]"
+              "commandToExecute": "[concat('bash crawler-install-ubuntu.sh -git ', parameters('gitCredentials'), ' -mongo ', variables('mongo_ip'))]"
             }
           }
       }
@@ -334,7 +334,7 @@
         "storageAccountType":"Standard_LRS"
       }
     },
-    "nodesPerStorageAccount":"[variables('dataSkuSettings')[parameters('vmSizeDataNodes')].nodesPerStorageAccount]",
+    "nodesPerStorageAccount":"[variables('dataSkuSettings')[parameters('vmSizeCrawlerNodes')].nodesPerStorageAccount]",
     "storageBinPackMap": [
       "[div(sub(add(1, variables('nodesPerStorageAccount')), 1), variables('nodesPerStorageAccount'))]",
       "[div(sub(add(2, variables('nodesPerStorageAccount')), 1), variables('nodesPerStorageAccount'))]",
@@ -393,9 +393,6 @@
       "name": "mongo-nodes",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "[concat('Microsoft.Resources/deployments/', 'shared')]"
-      ],
       "properties": {
         "mode": "Incremental",
         "templateLink": {
@@ -412,14 +409,8 @@
           "adminPassword": {
             "value": "[parameters('adminPassword')]"
           },
-          "mongo_ip": {
-            "value": "[variables('mongo_ip')]"
-          },
           "location": {
             "value": "[variables('location')]"
-          },
-          "vmSize": {
-            "value": "[parameters('vmSizeMasterNodes')]"
           },
           "subnet": {
             "value": "[variables('networkSettings').subnet.mongo]"
@@ -434,16 +425,16 @@
       "name": "crawler-nodes",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "[concat('Microsoft.Resources/deployments/', 'shared')]"
-      ],
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[variables('dataTemplateUrl')]",
+          "uri": "[variables('crawlerTemplateUrl')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
+          "storageAccountName": {
+            "value": "[variables('storageAccountNameShared')]"
+          },
           "adminUsername": {
             "value": "[parameters('adminUsername')]"
           },
@@ -452,9 +443,6 @@
           },
           "location": {
             "value": "[variables('location')]"
-          },
-          "storageSettings": {
-            "value": "[variables('dataNodeStorageSettings')]"
           },
           "subnet": {
             "value": "[variables('networkSettings').subnet.crawler]"
