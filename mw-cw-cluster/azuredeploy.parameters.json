@@ -8,11 +8,8 @@
     "adminPassword": {
       "value": "changeme"
     },
-    "virtualNetworkName": {
-      "value": "verticanet"
-    },
-    "OS": {
-      "value": "ubuntu"
+    "gitCredentials": {
+      "value": "username:password"
     }
   }
 }

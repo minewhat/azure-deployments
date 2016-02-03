@@ -155,11 +155,11 @@
       "resources": [
         {
           "type": "Microsoft.Compute/virtualMachines/extensions",
-          "name": "[concat(parameters('vmName'),'/installmongo')]",
+          "name": "[concat(variables('vmName'),'/installmongo')]",
           "apiVersion": "2015-05-01",
           "location": "[parameters('location')]",
           "dependsOn": [
-            "[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
+            "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
           ],
           "properties": "[parameters('osSettings').extensionSettings.mongo]"
         }

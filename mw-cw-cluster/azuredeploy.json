@@ -153,7 +153,7 @@
         "North Europe":"[parameters('location')]"
     },
     "location":"[variables('locationMap')[parameters('location')]]",
-    "storageAccountPrefix": "mw-cw",
+    "storageAccountPrefix": "mwcw",
     "storageAccountNameShared": "[concat(variables('storageAccountPrefix'), 's', uniqueString(resourceGroup().id, deployment().name))]",
     "networkSettings": {
       "virtualNetworkName": "[parameters('virtualNetworkName')]",

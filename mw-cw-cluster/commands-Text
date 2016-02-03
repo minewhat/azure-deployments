@@ -1,1 +1,2 @@
-azure group deployment create mw-cw mw-cw-01 -f azuredeploy.json
+azure group deployment create --resource-group mw-cw mw-cw-01 -f azuredeploy.json
+azure group template validate --resource-group mw-cw --template-uri https://raw.githubusercontent.com/minewhat/azure-deployments/master/mw-cw-cluster/azuredeploy.json
