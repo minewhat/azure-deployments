@@ -103,7 +103,7 @@
           {
             "name": "ipconfig1",
             "properties": {
-              "privateIPAddress": "10.1.0.135",
+              "privateIPAddress": "[variables('mongoIp')]",
               "privateIPAllocationMethod": "Static",
               "subnet": {
                 "id": "[variables('subnetRef')]"

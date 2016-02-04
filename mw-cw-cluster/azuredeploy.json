@@ -137,7 +137,7 @@
     }
   },
   "variables": {
-    "mongo_ip": "10.1.0.135",
+    "mongo_ip": "10.2.0.135",
     "templateBaseUrl": "https://raw.githubusercontent.com/minewhat/azure-deployments/master/mw-cw-cluster/",
     "locationMap": {
         "ResourceGroup":"[resourceGroup().location]",
@@ -406,6 +406,9 @@
         "parameters": {
           "storageAccountName": {
             "value": "[variables('storageAccountNameShared')]"
+          },
+          "mongoIp": {
+            "value": "[variables('mongo_ip')]"
           },
           "adminUsername": {
             "value": "[parameters('adminUsername')]"
