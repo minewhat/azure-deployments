@@ -47,10 +47,10 @@ sudo apt-get -y install uuid-dev libtool
 sudo apt-get -y install git pkg-config autoconf automake
 sudo apt-get -y install python-setuptools python-pip
 sudo apt-get -y install lynx
-sudo pip install supervisor
 sudo apt-get -y install software-properties-common
-sudo apt-get install -y python-software-properties python g++ make
-sudo apt-get install python-lxml
+sudo apt-get --yes install python-software-properties python g++ make
+sudo apt-get --yes install python-lxml
+sudo pip install supervisor
 sudo pip install pymongo==2.6.3
 sudo pip install elasticsearch
 sudo pip install redis
@@ -82,7 +82,7 @@ sudo pip install unidecode
 sudo pip install aerospike
 sudo pip install beautifulsoup4
 sudo pip install -U nltk
-sudo apt-get install python-numpy python-scipy
+sudo apt-get --yes install python-numpy python-scipy
 sudo pip install spacy
 sudo python -m spacy.en.download --force all
 sudo pip install -U scikit-learn

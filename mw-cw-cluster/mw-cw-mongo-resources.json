@@ -33,6 +33,12 @@
         "description": "Administrator user name used when provisioning virtual machines"
       }
     },
+    "mongoIp": {
+      "type": "string",
+      "metadata": {
+        "description": "Static IP for mongo machine"
+      }
+    },
     "adminPassword": {
       "type": "securestring",
       "metadata": {
@@ -103,7 +109,7 @@
           {
             "name": "ipconfig1",
             "properties": {
-              "privateIPAddress": "[variables('mongoIp')]",
+              "privateIPAddress": "[parameters('mongoIp')]",
               "privateIPAllocationMethod": "Static",
               "subnet": {
                 "id": "[variables('subnetRef')]"
