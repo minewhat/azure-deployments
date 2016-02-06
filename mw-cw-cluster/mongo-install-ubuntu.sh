@@ -38,9 +38,9 @@ sudo mkdir -p /raid1
 # give read/write permission to all users
 sudo chmod -R a+w /mnt
 sudo chmod -R a+w /raid1
-cd ~
+cd /home/ubuntu
 mkdir minehwat
-cd ~/minewhat
+cd /home/ubuntu/minewhat
 gitAuth=$(echo "$GIT_AUTH")
 sudo -u ubuntu git clone https://$gitAuth@github.com/minewhat/Server.git
 
