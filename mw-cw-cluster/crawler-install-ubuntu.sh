@@ -32,7 +32,7 @@ while getopts :git:mongo:h optname; do
   esac
 done
 
-sudo apt-get install git --yes
+sudo apt-get --yes install git
 # create mount folder
 sudo mkdir -p /mnt
 sudo mkdir -p /raid1
@@ -89,11 +89,10 @@ sudo pip install -U scikit-learn
 sudo pip install python-amazon-simple-product-api==2.0.1
 sudo pip install pyquery==1.2.10
 
-cd /home/ubuntu
-mkdir minehwat
+sudo mkdir -p /home/ubuntu/minewhat
+sudo chmod -R a+w /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
-gitAuth=$(echo "$GIT_AUTH")
-sudo -u ubuntu git clone https://$gitAuth@github.com/minewhat/workers.git
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/workers.git
 cd workers/configs
 cp supervisord.conf /etc/
 

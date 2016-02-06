@@ -38,11 +38,10 @@ sudo mkdir -p /raid1
 # give read/write permission to all users
 sudo chmod -R a+w /mnt
 sudo chmod -R a+w /raid1
-cd /home/ubuntu
-mkdir minehwat
+sudo mkdir -p /home/ubuntu/minewhat
+sudo chmod -R a+w /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
-gitAuth=$(echo "$GIT_AUTH")
-sudo -u ubuntu git clone https://$gitAuth@github.com/minewhat/Server.git
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 
 # mongo install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
