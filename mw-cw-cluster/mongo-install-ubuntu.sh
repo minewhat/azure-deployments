@@ -29,7 +29,7 @@ while getopts :git:h optname; do
       ;;
   esac
 done
-
+sudo apt-get update --yes
 # installing GIT
 sudo apt-get --yes --force-yes install git
 
@@ -49,7 +49,7 @@ sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 # mongo install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-sudo apt-get update --yes
+
 # Disable THP
 sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
 sudo echo never > /sys/kernel/mm/transparent_hugepage/defrag
@@ -74,7 +74,7 @@ replication:
    replSetName: mw
 " > /etc/mongod.conf
 sudo service mongod start
-
+sleep 20
 MY_IPS=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
 
 echo "

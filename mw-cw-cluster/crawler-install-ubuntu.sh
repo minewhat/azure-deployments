@@ -32,7 +32,7 @@ while getopts :git:mongo:h optname; do
       ;;
   esac
 done
-
+sudo apt-get update --yes
 sudo apt-get --yes --force-yes  install git
 # create mount folder
 sudo mkdir -p /raid1
