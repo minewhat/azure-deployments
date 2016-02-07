@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 help()
 {
     echo "This script installs Crawlers on Ubuntu"
@@ -33,13 +34,17 @@ done
 sudo apt-get install git --yes
 
 # create mount folder
-sudo mkdir -p /mnt
-sudo mkdir -p /raid1
+sudo -u ubuntu mkdir -p /mnt
+sudo -u ubuntu mkdir -p /raid1
 # give read/write permission to all users
 sudo chmod -R a+w /mnt
-sudo chmod -R a+w /raid1
+sudo mkdir -p /raid1/mongo/
+sudo mkdir -p /raid1/mongo/log
+sudo mkdir -p /raid1/mongo/data
 sudo mkdir -p /home/ubuntu/minewhat
-sudo chmod -R a+w /home/ubuntu/minewhat
+sudo chmod -R a+w /raid1
+sudo chown -R ubuntu:ubuntu /raid1
+sudo chown -R ubuntu:ubuntu /mnt
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 

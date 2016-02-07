@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 help()
 {
     echo "This script installs Crawlers on Ubuntu"
