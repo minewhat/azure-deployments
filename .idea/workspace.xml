@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="542c4a0c-801c-488b-87f2-255652540e14" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh" afterPath="$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh" afterPath="$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -39,38 +38,28 @@
       <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.107143">
-              <caret line="458" column="32" selection-start-line="458" selection-start-column="32" selection-end-line="458" selection-end-column="32" />
+            <state vertical-scroll-proportion="-7.642857">
+              <caret line="204" column="46" selection-start-line="204" selection-start-column="46" selection-end-line="204" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.6180553">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="8" />
+            <state vertical-scroll-proportion="-1.9">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kibana-install.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/es-azapp/kibana-install.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.1666665">
-              <caret line="87" column="7" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="crawler-install-ubuntu.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="crawler-install-ubuntu.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,11 +101,11 @@
         <option value="$PROJECT_DIR$/test/tests.js" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/azuredeploy.parameters.json" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/mw-cw-crawler-resources.json" />
-        <option value="$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/mw-cw-mongo-resources.json" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/shared-resources.json" />
-        <option value="$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh" />
+        <option value="$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh" />
+        <option value="$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh" />
       </list>
     </option>
   </component>
@@ -198,6 +187,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mw-cw-cluster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="azure-deployments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="azure-deployments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="es-azapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -765,7 +768,7 @@
       <workItem from="1451457671018" duration="15264000" />
       <workItem from="1451975769717" duration="916000" />
       <workItem from="1454322848316" duration="36204000" />
-      <workItem from="1454764467402" duration="15551000" />
+      <workItem from="1454764467402" duration="17483000" />
     </task>
     <task id="LOCAL-00001" summary="new setup for es-azapp :smile:">
       <created>1451460958257</created>
@@ -977,11 +980,23 @@
       <option name="project" value="LOCAL" />
       <updated>1454825233300</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="sleep and apt-get update">
+      <created>1454827784048</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1454827784048</updated>
+    </task>
+    <task id="LOCAL-00037" summary="parameters changes">
+      <created>1454831105690</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1454831105690</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67935000" />
+    <option name="totallyTimeSpent" value="69867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="-4" width="1323" height="772" extended-state="6" />
@@ -990,7 +1005,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44657096" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46092504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4401914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1027,8 +1042,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ip change :smile:" />
-    <MESSAGE value="base url change :smile:" />
     <MESSAGE value="reserved ip change :smile:" />
     <MESSAGE value="reserved ip range change :sweat:" />
     <MESSAGE value="reserved ip range change :sweat: :sweat:" />
@@ -1052,7 +1065,9 @@
     <MESSAGE value="permission for folder changes" />
     <MESSAGE value="mongo config changes to explicitly bind IP" />
     <MESSAGE value="force install git" />
-    <option name="LAST_COMMIT_MESSAGE" value="force install git" />
+    <MESSAGE value="sleep and apt-get update" />
+    <MESSAGE value="parameters changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="parameters changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1266,13 +1281,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/es-azapp/elasticsearch-ubuntu-install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="36.633335">
-          <caret line="208" column="58" selection-start-line="208" selection-start-column="51" selection-end-line="208" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/es-azapp/commands-Text">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1383,24 +1391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4404333">
-          <caret line="580" column="19" selection-start-line="580" selection-start-column="19" selection-end-line="580" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!block;n#vmClientNodeCount#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#vmSizeClientNodes#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#vmSizeMasterNodes#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#vmSizeDataNodes#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#vmDataNodeCount#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#esClusterName#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#esVersion#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#marvel#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#kibana#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mw-cw-cluster/mw-cw-mongo-resources.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.5379062">
@@ -1417,22 +1407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.107143">
-          <caret line="458" column="32" selection-start-line="458" selection-start-column="32" selection-end-line="458" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/es-azapp/kibana-install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.1666665">
-          <caret line="87" column="7" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1441,18 +1415,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh">
+    <entry file="file://$PROJECT_DIR$/es-azapp/elasticsearch-ubuntu-install.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <caret line="238" column="0" selection-start-line="238" selection-start-column="0" selection-end-line="241" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es-azapp/kibana-install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.96875">
+          <caret line="87" column="7" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.6180553">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="8" />
+        <state vertical-scroll-proportion="-1.9">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3426295">
+          <caret line="316" column="80" selection-start-line="316" selection-start-column="77" selection-end-line="316" selection-end-column="80" />
+          <folding>
+            <element signature="n#!!block;n#vmClientNodeCount#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#vmSizeClientNodes#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#vmSizeMasterNodes#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#vmSizeDataNodes#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#vmDataNodeCount#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#esClusterName#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#esVersion#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#marvel#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#kibana#0;n#!!block;n#parameters#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.642857">
+          <caret line="204" column="46" selection-start-line="204" selection-start-column="46" selection-end-line="204" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding />
         </state>
       </provider>
