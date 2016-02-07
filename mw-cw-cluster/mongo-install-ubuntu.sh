@@ -34,7 +34,7 @@ done
 sudo apt-get install git --yes
 
 # create mount folder
-sudo -u ubuntu mkdir -p /raid1
+sudo mkdir -p /raid1
 # give read/write permission to all users
 sudo mkdir -p /raid1/mongo/
 sudo mkdir -p /raid1/mongo/log
@@ -63,9 +63,12 @@ systemLog:
    logAppend: true
 storage:
   engine: wiredTiger
-  dbpath: /raid1/mongo/data
+  dbPath: /raid1/mongo/data
 processManagement:
    fork: true
+net:
+  port: 27017
+  bindIp: 0.0.0.0
 replication:
    replSetName: mw
 " > /etc/mongod.conf

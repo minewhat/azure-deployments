@@ -38,7 +38,7 @@ sudo apt-get --yes install git
 sudo mkdir -p /raid1
 # give read/write permission to all users
 sudo chmod -R a+w /raid1
-
+sudo chown -R ubuntu:ubuntu /raid1
 sudo apt-get -y install unzip
 sudo apt-get -y install make
 sudo apt-get -y install build-essential maven2
@@ -90,6 +90,7 @@ sudo pip install pyquery==1.2.10
 
 sudo mkdir -p /home/ubuntu/minewhat
 sudo chmod -R a+w /home/ubuntu/minewhat
+sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/workers.git
 cd workers/configs
