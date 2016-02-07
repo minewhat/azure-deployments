@@ -202,7 +202,7 @@
               "fileUris": [
                 "https://raw.githubusercontent.com/minewhat/azure-deployments/master/mw-cw-cluster/crawler-install-ubuntu.sh"
               ],
-              "commandToExecute": "[concat('bash crawler-install-ubuntu.sh -git ', parameters('gitCredentials'), ' -mongo ', variables('mongo_ip'))]"
+              "commandToExecute": "[concat('bash crawler-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'))]"
             }
           }
       }

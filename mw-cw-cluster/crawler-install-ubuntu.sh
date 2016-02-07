@@ -9,29 +9,8 @@ help()
 }
 
 #Script Parameters
-GIT_AUTH="username:password"
-MONGO_IP="127.0.0.1"
-#Loop through options passed
-while getopts :git:mongo:h optname; do
-    log "Option $optname set with value ${OPTARG}"
-  case $optname in
-    git) #set cluster name
-      GIT_AUTH=${OPTARG}
-      ;;
-    mongo) #static discovery endpoints
-      MONGO_IP=${OPTARG}
-      ;;
-    h) #show help
-      help
-      exit 2
-      ;;
-    \?) #unrecognized option - show help
-      echo -e \\n"Option -${BOLD}$OPTARG${NORM} not allowed."
-      help
-      exit 2
-      ;;
-  esac
-done
+GIT_AUTH="$1"
+MONGO_IP="$2"
 sudo apt-get update --yes
 sudo apt-get --yes --force-yes  install git
 # create mount folder

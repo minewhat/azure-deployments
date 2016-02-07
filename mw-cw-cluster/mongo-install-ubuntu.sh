@@ -9,26 +9,8 @@ help()
 }
 
 #Script Parameters
-GIT_AUTH="username:password"
+GIT_AUTH="$1"
 MONGO_IP="127.0.0.1"
-#Loop through options passed
-while getopts :git:h optname; do
-    log "Option $optname set with value ${OPTARG}"
-  case $optname in
-    git) #set cluster name
-      GIT_AUTH=${OPTARG}
-      ;;
-    h) #show help
-      help
-      exit 2
-      ;;
-    \?) #unrecognized option - show help
-      echo -e \\n"Option -${BOLD}$OPTARG${NORM} not allowed."
-      help
-      exit 2
-      ;;
-  esac
-done
 sudo apt-get update --yes
 # installing GIT
 sudo apt-get --yes --force-yes install git
