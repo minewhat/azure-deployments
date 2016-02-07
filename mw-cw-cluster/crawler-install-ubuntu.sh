@@ -9,8 +9,8 @@ help()
 }
 
 #Script Parameters
-GIT_AUTH = "username:password"
-MONGO_IP = "127.0.0.1"
+GIT_AUTH="username:password"
+MONGO_IP="127.0.0.1"
 #Loop through options passed
 while getopts :git:mongo:h optname; do
     log "Option $optname set with value ${OPTARG}"
@@ -35,10 +35,8 @@ done
 
 sudo apt-get --yes install git
 # create mount folder
-sudo mkdir -p /mnt
 sudo mkdir -p /raid1
 # give read/write permission to all users
-sudo chmod -R a+w /mnt
 sudo chmod -R a+w /raid1
 
 sudo apt-get -y install unzip

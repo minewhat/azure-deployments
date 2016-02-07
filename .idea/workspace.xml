@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="542c4a0c-801c-488b-87f2-255652540e14" name="Default" comment="">
+    <list default="true" id="542c4a0c-801c-488b-87f2-255652540e14" name="Default" comment="permission for folder changes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh" afterPath="$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh" afterPath="$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.04656863">
-              <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+            <state vertical-scroll-proportion="-3.4666667">
+              <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -66,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crawler-install-ubuntu.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="crawler-install-ubuntu.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+            <state vertical-scroll-proportion="-1.9954338">
+              <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -115,8 +115,8 @@
         <option value="$PROJECT_DIR$/mw-cw-cluster/azuredeploy.json" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/mw-cw-mongo-resources.json" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/shared-resources.json" />
-        <option value="$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh" />
+        <option value="$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh" />
       </list>
     </option>
   </component>
@@ -779,7 +779,7 @@
       <workItem from="1451457671018" duration="15264000" />
       <workItem from="1451975769717" duration="916000" />
       <workItem from="1454322848316" duration="36204000" />
-      <workItem from="1454764467402" duration="11677000" />
+      <workItem from="1454764467402" duration="12304000" />
     </task>
     <task id="LOCAL-00001" summary="new setup for es-azapp :smile:">
       <created>1451460958257</created>
@@ -967,11 +967,17 @@
       <option name="project" value="LOCAL" />
       <updated>1454793156523</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="permission for folder changes">
+      <created>1454823296635</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1454823296635</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64061000" />
+    <option name="totallyTimeSpent" value="64688000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="-4" width="1323" height="772" extended-state="6" />
@@ -1040,7 +1046,8 @@
     <MESSAGE value="correct api version&#10;" />
     <MESSAGE value="home folder path" />
     <MESSAGE value="mkdir path changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="mkdir path changes" />
+    <MESSAGE value="permission for folder changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="permission for folder changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1413,14 +1420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/es-azapp/kibana-install.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1439,8 +1438,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mw-cw-cluster/mongo-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04656863">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+        <state vertical-scroll-proportion="-3.4666667">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mw-cw-cluster/crawler-install-ubuntu.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9954338">
+          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
           <folding />
         </state>
       </provider>

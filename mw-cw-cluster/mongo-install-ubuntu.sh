@@ -9,8 +9,8 @@ help()
 }
 
 #Script Parameters
-GIT_AUTH = "username:password"
-MONGO_IP = "127.0.0.1"
+GIT_AUTH="username:password"
+MONGO_IP="127.0.0.1"
 #Loop through options passed
 while getopts :git:h optname; do
     log "Option $optname set with value ${OPTARG}"
@@ -34,17 +34,14 @@ done
 sudo apt-get install git --yes
 
 # create mount folder
-sudo -u ubuntu mkdir -p /mnt
 sudo -u ubuntu mkdir -p /raid1
 # give read/write permission to all users
-sudo chmod -R a+w /mnt
 sudo mkdir -p /raid1/mongo/
 sudo mkdir -p /raid1/mongo/log
 sudo mkdir -p /raid1/mongo/data
 sudo mkdir -p /home/ubuntu/minewhat
 sudo chmod -R a+w /raid1
 sudo chown -R ubuntu:ubuntu /raid1
-sudo chown -R ubuntu:ubuntu /mnt
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 
