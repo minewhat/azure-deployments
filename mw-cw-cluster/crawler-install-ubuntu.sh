@@ -33,7 +33,7 @@ while getopts :git:mongo:h optname; do
   esac
 done
 
-sudo apt-get --yes install git
+sudo apt-get --yes --force-yes  install git
 # create mount folder
 sudo mkdir -p /raid1
 # give read/write permission to all users

@@ -31,7 +31,7 @@ while getopts :git:h optname; do
 done
 
 # installing GIT
-sudo apt-get install git --yes
+sudo apt-get --yes --force-yes install git
 
 # create mount folder
 sudo mkdir -p /raid1
@@ -42,6 +42,7 @@ sudo mkdir -p /raid1/mongo/data
 sudo mkdir -p /home/ubuntu/minewhat
 sudo chmod -R a+w /raid1
 sudo chown -R ubuntu:ubuntu /raid1
+sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 
