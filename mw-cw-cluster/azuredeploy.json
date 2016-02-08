@@ -191,7 +191,7 @@
             "fileUris": [
               "https://raw.githubusercontent.com/minewhat/azure-deployments/master/mw-cw-cluster/mongo-install-ubuntu.sh"
             ],
-            "commandToExecute": "[concat('bash mongo-install-ubuntu.sh -git ', parameters('gitCredentials'))]"
+            "commandToExecute": "[concat('bash mongo-install-ubuntu.sh ', parameters('gitCredentials'))]"
           }
         },
         "crawler": {

@@ -18,6 +18,7 @@ sudo mkdir -p /raid1
 sudo chmod -R a+w /raid1
 sudo chown -R ubuntu:ubuntu /raid1
 sudo apt-get -y install unzip
+sleep 120
 sudo apt-get -y install build-essential maven2 make python-dev
 sudo apt-get -y install libev4 libev-dev
 sudo apt-get -y install uuid-dev libtool
