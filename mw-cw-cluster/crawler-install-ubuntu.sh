@@ -19,7 +19,9 @@ sudo chmod -R a+w /raid1
 sudo chown -R ubuntu:ubuntu /raid1
 sudo apt-get -y install unzip
 sleep 120
-sudo apt-get -y install build-essential maven2 make python-dev
+sudo apt-get -y install make
+sudo apt-get -y install build-essential maven2 python-dev
+sudo apt-get -y install libc6-dev-i386
 sudo apt-get -y install libev4 libev-dev
 sudo apt-get -y install uuid-dev libtool
 sudo apt-get -y install git pkg-config autoconf automake
