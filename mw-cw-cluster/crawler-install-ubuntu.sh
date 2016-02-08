@@ -75,6 +75,7 @@ sudo chown -R ubuntu:ubuntu /raid1
 sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/workers.git
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 cd workers/configs
 sudo cp supervisord.conf /etc/
 sudo cp supervisord /etc/init.d/supervisord
@@ -104,4 +105,4 @@ $MONGO_IP  mongodb1.linodefarm.minewhat.com
 
 sudo service supervisord restart
 supervisorctl update
-supervisorctl start
+supervisorctl start all
