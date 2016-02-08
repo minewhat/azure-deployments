@@ -12,32 +12,29 @@ help()
 GIT_AUTH="$1"
 MONGO_IP="$2"
 sudo apt-get update --yes
-sudo apt-get --yes --force-yes  install git
 # create mount folder
 sudo mkdir -p /raid1
 # give read/write permission to all users
 sudo chmod -R a+w /raid1
 sudo chown -R ubuntu:ubuntu /raid1
 sudo apt-get -y install unzip
-sudo apt-get -y install make
-sudo apt-get -y install build-essential maven2
+sudo apt-get -y install build-essential maven2 make python-dev
+sudo apt-get -y install libev4 libev-dev
 sudo apt-get -y install uuid-dev libtool
 sudo apt-get -y install git pkg-config autoconf automake
+sudo apt-get --yes install python-software-properties python g++
 sudo apt-get -y install python-setuptools python-pip
 sudo apt-get -y install lynx
 sudo apt-get -y install software-properties-common
-sudo apt-get --yes install python-software-properties python g++ make
 sudo apt-get --yes install python-lxml
 sudo pip install supervisor
 sudo pip install pymongo==2.6.3
 sudo pip install elasticsearch
 sudo pip install redis
-sudo pip install cassandra-driver
 sudo pip install mandrill
 sudo pip install jinja2
 sudo pip install arrow
 sudo pip install boto
-sudo pip install blist
 sudo pip install simplejson
 sudo pip install moment
 sudo pip install kafka-python==0.9.4
@@ -66,15 +63,20 @@ sudo python -m spacy.en.download --force all
 sudo pip install -U scikit-learn
 sudo pip install python-amazon-simple-product-api==2.0.1
 sudo pip install pyquery==1.2.10
-
+sudo pip install cassandra-driver
+sudo pip install blist
 sudo mkdir -p /home/ubuntu/minewhat
-sudo chmod -R a+w /home/ubuntu/minewhat
+sudo mkdir -p /raid1
+sudo mkdir -p /raid1/supervisorlogs
+sudo chown -R ubuntu:ubuntu /raid1
 sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/workers.git
 cd workers/configs
-cp supervisord.conf /etc/
-
+sudo cp supervisord.conf /etc/
+sudo cp supervisord /etc/init.d/supervisord
+sudo chmod +x /etc/init.d/supervisord
+sudo service supervisord start
 echo "
 [program:wo_crawlerWorker]
 command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/crawlerWorker.py
