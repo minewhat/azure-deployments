@@ -109,6 +109,9 @@
           {
             "name": "ipconfig1",
             "properties": {
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIpName'))]"
+              },
               "privateIPAddress": "[parameters('mongoIp')]",
               "privateIPAllocationMethod": "Static",
               "subnet": {
