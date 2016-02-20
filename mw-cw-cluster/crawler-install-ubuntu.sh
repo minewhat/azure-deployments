@@ -41,7 +41,7 @@ sudo pip install boto
 sudo pip install simplejson
 sudo pip install moment
 sudo pip install kafka-python==0.9.4
-sudo pip install git+git://github.com/sumitkumar1209/superlanceadds
+sudo pip install git+git://github.com/minewhat/superlanceadds
 sudo pip install python-magic
 sudo pip install rarfile
 sudo pip install unrar
