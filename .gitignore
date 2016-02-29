@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 .idea
-
->>>>>>> origin/master
+.idea/*
 ### Node template
 # Logs
 logs
