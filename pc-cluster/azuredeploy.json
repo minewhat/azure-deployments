@@ -64,7 +64,6 @@
         "Standard_D1",
         "Standard_D2",
         "Standard_D3",
-        "Standard_DS3",
         "Standard_D4",
         "Standard_D12",
         "Standard_D13",
@@ -165,11 +164,6 @@
         "storageAccountType":"Standard_LRS"
       },
       "Standard_D3": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":3,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_DS3": {
         "dataDisks":4,
         "nodesPerStorageAccount":3,
         "storageAccountType":"Standard_LRS"
