@@ -230,7 +230,7 @@ HOSTS_CONFIG="[\"${S// /\",\"}\"]"
 #---------------------------
 #Backup the current Elasticsearch configuration file
 mv /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.bak
-
+echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
 # Set cluster and machine names - just use hostname for our node.name
 echo "cluster.name: $CLUSTER_NAME" >> /etc/elasticsearch/elasticsearch.yml
 echo "node.name: ${HOSTNAME}" >> /etc/elasticsearch/elasticsearch.yml
@@ -259,7 +259,7 @@ elif [ ${DATA_NODE} -ne 0 ]; then
     echo "node.master: false" >> /etc/elasticsearch/elasticsearch.yml
     echo "node.data: true" >> /etc/elasticsearch/elasticsearch.yml
 elif [ ${CLIENT_ONLY_NODE} -ne 0 ]; then
-    log "Configure node as data only"
+    log "Configure node as client only"
     echo "node.master: false" >> /etc/elasticsearch/elasticsearch.yml
     echo "node.data: false" >> /etc/elasticsearch/elasticsearch.yml
 else
