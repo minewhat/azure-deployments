@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 help()
 {
-    echo "This script installs mongo on Ubuntu"
+    echo "This script installs cruncher on Ubuntu"
     echo "Parameters:"
     echo "git credentials username:password"
     echo "static mongo IP"
@@ -18,8 +18,20 @@ ES_IP="$3"
 AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
-sudo add-apt-repository ppa:nginx/stable
 sudo apt-get update --yes
+
+# debconf
+sudo apt-get install debconf-utils --yes
+
+# JDK
+sudo add-apt-repository ppa:webupd8team/java --yes
+sudo apt-get update --yes
+echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
+sudo apt-get install oracle-java7-installer --yes
+sudo apt-get install oracle-java7-set-default --yes
+
+
 # installing GIT
 sudo apt-get --yes --force-yes install git
 # install maven
@@ -46,11 +58,12 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
 sudo pip install supervisor
 # create mount folder
-sudo mkdir -p /raid1
+sudo mkdir -p /mnt
+
 # give read/write permission to all users
-sudo mkdir -p /raid1/mongo/
-sudo mkdir -p /raid1/mongo/log
-sudo mkdir -p /raid1/mongo/data
+sudo chmod -R a+w /mnt
+# create mount folder
+sudo mkdir -p /raid1
 sudo mkdir -p /home/ubuntu/minewhat
 sudo chmod -R a+w /raid1
 sudo chown -R ubuntu:ubuntu /raid1
@@ -58,46 +71,10 @@ sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
-sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/cdnassets.git
-
-sudo apt-get install nginx
-cd /home/ubuntu/minewhat/server2/config/nginx
-cp choice* /etc/nginx
-
-# mongo install
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-sudo apt-get update --yes
-# Disable THP
-sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
-sudo echo never > /sys/kernel/mm/transparent_hugepage/defrag
-sudo grep -q -F 'transparent_hugepage=never' /etc/default/grub || echo 'transparent_hugepage=never' >> /etc/default/grub
-
-sudo apt-get install -y mongodb-org=3.0.7 mongodb-org-server=3.0.7 mongodb-org-shell=3.0.7 mongodb-org-mongos=3.0.7 mongodb-org-tools=3.0.7
-sudo service mongod stop
-echo "
-systemLog:
-   destination: file
-   path: /raid1/mongo/log/mongodb.log
-   logAppend: true
-storage:
-  engine: wiredTiger
-  dbPath: /raid1/mongo/data
-processManagement:
-   fork: true
-net:
-  port: 27017
-  bindIp: 0.0.0.0
-replication:
-   replSetName: mw
-" > /etc/mongod.conf
-sudo service mongod start
-sleep 20
-MY_IPS=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
 
 echo "
-$MY_IPS  mongo1.choice.ai
-$MY_IPS  mongo2.choice.ai
+$MONGO_IP  mongo1.choice.ai
+$MONGO_IP  mongo2.choice.ai
 $CASSA_IP cassa1.choice.ai
 $CASSA_IP cassa2.choice.ai
 $AE_IP aerospike1.choice.ai
@@ -115,14 +92,38 @@ $CRUNCHER_IP zoo1.linodefarm.choice.ai
 $CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
 " >> /etc/hosts
 
-mongo --eval 'rs.initiate({
-	"_id" : "mw",
-	"members" : [
-		{
-			"_id" : 0,
-			"host" : "mongo1.choice.ai:27017",
-      priority: 10
-		}
-	]
-})
-'
+# setup stormkafkamon
+cd stormkafkamon
+sudo python setup.py install
+
+# setup storm cluster
+cd /home/ubuntu/minewhat/Server/Config
+sudo -u ubuntu git checkout MW_V2.3
+sudo -u ubuntu ./StromAMIprepare.sh
+sudo -u ubuntu ./RedisAMIprepare.sh
+sudo -u ubuntu ./setupprepare.sh
+sudo -u ubuntu ./setupsupervisord.sh
+sudo -u ubuntu ./addcleanuptocron.sh
+
+# change owership of .npm n .forever folders to ubuntu
+sudo chown -R ubuntu:ubuntu /home/ubuntu/.npm/
+sudo chown -R ubuntu:ubuntu /home/ubuntu/.forever/
+
+# install node modules
+cd /home/ubuntu/minewhat/Server/stats
+sudo -u ubuntu npm install
+cd /home/ubuntu/minewhat/Server/evictor
+sudo -u ubuntu npm install
+cd /home/ubuntu/minewhat/Server/listener
+sudo -u ubuntu npm install
+
+# setup kafka queues
+cd /home/ubuntu/minewhat/Server/listener
+node createQueues.js
+
+# setup startup and shutdown scripts
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/myntra/crunchers/* /home/ubuntu/
+
+# setup utility scripts
+sudo -u ubuntu cp /home/ubuntu/minewhat/server2/scripts/workerLogs.sh /home/ubuntu/
+sudo -u ubuntu cp /home/ubuntu/minewhat/server2/scripts/queueStatus.sh /home/ubuntu/
