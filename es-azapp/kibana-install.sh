@@ -79,9 +79,22 @@ sudo useradd -u 999 -g 999 logstash
 
 sudo mkdir -p /opt/logstash
 curl -o logstash.tar.gz https://download.elastic.co/logstash/logstash/logstash-2.1.1.tar.gz
-tar xvf logstash.tar.gz -C /opt/logstash/ --strip-components=1
+sudo tar xvf logstash.tar.gz -C /opt/logstash/ --strip-components=1
 
 sudo chown -R logstash: /opt/logstash
+
+cat << EOF > /etc/init/logstash_kafka.conf
+# logstash
+description "Logstash from Kafka to ES Service"
+
+start on starting
+script
+    /opt/logstash/bin/logstash -f /home/ubuntu/minewhat/server2/eslogs/kafka.conf
+end script
+EOF
+
+chmod +x /etc/init/logstash_kafka.conf
+sudo service kibana start
 
 
 #nginx

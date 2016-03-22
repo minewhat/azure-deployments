@@ -1,0 +1,2 @@
+azure group deployment create --resource-group cai cai-01 -f azuredeploy.json
+azure group template validate --resource-group cai --template-uri https://raw.githubusercontent.com/minewhat/azure-deployments/master/cai-cluster/azuredeploy.json
