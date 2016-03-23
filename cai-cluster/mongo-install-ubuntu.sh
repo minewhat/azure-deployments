@@ -66,7 +66,7 @@ cd /home/ubuntu/minewhat/cdnassets/mwstoreSample
 npm i
 gulp dist
 
-sudo apt-get install nginx
+sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
 cp choice* /etc/nginx
 cp dhparams.pem /etc/nginx/conf.d

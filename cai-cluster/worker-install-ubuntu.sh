@@ -138,7 +138,7 @@ cd /home/ubuntu/minewhat/addons/choiceAI_Addons
 ./startshopify.sh
 ./startbigcommerce.sh
 
-sudo apt-get install nginx
+sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
 cp choice* /etc/nginx
 cp dhparams.pem /etc/nginx/conf.d
