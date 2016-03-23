@@ -126,8 +126,17 @@ MY_IPS=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9
 echo "
 $MY_IPS  mongo1.choice.ai
 $MY_IPS  mongo2.choice.ai
+$MY_IPS mongo1.choice.ai
+$MY_IPS mongo2.choice.ai
+$MY_IPS mongodbdomain1.linodefarm.minewhat.com
+$MY_IPS mongodbdomain2.linodefarm.minewhat.com
+$MY_IPS mongodb1.linodefarm.minewhat.com
+$MY_IPS mongodb2.linodefarm.minewhat.com
 $CASSA_IP cassa1.choice.ai
 $CASSA_IP cassa2.choice.ai
+$CASSA_IP cassaseed5.linodefarm.minewhat.com
+$CASSA_IP cassaseed6.linodefarm.minewhat.com
+$CASSA_IP cassaseedrealtime.linodefarm.minewhat.com
 $AE_IP aerospike1.choice.ai
 $AE_IP aerospike2.choice.ai
 $ES_IP elastic.azure.minewhat.com
@@ -141,6 +150,9 @@ $CRUNCHER_IP mwcollector1.linodefarm.choice.ai
 $CRUNCHER_IP mwcollector2.linodefarm.choice.ai
 $CRUNCHER_IP zoo1.linodefarm.choice.ai
 $CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
+$CRUNCHER_IP mwzoo.linodefarm.minewhat.com
+$CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
+$CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
 " >> /etc/hosts
 
 sudo -u ubuntu mongo --eval 'rs.initiate({

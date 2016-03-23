@@ -20,10 +20,17 @@ CASSA_IP="$5"
 CRUNCHER_IP="$6"
 
 echo "
-$MONGO_IP  mongo1.choice.ai
-$MONGO_IP  mongo2.choice.ai
+$MONGO_IP mongo1.choice.ai
+$MONGO_IP mongo2.choice.ai
+$MONGO_IP mongodbdomain1.linodefarm.minewhat.com
+$MONGO_IP mongodbdomain2.linodefarm.minewhat.com
+$MONGO_IP mongodb1.linodefarm.minewhat.com
+$MONGO_IP mongodb2.linodefarm.minewhat.com
 $CASSA_IP cassa1.choice.ai
 $CASSA_IP cassa2.choice.ai
+$CASSA_IP cassaseed5.linodefarm.minewhat.com
+$CASSA_IP cassaseed6.linodefarm.minewhat.com
+$CASSA_IP cassaseedrealtime.linodefarm.minewhat.com
 $AE_IP aerospike1.choice.ai
 $AE_IP aerospike2.choice.ai
 $ES_IP elastic.azure.minewhat.com
@@ -37,6 +44,9 @@ $CRUNCHER_IP mwcollector1.linodefarm.choice.ai
 $CRUNCHER_IP mwcollector2.linodefarm.choice.ai
 $CRUNCHER_IP zoo1.linodefarm.choice.ai
 $CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
+$CRUNCHER_IP mwzoo.linodefarm.minewhat.com
+$CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
+$CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
 " >> /etc/hosts
 sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update --yes
