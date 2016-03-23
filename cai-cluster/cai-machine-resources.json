@@ -59,7 +59,7 @@
   },
   "variables": {
     "vmStorageAccountContainerName": "vhd",
-    "subnetRef": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('subnet').vnet), '/subnets/', parameters('subnet').name)]",
+    "subnetRef": "[concat('/subscriptions/f0e3b4ef-048b-44f4-9dd8-6a66f3e06a60/resourceGroups/ES-AZAPP/providers/Microsoft.Network/virtualNetworks/VERTICANET', '/subnets/', parameters('subnet').name)]",
     "vmName": "[concat(parameters('namespace'), '-vm')]",
     "securityGroupName": "[concat(parameters('namespace'), '-nsg')]",
     "nicName": "[concat(parameters('namespace'), '-nic')]"
