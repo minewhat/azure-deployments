@@ -18,7 +18,12 @@ ES_IP="$3"
 AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
+
 sudo add-apt-repository ppa:nginx/stable
+sudo add-apt-repository -y ppa:chris-lea/node.js
+# mongo install
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
 sudo apt-get update --yes
 # installing GIT
 sudo apt-get --yes --force-yes install git
@@ -40,21 +45,22 @@ sudo apt-get -y install python-setuptools python-pip
 sudo apt-get -y install lynx
 sudo apt-get -y install software-properties-common
 sudo apt-get install -y python-software-properties python g++ make
-sudo add-apt-repository -y ppa:chris-lea/node.js
-sudo apt-get update
 sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
 sudo npm install -g forever
 sudo pip install supervisor
+
 # create mount folder
 sudo mkdir -p /raid1
+sudo mkdir -p /mnt
 # give read/write permission to all users
 sudo mkdir -p /raid1/mongo/
 sudo mkdir -p /raid1/mongo/log
 sudo mkdir -p /raid1/mongo/data
 sudo mkdir -p /home/ubuntu/minewhat
-sudo chmod -R a+w /raid1
+# give read/write permission to all users
 sudo chown -R ubuntu:ubuntu /raid1
+sudo chown -R ubuntu:ubuntu /mnt
 sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
@@ -66,34 +72,30 @@ cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
 cd ~
 #Copy GEO
-mkdir GeoIP
+sudo -u ubuntu mkdir GeoIP
 cp ~/minewhat/Server/Config/Geo* GeoIP
-gunzip GeoIP/*
+sudo -u ubuntu gunzip GeoIP/*
 
 cd /home/ubuntu/minewhat/app2/choiceai
-tar -zxvf node_modules_ubuntu.tgz
-./prepare.sh
-gulp dist
+sudo -u ubuntu tar -zxvf node_modules_ubuntu.tgz
+sudo -u ubuntu sh prepare.sh
+sudo -u ubuntu gulp dist
 
 cd /home/ubuntu/minewhat/cdnassets/mwstoreSample
-npm i
-gulp dist
+sudo -u ubuntu npm i
+sudo -u ubuntu gulp dist
 
 cd /home/ubuntu/minewhat/server2/choiceai
 sudo -u ubuntu git checkout cai_rel
-tar zxvf node_modules_ubuntu.tar.gz
-./prepare.sh
-./scripts/startwidget.sh
-./scripts/startwidgetData.sh
-./scripts/startnotif.sh
+sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz
+sudo -u ubuntu sh prepare.sh
+sudo -u ubuntu sh scripts/startwidget.sh
+sudo -u ubuntu sh scripts/startwidgetData.sh
+sudo -u ubuntu sh scripts/startnotif.sh
 cd static
-ln -s  ~/minewhat/app2/choiceai/dist newapp
-ln -s  ~/minewhat/app2/choiceai/dist settings
+sudo -u ubuntu ln -s  ~/minewhat/app2/choiceai/dist newapp
+sudo -u ubuntu ln -s  ~/minewhat/app2/choiceai/dist settings
 
-# mongo install
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-sudo apt-get update --yes
 # Disable THP
 sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
 sudo echo never > /sys/kernel/mm/transparent_hugepage/defrag
@@ -117,7 +119,7 @@ net:
 replication:
    replSetName: mw
 " > /etc/mongod.conf
-sudo service mongod start
+sudo -u ubuntu service mongod start
 sleep 20
 MY_IPS=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
 
@@ -141,7 +143,7 @@ $CRUNCHER_IP zoo1.linodefarm.choice.ai
 $CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
 " >> /etc/hosts
 
-mongo --eval 'rs.initiate({
+sudo -u ubuntu mongo --eval 'rs.initiate({
 	"_id" : "mw",
 	"members" : [
 		{
@@ -158,7 +160,7 @@ cd /home/ubuntu/minewhat/server2/config/nginx
 cp choice* /etc/nginx
 cp dhparams.pem /etc/nginx/conf.d
 cp choice_conf_d/* /etc/nginx/conf.d
-sudo service nginx restart
+sudo -u ubuntu service nginx restart
 
 # setup startup and shutdown scripts
 sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/mongo/* /home/ubuntu/

@@ -38,73 +38,34 @@ $CRUNCHER_IP mwcollector2.linodefarm.choice.ai
 $CRUNCHER_IP zoo1.linodefarm.choice.ai
 $CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
 " >> /etc/hosts
-
+sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update --yes
 # installing GIT
 sudo apt-get --yes --force-yes install git
 
 # create mount folder
-# create mount folder
 sudo mkdir -p /raid1
+sudo mkdir -p /mnt
 # give read/write permission to all users
-sudo chmod -R a+w /raid1
 sudo chown -R ubuntu:ubuntu /raid1
+sudo chown -R ubuntu:ubuntu /mnt
 sudo apt-get -y install unzip
-sleep 120
 sudo apt-get -y install make
 sudo apt-get -y install git pkg-config autoconf automake
-sudo apt-get -y install build-essential maven2 python-dev
+sudo apt-get -y install build-essential maven2
 sudo apt-get -y install libc6-dev-i386
 sudo apt-get -y install libev4 libev-dev
 sudo apt-get -y install uuid-dev libtool
-sudo apt-get -y install python-setuptools python-pip
-sudo apt-get -y install lynx
-sudo apt-get -y install software-properties-common
-sudo apt-get --yes install python-software-properties python g++
-sudo add-apt-repository -y ppa:chris-lea/node.js
-sudo apt-get update
+sudo apt-get -y install python-setuptools
 sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
 sudo npm install -g forever
+sudo apt-get -y install lynx
+sudo apt-get -y install software-properties-common
+sudo apt-get --yes install python-dev python-pip
+sudo apt-get --yes install python-software-properties python g++
 sudo pip install supervisor
-sudo apt-get --yes install python-lxml
-sudo pip install pymongo==2.6.3
-sudo pip install elasticsearch
-sudo pip install redis
-sudo pip install mandrill
-sudo pip install jinja2
-sudo pip install arrow
-sudo pip install boto
-sudo pip install simplejson
-sudo pip install moment
-sudo pip install kafka-python==0.9.4
-sudo pip install git+git://github.com/minewhat/superlanceadds
-sudo pip install python-magic
-sudo pip install rarfile
-sudo pip install unrar
-sudo pip install tarfile
-sudo pip install zipfile
-sudo pip install xmltodict
-sudo pip install paramiko
-sudo pip install scpclient
-sudo pip install oauth2client
-sudo pip install google-api-python-client
-sudo pip install xlrd
-sudo pip install fastavro
-sudo pip install redis
-sudo pip install hash_ring
-sudo pip install unidecode
-sudo pip install aerospike
-sudo pip install beautifulsoup4
-sudo pip install -U nltk
-sudo apt-get --yes install python-numpy python-scipy
-sudo pip install spacy
-sudo python -m spacy.en.download --force all
-sudo pip install -U scikit-learn
-sudo pip install python-amazon-simple-product-api==2.0.1
-sudo pip install pyquery==1.2.10
-sudo pip install cassandra-driver
-sudo pip install blist
+
 sudo mkdir -p /home/ubuntu/minewhat
 sudo chmod -R a+w /raid1
 sudo mkdir -p /raid1/supervisorlogs
@@ -131,6 +92,8 @@ sudo cp supervisord.conf /etc/
 sudo cp supervisord /etc/init.d/supervisord
 sudo chmod +x /etc/init.d/supervisord
 sudo service supervisord start
+cd /home/ubuntu/minewhat/workers/shell_scripts
+sudo -u ubuntu sh setup.sh
 
 sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
@@ -140,17 +103,17 @@ cp choice_conf_d/* /etc/nginx/conf.d
 sudo service nginx restart
 
 cd /home/ubuntu/minewhat/addons/choiceAI_Addons
-./prepare.sh
-./startshopify.sh
-./startbigcommerce.sh
+sudo -u ubuntu sh prepare.sh
+sudo -u ubuntu sh startshopify.sh
+sudo -u ubuntu sh startbigcommerce.sh
 
 cd /home/ubuntu/minewhat/server2/choiceai
 sudo -u ubuntu git checkout cai_rel
-tar -zxvf node_modules_ubuntu.tar.gz
-./prepare.sh
+sudo -u ubuntu tar -zxvf node_modules_ubuntu.tar.gz
+sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redissession.conf
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redisstatscache1.conf
-./scripts/startworker.sh
+sudo -u ubuntu sh scripts/startworker.sh
 
 sudo service supervisord stop
 echo "
@@ -363,8 +326,8 @@ logfile = /raid1/supervisorlogs/program:crawlerWorker_5.log
 logfile_maxbytes = 50MB
 logfile_backups=1
 " >> /etc/supervisord.conf
-sudo service supervisord start
-supervisorctl start all
+sudo -u ubuntu service supervisord start
+sudo -u ubuntu supervisorctl start all
 
 # setup startup and shutdown scripts
 sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/workers/* /home/ubuntu/
