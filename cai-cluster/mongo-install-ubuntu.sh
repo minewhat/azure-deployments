@@ -64,6 +64,11 @@ sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/cdnassets.git
 
 cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
+cd ~
+#Copy GEO
+mkdir GeoIP
+cp ~/minewhat/Server/Config/Geo* GeoIP
+gunzip GeoIP/*
 
 cd /home/ubuntu/minewhat/app2/choiceai
 tar -zxvf node_modules_ubuntu.tgz
