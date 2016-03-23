@@ -143,6 +143,7 @@ cd /home/ubuntu/minewhat/server2/config/nginx
 cp choice* /etc/nginx
 cp dhparams.pem /etc/nginx/conf.d
 cp choice_conf_d/* /etc/nginx/conf.d
+sudo service nginx restart
 
 cd /home/ubuntu/minewhat/server2/choiceai
 tar -zxvf node_modules_ubuntu.tar.gz
