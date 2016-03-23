@@ -18,6 +18,27 @@ ES_IP="$3"
 AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
+
+echo "
+$MONGO_IP  mongo1.choice.ai
+$MONGO_IP  mongo2.choice.ai
+$CASSA_IP cassa1.choice.ai
+$CASSA_IP cassa2.choice.ai
+$AE_IP aerospike1.choice.ai
+$AE_IP aerospike2.choice.ai
+$ES_IP elastic.azure.minewhat.com
+$CRUNCHER_IP caizooremote.choice.ai
+$CRUNCHER_IP caicollector1.choice.ai
+$CRUNCHER_IP caicollector2.choice.ai
+$CRUNCHER_IP caizoolocal.choice.ai
+$CRUNCHER_IP zoo1.choice.ai
+$CRUNCHER_IP mwzooremote.linodefarm.choice.ai
+$CRUNCHER_IP mwcollector1.linodefarm.choice.ai
+$CRUNCHER_IP mwcollector2.linodefarm.choice.ai
+$CRUNCHER_IP zoo1.linodefarm.choice.ai
+$CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
+" >> /etc/hosts
+
 sudo apt-get update --yes
 # installing GIT
 sudo apt-get --yes --force-yes install git
@@ -44,6 +65,7 @@ sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
+sudo npm install -g forever
 sudo pip install supervisor
 sudo apt-get --yes install python-lxml
 sudo pip install pymongo==2.6.3
@@ -103,7 +125,7 @@ sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/addons.git
 cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
 
-cd workers/configs
+cd /home/ubuntu/minewhat/workers/configs
 sudo -u ubuntu git checkout MW_V2.3
 sudo cp supervisord.conf /etc/
 sudo cp supervisord /etc/init.d/supervisord
@@ -116,13 +138,17 @@ cd /home/ubuntu/minewhat/addons/choiceAI_Addons
 ./startshopify.sh
 ./startbigcommerce.sh
 
+sudo apt-get install nginx
 cd /home/ubuntu/minewhat/server2/config/nginx
 cp choice* /etc/nginx
+cp dhparams.pem /etc/nginx/conf.d
+cp choice_conf_d/* /etc/nginx/conf.d
 
 cd /home/ubuntu/minewhat/server2/choiceai
 tar -zxvf node_modules_ubuntu.tar.gz
 ./scripts/startworker.sh
 
+sudo service supervisord stop
 echo "
 [program:cai_general_worker]
 command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/generalWorker.py
@@ -333,23 +359,4 @@ logfile = /raid1/supervisorlogs/program:crawlerWorker_5.log
 logfile_maxbytes = 50MB
 logfile_backups=1
 " >> /etc/supervisord.conf
-
-echo "
-$MONGO_IP  mongo1.choice.ai
-$MONGO_IP  mongo2.choice.ai
-$CASSA_IP cassa1.choice.ai
-$CASSA_IP cassa2.choice.ai
-$AE_IP aerospike1.choice.ai
-$AE_IP aerospike2.choice.ai
-$ES_IP elastic.azure.minewhat.com
-$CRUNCHER_IP caizooremote.choice.ai
-$CRUNCHER_IP caicollector1.choice.ai
-$CRUNCHER_IP caicollector2.choice.ai
-$CRUNCHER_IP caizoolocal.choice.ai
-$CRUNCHER_IP zoo1.choice.ai
-$CRUNCHER_IP mwzooremote.linodefarm.choice.ai
-$CRUNCHER_IP mwcollector1.linodefarm.choice.ai
-$CRUNCHER_IP mwcollector2.linodefarm.choice.ai
-$CRUNCHER_IP zoo1.linodefarm.choice.ai
-$CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
-" >> /etc/hosts
+sudo service supervisord start

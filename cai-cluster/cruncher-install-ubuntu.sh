@@ -56,6 +56,7 @@ sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
+sudo npm install -g forever
 sudo pip install supervisor
 # create mount folder
 sudo mkdir -p /mnt

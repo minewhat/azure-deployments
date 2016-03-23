@@ -62,7 +62,7 @@ $CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
 cd /home/ubuntu
 wget -O aerospike.tgz 'http://aerospike.com/download/server/latest/artifact/ubuntu12'
 tar -xvf aerospike.tgz
-cd aerospike-server-community-*-ubuntu12
+cd aerospike-server-community-3.7.4.1-ubuntu12.04/
 sudo ./asinstall # will install the .rpm packages
 sudo service aerospike start
 # sudo tail -f /var/log/aerospike/aerospike.log

@@ -44,6 +44,7 @@ sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
+sudo npm install -g forever
 sudo pip install supervisor
 # create mount folder
 sudo mkdir -p /raid1
@@ -58,11 +59,22 @@ sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/app2.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/cdnassets.git
+
+cd /home/ubuntu/minewhat/cdnassets/mwstoreSample
+npm i
+gulp dist
 
 sudo apt-get install nginx
 cd /home/ubuntu/minewhat/server2/config/nginx
 cp choice* /etc/nginx
+cp dhparams.pem /etc/nginx/conf.d
+cp choice_conf_d/* /etc/nginx/conf.d
+cd /home/ubuntu/minewhat/app2/choiceai
+tar -zxvf node_modules.tgz
+./prepare.sh
+gulp dist
 
 # mongo install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
