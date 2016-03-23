@@ -298,6 +298,9 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
+          "vmSize":{
+            "value": "[parameters('vmSizeMongoNodes')]"
+          },
           "storageAccountName": {
             "value": "[variables('storageAccountNameShared')]"
           },
@@ -339,6 +342,9 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
+          "vmSize":{
+            "value": "[parameters('vmSizeAerospikeNodes')]"
+          },
           "storageAccountName": {
             "value": "[variables('storageAccountNameShared')]"
           },
@@ -380,6 +386,9 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
+          "vmSize":{
+            "value": "[parameters('vmSizeWorkerNodes')]"
+          },
           "storageAccountName": {
             "value": "[variables('storageAccountNameShared')]"
           },
@@ -421,6 +430,9 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
+          "vmSize":{
+            "value": "[parameters('vmSizeCassaNodes')]"
+          },
           "storageAccountName": {
             "value": "[variables('storageAccountNameShared')]"
           },
@@ -462,6 +474,9 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
+          "vmSize":{
+            "value": "[parameters('vmSizeCruncherNodes')]"
+          },
           "storageAccountName": {
             "value": "[variables('storageAccountNameShared')]"
           },
