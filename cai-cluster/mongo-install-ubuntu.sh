@@ -80,6 +80,7 @@ npm i
 gulp dist
 
 cd /home/ubuntu/minewhat/server2/choiceai
+sudo -u ubuntu git checkout cai_rel
 tar zxvf node_modules_ubuntu.tar.gz
 ./prepare.sh
 ./scripts/startwidget.sh

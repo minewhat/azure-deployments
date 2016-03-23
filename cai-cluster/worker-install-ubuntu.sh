@@ -126,7 +126,7 @@ cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
 
 cd /home/ubuntu/minewhat/workers/configs
-sudo -u ubuntu git checkout MW_V2.3
+sudo -u ubuntu git checkout cai_rel
 sudo cp supervisord.conf /etc/
 sudo cp supervisord /etc/init.d/supervisord
 sudo chmod +x /etc/init.d/supervisord
@@ -145,6 +145,7 @@ cd /home/ubuntu/minewhat/addons/choiceAI_Addons
 ./startbigcommerce.sh
 
 cd /home/ubuntu/minewhat/server2/choiceai
+sudo -u ubuntu git checkout cai_rel
 tar -zxvf node_modules_ubuntu.tar.gz
 ./prepare.sh
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redissession.conf

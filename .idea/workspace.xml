@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c5a7edf4-79b4-4b32-9682-c837ff7dde73" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="azure-deployments.iws" />
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="worker-install-ubuntu.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="worker-install-ubuntu.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="143" column="13" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.16703297">
+              <caret line="130" column="38" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -45,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1459935">
-              <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -150,8 +151,8 @@
         <option value="$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh" />
-        <option value="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" />
+        <option value="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
       </list>
     </option>
   </component>
@@ -830,7 +831,7 @@
       <workItem from="1458628657904" duration="20339000" />
       <workItem from="1458710644433" duration="7900000" />
       <workItem from="1458735392148" duration="3467000" />
-      <workItem from="1458742326843" duration="31000" />
+      <workItem from="1458742326843" duration="95000" />
     </task>
     <task id="LOCAL-00001" summary="elastic default config">
       <created>1458213218100</created>
@@ -892,11 +893,17 @@
       <option name="project" value="LOCAL" />
       <updated>1458738087002</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="geo ip setup">
+      <created>1458742367694</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1458742367694</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36182000" />
+    <option name="totallyTimeSpent" value="36246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1723" y="46" width="1532" height="1059" extended-state="4" />
@@ -912,6 +919,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -922,7 +930,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3380744" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -951,7 +958,8 @@
     <MESSAGE value="restarting nginx" />
     <MESSAGE value="yes for nginx" />
     <MESSAGE value="more script additions with startup scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="more script additions with startup scripts" />
+    <MESSAGE value="geo ip setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="geo ip setup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1331,18 +1339,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
+    <entry file="file://$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="143" column="13" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh">
+    <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1459935">
-          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.16703297">
+          <caret line="130" column="38" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="38" />
           <folding />
         </state>
       </provider>
