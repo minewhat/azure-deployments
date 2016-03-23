@@ -67,3 +67,17 @@ sudo ./asinstall # will install the .rpm packages
 sudo service aerospike start
 # sudo tail -f /var/log/aerospike/aerospike.log
 # wait for it. "service ready: soon there will be cake!"
+
+# setup startup and shutdown scripts
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/aerospike/* /home/ubuntu/
+
+
+cat << EOF > /etc/init/choice.conf
+# choice
+description "start choice specific services"
+
+start on starting
+script
+    /home/ubuntu/startupscripts/basic.sh
+end script
+EOF

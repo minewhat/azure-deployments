@@ -132,12 +132,6 @@ sudo cp supervisord /etc/init.d/supervisord
 sudo chmod +x /etc/init.d/supervisord
 sudo service supervisord start
 
-cd /home/ubuntu/minewhat/addons/choiceAI_Addons
-./Nginx_Install.sh
-./prepare.sh
-./startshopify.sh
-./startbigcommerce.sh
-
 sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
 cp choice* /etc/nginx
@@ -145,8 +139,16 @@ cp dhparams.pem /etc/nginx/conf.d
 cp choice_conf_d/* /etc/nginx/conf.d
 sudo service nginx restart
 
+cd /home/ubuntu/minewhat/addons/choiceAI_Addons
+./prepare.sh
+./startshopify.sh
+./startbigcommerce.sh
+
 cd /home/ubuntu/minewhat/server2/choiceai
 tar -zxvf node_modules_ubuntu.tar.gz
+./prepare.sh
+sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redissession.conf
+sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redisstatscache1.conf
 ./scripts/startworker.sh
 
 sudo service supervisord stop
@@ -361,3 +363,17 @@ logfile_maxbytes = 50MB
 logfile_backups=1
 " >> /etc/supervisord.conf
 sudo service supervisord start
+supervisorctl start all
+
+# setup startup and shutdown scripts
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/workers/* /home/ubuntu/
+
+cat << EOF > /etc/init/choice.conf
+# choice
+description "start choice specific services"
+
+start on starting
+script
+    /home/ubuntu/startupscripts/basic.sh
+end script
+EOF

@@ -62,21 +62,27 @@ sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/app2.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/cdnassets.git
 
+cd /home/ubuntu/minewhat/Server/Config
+sudo -u ubuntu git checkout MW_V2.3
+
+cd /home/ubuntu/minewhat/app2/choiceai
+tar -zxvf node_modules_ubuntu.tgz
+./prepare.sh
+gulp dist
+
 cd /home/ubuntu/minewhat/cdnassets/mwstoreSample
 npm i
 gulp dist
 
-sudo apt-get install nginx --yes
-cd /home/ubuntu/minewhat/server2/config/nginx
-cp choice* /etc/nginx
-cp dhparams.pem /etc/nginx/conf.d
-cp choice_conf_d/* /etc/nginx/conf.d
-sudo service nginx restart
-
-cd /home/ubuntu/minewhat/app2/choiceai
-tar -zxvf node_modules.tgz
+cd /home/ubuntu/minewhat/server2/choiceai
+tar zxvf node_modules_ubuntu.tar.gz
 ./prepare.sh
-gulp dist
+./scripts/startwidget.sh
+./scripts/startwidgetData.sh
+./scripts/startnotif.sh
+cd static
+ln -s  ~/minewhat/app2/choiceai/dist newapp
+ln -s  ~/minewhat/app2/choiceai/dist settings
 
 # mongo install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -140,3 +146,23 @@ mongo --eval 'rs.initiate({
 	]
 })
 '
+
+sudo apt-get install nginx --yes
+cd /home/ubuntu/minewhat/server2/config/nginx
+cp choice* /etc/nginx
+cp dhparams.pem /etc/nginx/conf.d
+cp choice_conf_d/* /etc/nginx/conf.d
+sudo service nginx restart
+
+# setup startup and shutdown scripts
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/mongo/* /home/ubuntu/
+
+cat << EOF > /etc/init/choice.conf
+# choice
+description "start choice specific services"
+
+start on starting
+script
+    /home/ubuntu/startupscripts/basic.sh
+end script
+EOF

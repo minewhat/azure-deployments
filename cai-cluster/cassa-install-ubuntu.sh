@@ -120,3 +120,16 @@ echo 0 > /sys/block/sdb/queue/rotational
 
 #start Cassa
 sudo service dse start
+
+# setup startup and shutdown scripts
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/cassa/* /home/ubuntu/
+
+cat << EOF > /etc/init/choice.conf
+# choice
+description "start choice specific services"
+
+start on starting
+script
+    /home/ubuntu/startupscripts/basic.sh
+end script
+EOF
