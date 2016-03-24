@@ -134,6 +134,11 @@ sudo -u ubuntu tar -zxvf node_modules_ubuntu.tgz
 sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu gulp dist
 
+cd /home/ubuntu/minewhat/addons/productClues_Addons
+sudo -u ubuntu sh prepare.sh
+sudo -u ubuntu sh startshopify.sh
+sudo -u ubuntu sh startbigcommerce.sh
+
 cd /home/ubuntu/minewhat/server2/productclues
 sudo -u ubuntu git checkout pc_rel
 sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz

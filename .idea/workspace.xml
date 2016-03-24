@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7edf4-79b4-4b32-9682-c837ff7dde73" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pc-cluster/azuredeploy.json" afterPath="$PROJECT_DIR$/pc-cluster/azuredeploy.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" afterPath="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pc-cluster/pc-mongo-resources.json" afterPath="$PROJECT_DIR$/pc-cluster/pc-mongo-resources.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pc-cluster/shared-resources.json" afterPath="$PROJECT_DIR$/pc-cluster/shared-resources.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="azure-deployments.iws" />
@@ -43,11 +35,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cai-cluster/azuredeploy.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17094018">
-              <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
+            <state vertical-scroll-proportion="-11.535714">
+              <caret line="142" column="24" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.27090302">
+              <caret line="138" column="33" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="worker-install-ubuntu.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="118" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -78,12 +90,12 @@
         <option value="$PROJECT_DIR$/pc-cluster/azuredeploy.json" />
         <option value="$PROJECT_DIR$/pc-cluster/shared-resources.json" />
         <option value="$PROJECT_DIR$/pc-cluster/pc-mongo-resources.json" />
-        <option value="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
+        <option value="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" />
       </list>
     </option>
   </component>
@@ -106,10 +118,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1409" />
-    <option name="y" value="46" />
-    <option name="width" value="1781" />
-    <option name="height" value="1034" />
+    <option name="x" value="43" />
+    <option name="y" value="21" />
+    <option name="width" value="1323" />
+    <option name="height" value="747" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -134,9 +146,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -179,40 +188,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mw-cw-cluster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="azure-deployments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="azure-deployments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="es-azapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="azure-deployments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="azure-deployments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="cai-cluster" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -766,7 +750,8 @@
       <workItem from="1458742326843" duration="6242000" />
       <workItem from="1458753143553" duration="1013000" />
       <workItem from="1458763444780" duration="1842000" />
-      <workItem from="1458804242779" duration="8269000" />
+      <workItem from="1458804242779" duration="8328000" />
+      <workItem from="1458823776463" duration="373000" />
     </task>
     <task id="LOCAL-00001" summary="elastic default config">
       <created>1458213218100</created>
@@ -864,37 +849,43 @@
       <option name="project" value="LOCAL" />
       <updated>1458819498147</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="pc-cluster setup script">
+      <created>1458821644614</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1458821644614</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53517000" />
+    <option name="totallyTimeSpent" value="53949000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1409" y="46" width="1781" height="1034" extended-state="4" />
+    <frame x="43" y="21" width="1323" height="747" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26805252" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26751593" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15141048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20406568" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3380744" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -929,7 +920,8 @@
     <MESSAGE value="hosts with all names" />
     <MESSAGE value="always keep --yes in script" />
     <MESSAGE value="with machine interdependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="with machine interdependencies" />
+    <MESSAGE value="pc-cluster setup script" />
+    <option name="LAST_COMMIT_MESSAGE" value="pc-cluster setup script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -940,7 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -983,7 +974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,7 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1202,7 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5786802">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1210,7 +1196,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34471545">
           <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1218,7 +1203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2879046">
           <caret line="170" column="20" selection-start-line="170" selection-start-column="20" selection-end-line="170" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1226,7 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3420622">
           <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1234,7 +1217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="73" selection-start-line="81" selection-start-column="73" selection-end-line="81" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,7 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="134" column="77" selection-start-line="134" selection-start-column="77" selection-end-line="134" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,7 +1231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="135" column="77" selection-start-line="135" selection-start-column="77" selection-end-line="135" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1258,15 +1238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="179" column="77" selection-start-line="179" selection-start-column="77" selection-end-line="179" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.561431">
-          <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1274,7 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03069467">
           <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1282,15 +1252,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29082426">
-          <caret line="335" column="59" selection-start-line="335" selection-start-column="59" selection-end-line="335" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1312,8 +1273,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cai-cluster/azuredeploy.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17094018">
-          <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
+        <state vertical-scroll-proportion="-11.535714">
+          <caret line="142" column="24" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="118" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27090302">
+          <caret line="138" column="33" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
           <folding />
         </state>
       </provider>
