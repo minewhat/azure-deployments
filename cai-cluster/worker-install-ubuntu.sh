@@ -48,6 +48,8 @@ $CRUNCHER_IP mwzoo.linodefarm.minewhat.com
 $CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
 $CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
 " >> /etc/hosts
+
+sudo add-apt-repository -y ppa:nginx/stable
 sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update --yes
 # installing GIT

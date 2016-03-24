@@ -19,7 +19,7 @@ AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
 
-sudo add-apt-repository ppa:nginx/stable
+sudo add-apt-repository -y ppa:nginx/stable
 sudo add-apt-repository -y ppa:chris-lea/node.js
 # mongo install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -74,7 +74,7 @@ cd ~
 #Copy GEO
 sudo -u ubuntu mkdir GeoIP
 cp ~/minewhat/Server/Config/Geo* GeoIP
-sudo -u ubuntu gunzip GeoIP/*
+sudo -u ubuntu gunzip -f GeoIP/*
 
 cd /home/ubuntu/minewhat/app2/choiceai
 sudo -u ubuntu tar -zxvf node_modules_ubuntu.tgz

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5a7edf4-79b4-4b32-9682-c837ff7dde73" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh" />
+    <list default="true" id="c5a7edf4-79b4-4b32-9682-c837ff7dde73" name="Default" comment="hosts with all names">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -33,57 +30,37 @@
         <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aerospike-install-ubuntu.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="67" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cassa-install-ubuntu.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="98" column="47" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cruncher-install-ubuntu.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="102" column="47" selection-start-line="102" selection-start-column="47" selection-end-line="102" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="worker-install-ubuntu.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.2257524">
-              <caret line="133" column="7" selection-start-line="133" selection-start-column="7" selection-end-line="133" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="94" column="9" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="worker-install-ubuntu.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.53763443">
+              <caret line="102" column="27" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cai-cluster/azuredeploy.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.428571">
+              <caret line="120" column="28" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -138,10 +115,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="43" />
-    <option name="y" value="21" />
-    <option name="width" value="1323" />
-    <option name="height" value="747" />
+    <option name="x" value="1409" />
+    <option name="y" value="46" />
+    <option name="width" value="1781" />
+    <option name="height" value="1034" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -166,9 +143,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -226,20 +203,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cai-cluster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="azure-deployments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="azure-deployments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -796,7 +759,9 @@
       <workItem from="1458710644433" duration="7900000" />
       <workItem from="1458735392148" duration="3467000" />
       <workItem from="1458742326843" duration="6242000" />
-      <workItem from="1458753143553" duration="281000" />
+      <workItem from="1458753143553" duration="1013000" />
+      <workItem from="1458763444780" duration="1842000" />
+      <workItem from="1458804242779" duration="4102000" />
     </task>
     <task id="LOCAL-00001" summary="elastic default config">
       <created>1458213218100</created>
@@ -876,20 +841,26 @@
       <option name="project" value="LOCAL" />
       <updated>1458746879018</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="hosts with all names">
+      <created>1458753442478</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1458753442478</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42674000" />
+    <option name="totallyTimeSpent" value="49350000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="21" width="1323" height="747" extended-state="6" />
+    <frame x="1409" y="46" width="1781" height="1034" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52866244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5284464" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -900,7 +871,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.151681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15141048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -938,7 +909,8 @@
     <MESSAGE value="geo ip setup" />
     <MESSAGE value="production setup for cai" />
     <MESSAGE value="running command as ubuntu" />
-    <option name="LAST_COMMIT_MESSAGE" value="running command as ubuntu" />
+    <MESSAGE value="hosts with all names" />
+    <option name="LAST_COMMIT_MESSAGE" value="hosts with all names" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -949,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="134" column="3" selection-start-line="134" selection-start-column="3" selection-end-line="134" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,7 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="82" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -996,7 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1039,7 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1106,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1114,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1233,13 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cai-cluster/azuredeploy.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="194" column="12" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cai-cluster/shared-resources.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1275,19 +1234,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="67" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1295,7 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="98" column="47" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1303,22 +1252,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="102" column="47" selection-start-line="102" selection-start-column="47" selection-end-line="102" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
+    <entry file="file://$PROJECT_DIR$/cai-cluster/azuredeploy.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+        <state vertical-scroll-proportion="-5.428571">
+          <caret line="120" column="28" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.2257524">
-          <caret line="133" column="7" selection-start-line="133" selection-start-column="7" selection-end-line="133" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="9" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53763443">
+          <caret line="102" column="27" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
           <folding />
         </state>
       </provider>
