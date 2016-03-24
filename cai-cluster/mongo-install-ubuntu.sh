@@ -173,7 +173,7 @@ sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
 cp choice* /etc/nginx
 cp dhparams.pem /etc/nginx/conf.d
-cp choice_conf_d/* /etc/nginx/conf.d
+cp cai_conf_d/* /etc/nginx/conf.d
 sudo -u ubuntu service nginx restart
 
 # setup startup and shutdown scripts

@@ -130,9 +130,18 @@ cp ~/minewhat/Server/Config/Geo* GeoIP
 sudo -u ubuntu gunzip -f GeoIP/*
 
 cd /home/ubuntu/minewhat/app2/productclues
+cp /home/ubuntu/minewhat/app2/choice/node_modules_ubuntu.tgz .
 sudo -u ubuntu tar -zxvf node_modules_ubuntu.tgz
 sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu gulp dist
+
+
+sudo apt-get install nginx --yes
+cd /home/ubuntu/minewhat/server2/config/nginx
+cp productclues* /etc/nginx
+cp dhparams.pem /etc/nginx/conf.d
+cp pc_conf_d/* /etc/nginx/conf.d
+sudo service nginx restart
 
 cd /home/ubuntu/minewhat/addons/productClues_Addons
 sudo -u ubuntu sh prepare.sh
@@ -152,7 +161,6 @@ sudo -u ubuntu ln -s  ~/minewhat/app2/productclues/dist newapp
 sudo -u ubuntu ln -s  ~/minewhat/app2/productclues/dist settings
 
 cd /home/ubuntu/minewhat/workers/configs
-sudo -u ubuntu git checkout pc_rel
 sudo cp supervisord.conf /etc/
 sudo cp supervisord /etc/init.d/supervisord
 sudo chmod +x /etc/init.d/supervisord

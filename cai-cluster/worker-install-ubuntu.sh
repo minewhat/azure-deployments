@@ -98,7 +98,6 @@ cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
 
 cd /home/ubuntu/minewhat/workers/configs
-sudo -u ubuntu git checkout cai_rel
 sudo cp supervisord.conf /etc/
 sudo cp supervisord /etc/init.d/supervisord
 sudo chmod +x /etc/init.d/supervisord
@@ -110,7 +109,7 @@ sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
 cp choice* /etc/nginx
 cp dhparams.pem /etc/nginx/conf.d
-cp choice_conf_d/* /etc/nginx/conf.d
+cp cai_conf_d/* /etc/nginx/conf.d
 sudo service nginx restart
 
 cd /home/ubuntu/minewhat/addons/choiceAI_Addons
