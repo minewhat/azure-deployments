@@ -133,7 +133,7 @@ cd /home/ubuntu/minewhat/Server/listener
 node createQueues.js
 
 # setup startup and shutdown scripts
-sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/crunchers/* /home/ubuntu/
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/cai/crunchers/* /home/ubuntu/
 
 # setup utility scripts
 sudo -u ubuntu cp /home/ubuntu/minewhat/server2/scripts/workerLogs.sh /home/ubuntu/

@@ -4,7 +4,6 @@
   "parameters": {
     "namespace": {
       "type": "string",
-      "defaultValue": "pc-mongo",
       "metadata": {
         "description": "The namespace prefix for resources created by this template"
       }
@@ -33,7 +32,13 @@
         "description": "Administrator user name used when provisioning virtual machines"
       }
     },
-    "mongoIp": {
+    "vmSize": {
+      "type": "string",
+      "metadata": {
+        "description": "size of virtual machines"
+      }
+    },
+    "ip": {
       "type": "string",
       "metadata": {
         "description": "Static IP for mongo machine"
@@ -54,14 +59,25 @@
   },
   "variables": {
     "vmStorageAccountContainerName": "vhd",
-    "vmSize": "Standard_DS3",
-    "subnetRef": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('subnet').vnet), '/subnets/', parameters('subnet').name)]",
+    "subnetRef": "[concat('/subscriptions/f0e3b4ef-048b-44f4-9dd8-6a66f3e06a60/resourceGroups/ES-AZAPP/providers/Microsoft.Network/virtualNetworks/VERTICANET', '/subnets/', parameters('subnet').name)]",
     "vmName": "[concat(parameters('namespace'), '-vm')]",
     "publicIpName": "[concat(parameters('namespace'), '-pip')]",
     "securityGroupName": "[concat(parameters('namespace'), '-nsg')]",
     "nicName": "[concat(parameters('namespace'), '-nic')]"
   },
   "resources": [
+    {
+      "apiVersion": "2015-06-15",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[variables('publicIpName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic",
+        "dnsSettings": {
+          "domainNameLabel": "[parameters('namespace')]"
+        }
+      }
+    },
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Network/networkSecurityGroups",
@@ -88,15 +104,6 @@
     },
     {
       "apiVersion": "2015-06-15",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('publicIpName')]",
-      "location": "[parameters('location')]",
-      "properties": {
-        "publicIPAllocationMethod": "Dynamic"
-      }
-    },
-    {
-      "apiVersion": "2015-06-15",
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[variables('nicName')]",
       "location": "[parameters('location')]",
@@ -112,7 +119,7 @@
               "publicIPAddress": {
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIpName'))]"
               },
-              "privateIPAddress": "[parameters('mongoIp')]",
+              "privateIPAddress": "[parameters('ip')]",
               "privateIPAllocationMethod": "Static",
               "subnet": {
                 "id": "[variables('subnetRef')]"
@@ -135,7 +142,7 @@
       ],
       "properties": {
         "hardwareProfile": {
-          "vmSize": "[variables('vmSize')]"
+          "vmSize": "[parameters('vmSize')]"
         },
         "osProfile": {
           "computerName": "[variables('vmName')]",
@@ -164,13 +171,13 @@
       "resources": [
         {
           "type": "Microsoft.Compute/virtualMachines/extensions",
-          "name": "[concat(variables('vmName'),'/installmongo')]",
+          "name": "[concat(variables('vmName'),'/install')]",
           "apiVersion": "2015-06-15",
           "location": "[parameters('location')]",
           "dependsOn": [
             "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
           ],
-          "properties": "[parameters('osSettings').extensionSettings.mongo]"
+          "properties": "[parameters('osSettings').extensionSettings[parameters('namespace')]]"
         }
       ]
     }

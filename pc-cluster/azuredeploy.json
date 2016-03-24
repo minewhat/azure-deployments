@@ -42,7 +42,7 @@
     },
     "virtualNetworkName": {
       "type": "string",
-      "defaultValue": "pcnet",
+      "defaultValue": "verticanet",
       "metadata": {
         "description": "Virtual Network"
       }
@@ -61,29 +61,8 @@
       "type": "string",
       "defaultValue": "Standard_DS3",
       "allowedValues": [
-        "Standard_D1",
-        "Standard_D2",
-        "Standard_D3",
-        "Standard_D4",
-        "Standard_D12",
-        "Standard_D13",
-        "Standard_D1_V2",
-        "Standard_D2_V2",
-        "Standard_D3_V2",
-        "Standard_D4_V2",
-        "Standard_D12_V2",
-        "Standard_D13_V2",
-        "Basic_A0",
-        "Standard_A2",
-        "Standard_A3",
-        "Standard_A4",
-        "Standard_A7",
-        "Standard_DS1",
-        "Standard_DS2",
         "Standard_DS3",
-        "Standard_DS4",
-        "Standard_DS12",
-        "Standard_DS13"
+        "Standard_DS4"
       ],
       "metadata": {
         "description": "Size of the Mongo nodes"
@@ -98,7 +77,8 @@
     }
   },
   "variables": {
-    "mongo_ip": "10.3.0.135",
+    "es_ip": "10.1.100.136",
+    "mongo_ip": "10.1.100.80",
     "templateBaseUrl": "https://raw.githubusercontent.com/minewhat/azure-deployments/master/pc-cluster/",
     "locationMap": {
         "ResourceGroup":"[resourceGroup().location]",
@@ -118,11 +98,11 @@
     "storageAccountNameShared": "[concat(variables('storageAccountPrefix'), 's', uniqueString(resourceGroup().id, deployment().name))]",
     "networkSettings": {
       "virtualNetworkName": "[parameters('virtualNetworkName')]",
-      "addressPrefix": "10.3.0.128/28",
+      "addressPrefix": "10.1.100.0/24",
       "subnet": {
-        "mongo": {
-          "name": "mongo",
-          "prefix": "10.3.0.128/28",
+        "master": {
+          "name": "master",
+          "prefix": "10.1.100.0/25",
           "vnet": "[parameters('virtualNetworkName')]"
         }
       }
@@ -138,7 +118,7 @@
       },
       "managementPort":"22",
       "extensionSettings":{
-        "mongo": {
+        "cai-mongo": {
           "publisher": "Microsoft.OSTCExtensions",
           "type": "CustomScriptForLinux",
           "typeHandlerVersion": "1.2",
@@ -146,83 +126,13 @@
             "fileUris": [
               "https://raw.githubusercontent.com/minewhat/azure-deployments/master/pc-cluster/mongo-install-ubuntu.sh"
             ],
-            "commandToExecute": "[concat('bash mongo-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'))]"
+            "commandToExecute": "[concat('bash mongo-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'))]"
           }
         }
       }
     },
     "osSettings": "[variables('ubuntuSettings')]",
     "dataSkuSettings": {
-      "Standard_D1": {
-        "dataDisks":2,
-        "nodesPerStorageAccount":6,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_D2": {
-        "dataDisks":2,
-        "nodesPerStorageAccount":4,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_D3": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":3,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_D4": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_D12": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_D13": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_D1_V2": {
-        "dataDisks":2,
-        "nodesPerStorageAccount":6,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_D2_V2": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":4,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_D3_V2": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":3,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_D4_V2": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_D12_V2": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
-      },
-       "Standard_D13_v2": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_DS1": {
-        "dataDisks":2,
-        "nodesPerStorageAccount":6,
-        "storageAccountType":"Premium_LRS"
-      },
-      "Standard_DS2": {
-        "dataDisks":2,
-        "nodesPerStorageAccount":4,
-        "storageAccountType":"Premium_LRS"
-      },
       "Standard_DS3": {
         "dataDisks":4,
         "nodesPerStorageAccount":4,
@@ -232,51 +142,6 @@
         "dataDisks":4,
         "nodesPerStorageAccount":2,
         "storageAccountType":"Premium_LRS"
-      },
-      "Standard_DS12": {
-        "dataDisks":1,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Premium_LRS"
-      },
-      "Standard_DS13": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Premium_LRS"
-      },
-      "Basic_A0": {
-        "dataDisks":1,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
-      },
-       "Standard_A0": {
-        "dataDisks":1,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_A1": {
-        "dataDisks":2,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_A2": {
-        "dataDisks":2,
-        "nodesPerStorageAccount":6,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_A3": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":4,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_A4": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
-      },
-      "Standard_A7": {
-        "dataDisks":4,
-        "nodesPerStorageAccount":2,
-        "storageAccountType":"Standard_LRS"
       }
     },
     "nodesPerStorageAccount":"[variables('dataSkuSettings')[parameters('vmSizeMongoNodes')].nodesPerStorageAccount]",
@@ -348,10 +213,16 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
+          "vmSize":{
+            "value": "[parameters('vmSizeMongoNodes')]"
+          },
           "storageAccountName": {
             "value": "[variables('storageAccountNameShared')]"
           },
-          "mongoIp": {
+          "namespace": {
+            "value": "pc-mongo"
+          },
+          "ip": {
             "value": "[variables('mongo_ip')]"
           },
           "adminUsername": {
@@ -385,9 +256,6 @@
         "parameters": {
           "location": {
             "value": "[variables('location')]"
-          },
-          "networkSettings": {
-            "value": "[variables('networkSettings')]"
           },
           "storageAccountName": {
             "value": "[variables('storageAccountNameShared')]"

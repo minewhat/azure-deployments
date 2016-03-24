@@ -58,6 +58,16 @@ sudo apt-get --yes --force-yes install git
 # create mount folder
 sudo mkdir -p /raid1
 sudo mkdir -p /mnt
+sudo mkdir -p /home/ubuntu/minewhat
+sudo mkdir -p /raid1/supervisorlogs
+sudo mkdir /mnt/storml
+sudo mkdir /mnt/zookeeper2
+sudo mkdir /mnt/kafka-logs
+sudo chown ubuntu:ubuntu /mnt/storml/
+sudo chown ubuntu:ubuntu /mnt/zookeeper2/
+sudo chown ubuntu:ubuntu /mnt/kafka-logs
+sudo chown -R ubuntu:ubuntu /raid1
+sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 # give read/write permission to all users
 sudo chown -R ubuntu:ubuntu /raid1
 sudo chown -R ubuntu:ubuntu /mnt
@@ -78,17 +88,6 @@ sudo apt-get --yes install python-dev python-pip
 sudo apt-get --yes install python-software-properties python g++
 sudo pip install supervisor
 
-sudo mkdir -p /home/ubuntu/minewhat
-sudo chmod -R a+w /raid1
-sudo mkdir -p /raid1/supervisorlogs
-sudo mkdir /mnt/storml
-sudo mkdir /mnt/zookeeper2
-sudo mkdir /mnt/kafka-logs
-sudo chown ubuntu:ubuntu /mnt/storml/
-sudo chown ubuntu:ubuntu /mnt/zookeeper2/
-sudo chown ubuntu:ubuntu /mnt/kafka-logs
-sudo chown -R ubuntu:ubuntu /raid1
-sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
@@ -342,7 +341,7 @@ sudo -u ubuntu service supervisord start
 sudo -u ubuntu supervisorctl start all
 
 # setup startup and shutdown scripts
-sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/workers/* /home/ubuntu/
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/cai/workers/* /home/ubuntu/
 
 cat << EOF > /etc/init/choice.conf
 # choice

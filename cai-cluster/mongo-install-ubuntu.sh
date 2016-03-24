@@ -35,6 +35,19 @@ echo noop > /sys/block/sdb/queue/scheduler
 echo 0 > /sys/block/sdb/queue/read_ahead_kb
 echo 0 > /sys/block/sdb/queue/rotational
 
+# create mount folder
+sudo mkdir -p /raid1
+sudo mkdir -p /mnt
+# give read/write permission to all users
+sudo mkdir -p /raid1/mongo/
+sudo mkdir -p /raid1/mongo/log
+sudo mkdir -p /raid1/mongo/data
+sudo mkdir -p /home/ubuntu/minewhat
+# give read/write permission to all users
+sudo chown -R ubuntu:ubuntu /raid1
+sudo chown -R ubuntu:ubuntu /mnt
+sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
+
 # most common need
 sudo apt-get -y install unzip
 sudo apt-get -y install make
@@ -49,52 +62,6 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
 sudo npm install -g forever
 sudo pip install supervisor
-
-# create mount folder
-sudo mkdir -p /raid1
-sudo mkdir -p /mnt
-# give read/write permission to all users
-sudo mkdir -p /raid1/mongo/
-sudo mkdir -p /raid1/mongo/log
-sudo mkdir -p /raid1/mongo/data
-sudo mkdir -p /home/ubuntu/minewhat
-# give read/write permission to all users
-sudo chown -R ubuntu:ubuntu /raid1
-sudo chown -R ubuntu:ubuntu /mnt
-sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
-cd /home/ubuntu/minewhat
-sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
-sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
-sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/app2.git
-sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/cdnassets.git
-
-cd /home/ubuntu/minewhat/Server/Config
-sudo -u ubuntu git checkout MW_V2.3
-cd ~
-#Copy GEO
-sudo -u ubuntu mkdir GeoIP
-cp ~/minewhat/Server/Config/Geo* GeoIP
-sudo -u ubuntu gunzip -f GeoIP/*
-
-cd /home/ubuntu/minewhat/app2/choiceai
-sudo -u ubuntu tar -zxvf node_modules_ubuntu.tgz
-sudo -u ubuntu sh prepare.sh
-sudo -u ubuntu gulp dist
-
-cd /home/ubuntu/minewhat/cdnassets/mwstoreSample
-sudo -u ubuntu npm i
-sudo -u ubuntu gulp dist
-
-cd /home/ubuntu/minewhat/server2/choiceai
-sudo -u ubuntu git checkout cai_rel
-sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz
-sudo -u ubuntu sh prepare.sh
-sudo -u ubuntu sh scripts/startwidget.sh
-sudo -u ubuntu sh scripts/startwidgetData.sh
-sudo -u ubuntu sh scripts/startnotif.sh
-cd static
-sudo -u ubuntu ln -s  ~/minewhat/app2/choiceai/dist newapp
-sudo -u ubuntu ln -s  ~/minewhat/app2/choiceai/dist settings
 
 # Disable THP
 sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
@@ -167,6 +134,41 @@ sudo -u ubuntu mongo --eval 'rs.initiate({
 })
 '
 
+
+cd /home/ubuntu/minewhat
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/app2.git
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/cdnassets.git
+
+cd /home/ubuntu/minewhat/Server/Config
+sudo -u ubuntu git checkout MW_V2.3
+cd ~
+#Copy GEO
+sudo -u ubuntu mkdir GeoIP
+cp ~/minewhat/Server/Config/Geo* GeoIP
+sudo -u ubuntu gunzip -f GeoIP/*
+
+cd /home/ubuntu/minewhat/app2/choiceai
+sudo -u ubuntu tar -zxvf node_modules_ubuntu.tgz
+sudo -u ubuntu sh prepare.sh
+sudo -u ubuntu gulp dist
+
+cd /home/ubuntu/minewhat/cdnassets/mwstoreSample
+sudo -u ubuntu npm i
+sudo -u ubuntu gulp dist
+
+cd /home/ubuntu/minewhat/server2/choiceai
+sudo -u ubuntu git checkout cai_rel
+sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz
+sudo -u ubuntu sh prepare.sh
+sudo -u ubuntu sh scripts/startwidget.sh
+sudo -u ubuntu sh scripts/startwidgetData.sh
+sudo -u ubuntu sh scripts/startnotif.sh
+cd static
+sudo -u ubuntu ln -s  ~/minewhat/app2/choiceai/dist newapp
+sudo -u ubuntu ln -s  ~/minewhat/app2/choiceai/dist settings
+
 sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
 cp choice* /etc/nginx
@@ -175,7 +177,7 @@ cp choice_conf_d/* /etc/nginx/conf.d
 sudo -u ubuntu service nginx restart
 
 # setup startup and shutdown scripts
-sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/mongo/* /home/ubuntu/
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/cai/mongo/* /home/ubuntu/
 
 cat << EOF > /etc/init/choice.conf
 # choice

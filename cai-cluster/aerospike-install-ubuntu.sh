@@ -79,7 +79,7 @@ sudo service aerospike start
 # wait for it. "service ready: soon there will be cake!"
 
 # setup startup and shutdown scripts
-sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/aerospike/* /home/ubuntu/
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/cai/aerospike/* /home/ubuntu/
 
 
 cat << EOF > /etc/init/choice.conf

@@ -132,7 +132,7 @@ echo 0 > /sys/block/sdb/queue/rotational
 sudo service dse start
 
 # setup startup and shutdown scripts
-sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/choice/cassa/* /home/ubuntu/
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/cai/cassa/* /home/ubuntu/
 
 cat << EOF > /etc/init/choice.conf
 # choice
