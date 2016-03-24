@@ -289,7 +289,9 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[concat('Microsoft.Resources/deployments/', 'shared')]"
+        "[concat('Microsoft.Resources/deployments/', 'shared')]",
+        "[concat('Microsoft.Resources/deployments/', 'aerospike-nodes')]",
+        "[concat('Microsoft.Resources/deployments/', 'cassa-nodes')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -377,7 +379,8 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[concat('Microsoft.Resources/deployments/', 'shared')]"
+        "[concat('Microsoft.Resources/deployments/', 'shared')]",
+        "[concat('Microsoft.Resources/deployments/', 'mongo-nodes')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -465,7 +468,8 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[concat('Microsoft.Resources/deployments/', 'shared')]"
+        "[concat('Microsoft.Resources/deployments/', 'shared')]",
+        "[concat('Microsoft.Resources/deployments/', 'mongo-nodes')]"
       ],
       "properties": {
         "mode": "Incremental",
