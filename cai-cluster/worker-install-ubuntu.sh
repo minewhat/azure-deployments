@@ -99,14 +99,15 @@ sudo pip install supervisor
 #prepare folders
 sudo mkdir /mnt/redisdb
 sudo chown ubuntu:ubuntu /mnt/redisdb
-cd ~
-mkdir Servers
+cd /home/ubuntu
+sudo -u ubuntu mkdir Servers
 cd Servers
 wget http://download.redis.io/releases/redis-2.8.19.tar.gz
-tar zxvf redis-2.8.19.tar.gz
-ln -s redis-2.8.19/ redis
+sudo tar zxvf redis-2.8.19.tar.gz
+sudo ln -s redis-2.8.19/ redis
+sudo chown ubuntu:ubuntu /home/ubuntu
 cd redis
-make 32bit
+sudo make 32bit
 
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
