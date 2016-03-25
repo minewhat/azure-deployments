@@ -379,8 +379,8 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[concat('Microsoft.Resources/deployments/', 'shared')]",
-        "[concat('Microsoft.Resources/deployments/', 'mongo-nodes')]"
+        "[concat('Microsoft.Resources/deployments/', 'shared')]"
+//        ,"[concat('Microsoft.Resources/deployments/', 'mongo-nodes')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -468,8 +468,8 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[concat('Microsoft.Resources/deployments/', 'shared')]",
-        "[concat('Microsoft.Resources/deployments/', 'mongo-nodes')]"
+        "[concat('Microsoft.Resources/deployments/', 'shared')]"
+//        ,"[concat('Microsoft.Resources/deployments/', 'mongo-nodes')]"
       ],
       "properties": {
         "mode": "Incremental",
