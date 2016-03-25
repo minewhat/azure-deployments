@@ -86,8 +86,8 @@ net:
 replication:
    replSetName: mw
 " > /etc/mongod.conf
-sudo -u ubuntu service mongod start
-sleep 20
+sudo -u ubuntu /usr/bin/mongod --config /etc/mongod.conf
+sleep 2
 MY_IPS=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
 
 echo "
