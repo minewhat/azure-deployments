@@ -20,7 +20,7 @@ CASSA_IP="$5"
 CRUNCHER_IP="$6"
 WORKER_IP="$7"
 sudo add-apt-repository -y ppa:nginx/stable
-sudo add-apt-repository -y ppa:chris-lea/node.js
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 # mongo install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
@@ -151,10 +151,10 @@ sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/cdnassets.git
 
 cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
-cd ~
+cd /home/ubuntu/
 #Copy GEO
 sudo -u ubuntu mkdir GeoIP
-cp ~/minewhat/Server/Config/Geo* GeoIP
+cp /home/ubuntu/minewhat/Server/Config/Geo* GeoIP
 sudo -u ubuntu gunzip -f GeoIP/*
 
 cd /home/ubuntu/minewhat/app2/choiceai
@@ -163,7 +163,8 @@ sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu gulp dist
 
 cd /home/ubuntu/minewhat/cdnassets/mwstoreSample
-sudo -u ubuntu npm i
+sudo npm i
+sudo chown -R ubuntu:ubuntu /home/ubuntu/
 sudo -u ubuntu gulp dist
 
 cd /home/ubuntu/minewhat/server2/choiceai
@@ -175,8 +176,8 @@ sudo -u ubuntu sh scripts/startwidget.sh
 sudo -u ubuntu sh scripts/startwidgetData.sh
 sudo -u ubuntu sh scripts/startnotif.sh
 cd static
-sudo -u ubuntu ln -s  ~/minewhat/app2/choiceai/dist newapp
-sudo -u ubuntu ln -s  ~/minewhat/app2/choiceai/dist settings
+sudo -u ubuntu ln -s  /home/ubuntu/minewhat/app2/choiceai/dist newapp
+sudo -u ubuntu ln -s  /home/ubuntu/minewhat/app2/choiceai/dist settings
 
 sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx

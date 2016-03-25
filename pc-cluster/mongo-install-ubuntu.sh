@@ -17,7 +17,7 @@ MONGO_IP="$2"
 ES_IP="$3"
 
 sudo add-apt-repository -y ppa:nginx/stable
-sudo add-apt-repository -y ppa:chris-lea/node.js
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 # mongo install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
@@ -140,10 +140,10 @@ sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/addons.git
 
 cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
-cd ~
+cd /home/ubuntu/
 #Copy GEO
 sudo -u ubuntu mkdir GeoIP
-cp ~/minewhat/Server/Config/Geo* GeoIP
+cp /home/ubuntu/minewhat/Server/Config/Geo* GeoIP
 sudo -u ubuntu gunzip -f GeoIP/*
 
 cd /home/ubuntu/minewhat/app2/productclues
@@ -174,8 +174,8 @@ sudo -u ubuntu sh scripts/startworker.sh
 sudo -u ubuntu sh scripts/startproductclues.sh
 sudo -u ubuntu sh scripts/startnotif.sh
 cd static
-sudo -u ubuntu ln -s  ~/minewhat/app2/productclues/dist newapp
-sudo -u ubuntu ln -s  ~/minewhat/app2/productclues/dist settings
+sudo -u ubuntu ln -s  /home/ubuntu/minewhat/app2/productclues/dist newapp
+sudo -u ubuntu ln -s  /home/ubuntu/minewhat/app2/productclues/dist settings
 
 cd /home/ubuntu/minewhat/workers/configs
 sudo cp supervisord.conf /etc/
