@@ -18,6 +18,7 @@ ES_IP="$3"
 AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
+WORKER_IP="$7"
 sudo apt-get update --yes
 
 # debconf
@@ -101,6 +102,14 @@ $CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
 $CRUNCHER_IP mwzoo.linodefarm.minewhat.com
 $CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
 $CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
+$WORKER_IP visual.choice.ai
+$WORKER_IP shopify.choice.ai
+$WORKER_IP bigcommerce.choice.ai
+$WORKER_IP highwire.choice.ai
+$WORKER_IP americommerce.choice.ai
+$WORKER_IP google.choice.ai
+$WORKER_IP search.choice.ai
+$WORKER_IP crawler.choice.ai
 " >> /etc/hosts
 
 # setup stormkafkamon

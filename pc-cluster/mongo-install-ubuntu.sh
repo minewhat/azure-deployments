@@ -91,14 +91,31 @@ sleep 20
 MY_IPS=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
 
 echo "
-$MY_IPS  mongo1.choice.ai
-$MY_IPS  mongo2.choice.ai
-$MY_IPS mongo1.choice.ai
-$MY_IPS mongo2.choice.ai
+$MY_IPS mongo1.productclues.com
+$MY_IPS mongo2.productclues.com
+$MY_IPS mongodbdomain1.linodefarm.productclues.com
+$MY_IPS mongodbdomain2.linodefarm.productclues.com
+$MY_IPS caizooremote.productclues.com
+$MY_IPS caicollector1.productclues.com
+$MY_IPS caicollector2.productclues.com
+$MY_IPS caizoolocal.productclues.com
+$MY_IPS zoo1.productclues.com
+$MY_IPS mwzooremote.linodefarm.productclues.com
+$MY_IPS mwcollector1.linodefarm.productclues.com
+$MY_IPS zoo1.linodefarm.productclues.com
+$MY_IPS mwzoolocal.linodefarm.productclues.com
+$MY_IPS mwzooremote.linodefarm.minewhat.com
+$MY_IPS mwcollector1.linodefarm.minewhat.com
+$MY_IPS zoo1.linodefarm.minewhat.com
+$MY_IPS mwzoolocal.linodefarm.minewhat.com
+$MY_IPS mongodb1.linodefarm.productclues.com
+$MY_IPS mongodb2.linodefarm.productclues.com
 $MY_IPS mongodbdomain1.linodefarm.minewhat.com
 $MY_IPS mongodbdomain2.linodefarm.minewhat.com
 $MY_IPS mongodb1.linodefarm.minewhat.com
 $MY_IPS mongodb2.linodefarm.minewhat.com
+$MY_IPS shopify.productclues.com
+$MY_IPS bigcommerce.productclues.com
 $ES_IP elastic.azure.minewhat.com
 " >> /etc/hosts
 
@@ -107,7 +124,7 @@ sudo -u ubuntu mongo --eval 'rs.initiate({
 	"members" : [
 		{
 			"_id" : 0,
-			"host" : "mongo1.choice.ai:27017",
+			"host" : "mongo1.productclues.com:27017",
       priority: 10
 		}
 	]
@@ -149,10 +166,10 @@ sudo -u ubuntu sh startshopify.sh
 sudo -u ubuntu sh startbigcommerce.sh
 
 cd /home/ubuntu/minewhat/server2/productclues
-sudo -u ubuntu git checkout pc_rel
 sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redissession.conf
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redisstatscache1.conf
+sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redislow321.conf
 sudo -u ubuntu sh scripts/startworker.sh
 sudo -u ubuntu sh scripts/startproductclues.sh
 sudo -u ubuntu sh scripts/startnotif.sh

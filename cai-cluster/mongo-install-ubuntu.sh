@@ -18,7 +18,7 @@ ES_IP="$3"
 AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
-
+WORKER_IP="$7"
 sudo add-apt-repository -y ppa:nginx/stable
 sudo add-apt-repository -y ppa:chris-lea/node.js
 # mongo install
@@ -120,6 +120,14 @@ $CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
 $CRUNCHER_IP mwzoo.linodefarm.minewhat.com
 $CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
 $CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
+$WORKER_IP visual.choice.ai
+$WORKER_IP shopify.choice.ai
+$WORKER_IP bigcommerce.choice.ai
+$WORKER_IP highwire.choice.ai
+$WORKER_IP americommerce.choice.ai
+$WORKER_IP google.choice.ai
+$WORKER_IP search.choice.ai
+$WORKER_IP crawler.choice.ai
 " >> /etc/hosts
 
 sudo -u ubuntu mongo --eval 'rs.initiate({
@@ -159,9 +167,10 @@ sudo -u ubuntu npm i
 sudo -u ubuntu gulp dist
 
 cd /home/ubuntu/minewhat/server2/choiceai
-sudo -u ubuntu git checkout cai_rel
 sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz
 sudo -u ubuntu sh prepare.sh
+sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redissession.conf
+sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redisstatscache1.conf
 sudo -u ubuntu sh scripts/startwidget.sh
 sudo -u ubuntu sh scripts/startwidgetData.sh
 sudo -u ubuntu sh scripts/startnotif.sh

@@ -18,14 +18,12 @@ ES_IP="$3"
 AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
-sudo apt-get update --yes
-
-# debconf
-sudo apt-get install debconf-utils --yes
-
+WORKER_IP="$7"
 # JDK
 sudo add-apt-repository ppa:webupd8team/java --yes
 sudo apt-get update --yes
+# debconf
+sudo apt-get install debconf-utils --yes
 echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 sudo apt-get install oracle-java7-installer --yes
@@ -97,6 +95,14 @@ $CRUNCHER_IP mwzoolocal.linodefarm.choice.ai
 $CRUNCHER_IP mwzoo.linodefarm.minewhat.com
 $CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
 $CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
+$WORKER_IP visual.choice.ai
+$WORKER_IP shopify.choice.ai
+$WORKER_IP bigcommerce.choice.ai
+$WORKER_IP highwire.choice.ai
+$WORKER_IP americommerce.choice.ai
+$WORKER_IP google.choice.ai
+$WORKER_IP search.choice.ai
+$WORKER_IP crawler.choice.ai
 " >> /etc/hosts
 
 #goto local Directory

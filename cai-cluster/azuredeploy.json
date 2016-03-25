@@ -156,7 +156,7 @@
             "fileUris": [
               "https://raw.githubusercontent.com/minewhat/azure-deployments/master/cai-cluster/mongo-install-ubuntu.sh"
             ],
-            "commandToExecute": "[concat('bash mongo-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'), ' ', variables('aerospike_ip'), ' ', variables('cassa_ip'), ' ', variables('cruncher_ip'))]"
+            "commandToExecute": "[concat('bash mongo-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'), ' ', variables('aerospike_ip'), ' ', variables('cassa_ip'), ' ', variables('cruncher_ip'), ' ', variables('worker_ip'))]"
           }
         },
         "cai-aerospike": {
@@ -167,7 +167,7 @@
               "fileUris": [
                 "https://raw.githubusercontent.com/minewhat/azure-deployments/master/cai-cluster/aerospike-install-ubuntu.sh"
               ],
-              "commandToExecute": "[concat('bash aerospike-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'), ' ', variables('aerospike_ip'), ' ', variables('cassa_ip'), ' ', variables('cruncher_ip'))]"
+              "commandToExecute": "[concat('bash aerospike-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'), ' ', variables('aerospike_ip'), ' ', variables('cassa_ip'), ' ', variables('cruncher_ip'), ' ', variables('worker_ip'))]"
             }
           },
         "cai-worker": {
@@ -178,7 +178,7 @@
             "fileUris": [
               "https://raw.githubusercontent.com/minewhat/azure-deployments/master/cai-cluster/worker-install-ubuntu.sh"
             ],
-            "commandToExecute": "[concat('bash worker-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'), ' ', variables('aerospike_ip'), ' ', variables('cassa_ip'), ' ', variables('cruncher_ip'))]"
+            "commandToExecute": "[concat('bash worker-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'), ' ', variables('aerospike_ip'), ' ', variables('cassa_ip'), ' ', variables('cruncher_ip'), ' ', variables('worker_ip'))]"
           }
         },
         "cai-cassa": {
@@ -189,7 +189,7 @@
             "fileUris": [
               "https://raw.githubusercontent.com/minewhat/azure-deployments/master/cai-cluster/cassa-install-ubuntu.sh"
             ],
-            "commandToExecute": "[concat('bash cassa-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'), ' ', variables('aerospike_ip'), ' ', variables('cassa_ip'), ' ', variables('cruncher_ip'))]"
+            "commandToExecute": "[concat('bash cassa-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'), ' ', variables('aerospike_ip'), ' ', variables('cassa_ip'), ' ', variables('cruncher_ip'), ' ', variables('worker_ip'))]"
           }
         },
         "cai-cruncher": {
@@ -200,7 +200,7 @@
             "fileUris": [
               "https://raw.githubusercontent.com/minewhat/azure-deployments/master/cai-cluster/cruncher-install-ubuntu.sh"
             ],
-            "commandToExecute": "[concat('bash cruncher-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'), ' ', variables('aerospike_ip'), ' ', variables('cassa_ip'), ' ', variables('cruncher_ip'))]"
+            "commandToExecute": "[concat('bash cruncher-install-ubuntu.sh ', parameters('gitCredentials'), ' ', variables('mongo_ip'), ' ', variables('es_ip'), ' ', variables('aerospike_ip'), ' ', variables('cassa_ip'), ' ', variables('cruncher_ip'), ' ', variables('worker_ip'))]"
           }
         }
       }
