@@ -4,6 +4,7 @@
     <list default="true" id="c5a7edf4-79b4-4b32-9682-c837ff7dde73" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" afterPath="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="azure-deployments.iws" />
@@ -30,17 +31,17 @@
         <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="25" />
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9379085">
-              <caret line="185" column="33" selection-start-line="185" selection-start-column="33" selection-end-line="185" selection-end-column="33" />
+            <state vertical-scroll-proportion="-11.4">
+              <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -49,8 +50,18 @@
       <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.4333334">
-              <caret line="177" column="34" selection-start-line="177" selection-start-column="34" selection-end-line="177" selection-end-column="34" />
+            <state vertical-scroll-proportion="-15.033334">
+              <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="worker-install-ubuntu.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.86292833">
+              <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -104,9 +115,9 @@
         <option value="$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh" />
-        <option value="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
-        <option value="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" />
+        <option value="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" />
+        <option value="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
       </list>
     </option>
   </component>
@@ -793,7 +804,7 @@
       <workItem from="1458763444780" duration="1842000" />
       <workItem from="1458804242779" duration="8328000" />
       <workItem from="1458823776463" duration="3151000" />
-      <workItem from="1458882485106" duration="11272000" />
+      <workItem from="1458882485106" duration="14388000" />
     </task>
     <task id="LOCAL-00001" summary="elastic default config">
       <created>1458213218100</created>
@@ -921,11 +932,17 @@
       <option name="project" value="LOCAL" />
       <updated>1458900758018</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="root home folder fix">
+      <created>1458905877490</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1458905877490</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67999000" />
+    <option name="totallyTimeSpent" value="71115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2093" y="46" width="1192" height="1034" extended-state="4" />
@@ -991,7 +1008,8 @@
     <MESSAGE value="single master branch" />
     <MESSAGE value="visual search server configuration and no rel branch" />
     <MESSAGE value="mongo startup fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="mongo startup fix" />
+    <MESSAGE value="root home folder fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="root home folder fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1316,22 +1334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2698908">
-          <caret line="130" column="41" selection-start-line="130" selection-start-column="41" selection-end-line="130" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/es-azapp/elasticsearch-ubuntu-install.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1356,18 +1358,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh">
+    <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.4333334">
-          <caret line="177" column="34" selection-start-line="177" selection-start-column="34" selection-end-line="177" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9379085">
-          <caret line="185" column="33" selection-start-line="185" selection-start-column="33" selection-end-line="185" selection-end-column="33" />
+        <state vertical-scroll-proportion="-11.4">
+          <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.033334">
+          <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.86292833">
+          <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
           <folding />
         </state>
       </provider>

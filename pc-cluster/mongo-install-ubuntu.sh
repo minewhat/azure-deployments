@@ -63,6 +63,18 @@ sudo apt-get --yes install python-dev python-pip
 sudo apt-get --yes install python-software-properties python g++
 sudo pip install supervisor
 
+#prepare folders
+sudo mkdir /mnt/redisdb
+sudo chown ubuntu:ubuntu /mnt/redisdb
+cd ~
+mkdir Servers
+cd Servers
+wget http://download.redis.io/releases/redis-2.8.19.tar.gz
+tar zxvf redis-2.8.19.tar.gz
+ln -s redis-2.8.19/ redis
+cd redis
+make 32bit
+
 # Disable THP
 sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
 sudo echo never > /sys/kernel/mm/transparent_hugepage/defrag

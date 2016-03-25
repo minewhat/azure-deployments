@@ -63,6 +63,18 @@ sudo apt-get install -y xfsprogs
 sudo npm install -g forever
 sudo pip install supervisor
 
+#prepare folders
+sudo mkdir /mnt/redisdb
+sudo chown ubuntu:ubuntu /mnt/redisdb
+cd ~
+mkdir Servers
+cd Servers
+wget http://download.redis.io/releases/redis-2.8.19.tar.gz
+tar zxvf redis-2.8.19.tar.gz
+ln -s redis-2.8.19/ redis
+cd redis
+make 32bit
+
 # Disable THP
 sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
 sudo echo never > /sys/kernel/mm/transparent_hugepage/defrag
@@ -163,9 +175,9 @@ sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu gulp dist
 
 cd /home/ubuntu/minewhat/cdnassets/mwstoreSample
-sudo npm i
+sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz
 sudo chown -R ubuntu:ubuntu /home/ubuntu/
-sudo -u ubuntu gulp dist
+sudo -u ubuntu gulp build
 
 cd /home/ubuntu/minewhat/server2/choiceai
 sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz
