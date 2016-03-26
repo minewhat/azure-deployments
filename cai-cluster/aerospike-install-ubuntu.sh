@@ -81,10 +81,11 @@ $WORKER_IP crawler.choice.ai
 
 
 cd /home/ubuntu
-wget -O aerospike.tgz 'http://aerospike.com/download/server/latest/artifact/ubuntu12'
+wget -O aerospike.tgz 'http://aerospike.com/download/server/3.7.5/artifact/ubuntu12'
 tar -xvf aerospike.tgz
-cd aerospike-server-community-3.7.4.1-ubuntu12.04/
+cd aerospike-server-community-3.7.5-ubuntu12.04/
 sudo ./asinstall # will install the .rpm packages
+sudo cp /home/ubuntu/minewhat/server2/choiceai/aerospike.conf /etc/aerospike
 sudo service aerospike start
 # sudo tail -f /var/log/aerospike/aerospike.log
 # wait for it. "service ready: soon there will be cake!"

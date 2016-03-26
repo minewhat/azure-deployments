@@ -19,7 +19,11 @@ AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
 WORKER_IP="$7"
-sudo add-apt-repository -y ppa:nginx/stable
+echo "
+deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
+deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
+" > /etc/apt/sources.list.d/nginx.list
+wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 # mongo install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -53,7 +57,9 @@ sudo apt-get -y install unzip
 sudo apt-get -y install make
 sudo apt-get -y install build-essential maven2
 sudo apt-get -y install uuid-dev libtool
-sudo apt-get -y install git pkg-config autoconf automake
+sudo apt-get -y install pkg-config autoconf automake
+sudo apt-get -y install libc6-dev-i386
+sudo apt-get -y install libev4 libev-dev
 sudo apt-get -y install python-setuptools python-pip
 sudo apt-get -y install lynx
 sudo apt-get -y install software-properties-common
@@ -69,12 +75,12 @@ sudo chown ubuntu:ubuntu /mnt/redisdb
 cd /home/ubuntu
 sudo -u ubuntu mkdir Servers
 cd Servers
-wget http://download.redis.io/releases/redis-2.8.19.tar.gz
-sudo tar zxvf redis-2.8.19.tar.gz
-sudo ln -s redis-2.8.19/ redis
+wget http://download.redis.io/releases/redis-3.0.7.tar.gz
+tar zxvf redis-3.0.7.tar.gz
+ln -s redis-3.0.7/ redis
 sudo chown ubuntu:ubuntu /home/ubuntu
 cd redis
-sudo make 32bit
+sudo -u ubuntu make
 
 # Disable THP
 sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
@@ -171,17 +177,16 @@ cp /home/ubuntu/minewhat/Server/Config/Geo* GeoIP
 sudo -u ubuntu gunzip -f GeoIP/*
 
 cd /home/ubuntu/minewhat/app2/choiceai
-sudo -u ubuntu tar -zxvf node_modules_ubuntu.tgz
 sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu gulp dist
 
 cd /home/ubuntu/minewhat/cdnassets/mwstoreSample
-sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz
+sudo -u ubuntu tar zxvf node_modules_ubuntu.tgz
 sudo chown -R ubuntu:ubuntu /home/ubuntu/
 sudo -u ubuntu gulp build
 
 cd /home/ubuntu/minewhat/server2/choiceai
-sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz
+wget http://assets.choice.ai.s3.amazonaws.com/node_modules/node_modules_ubuntu_server.tar.gz
 sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redissession.conf
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redisstatscache1.conf
@@ -194,10 +199,10 @@ sudo -u ubuntu ln -s  /home/ubuntu/minewhat/app2/choiceai/dist settings
 
 sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
-cp choice* /etc/nginx
-cp dhparams.pem /etc/nginx/conf.d
-cp cai_conf_d/* /etc/nginx/conf.d
-sudo -u ubuntu service nginx restart
+sudo cp choice* /etc/nginx
+sudo cp dhparams.pem /etc/nginx/conf.d
+sudo cp cai_conf_d/* /etc/nginx/conf.d
+sudo service nginx restart
 
 # setup startup and shutdown scripts
 sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/cai/mongo/* /home/ubuntu/

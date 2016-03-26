@@ -57,7 +57,11 @@ $WORKER_IP search.choice.ai
 $WORKER_IP crawler.choice.ai
 " >> /etc/hosts
 
-sudo add-apt-repository -y ppa:nginx/stable
+echo "
+deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
+deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
+" > /etc/apt/sources.list.d/nginx.list
+wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
 sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update --yes
 # installing GIT
@@ -102,12 +106,12 @@ sudo chown ubuntu:ubuntu /mnt/redisdb
 cd /home/ubuntu
 sudo -u ubuntu mkdir Servers
 cd Servers
-wget http://download.redis.io/releases/redis-2.8.19.tar.gz
-sudo tar zxvf redis-2.8.19.tar.gz
-sudo ln -s redis-2.8.19/ redis
+wget http://download.redis.io/releases/redis-3.0.7.tar.gz
+tar zxvf redis-3.0.7.tar.gz
+ln -s redis-3.0.7/ redis
 sudo chown ubuntu:ubuntu /home/ubuntu
 cd redis
-sudo make 32bit
+sudo -u ubuntu make
 
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
@@ -128,9 +132,9 @@ sudo -u ubuntu sh setup.sh
 
 sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
-cp choice* /etc/nginx
-cp dhparams.pem /etc/nginx/conf.d
-cp cai_conf_d/* /etc/nginx/conf.d
+sudo cp choice* /etc/nginx
+sudo cp dhparams.pem /etc/nginx/conf.d
+sudo cp cai_conf_d/* /etc/nginx/conf.d
 sudo service nginx restart
 
 cd /home/ubuntu/minewhat/addons/choiceAI_Addons
@@ -142,9 +146,9 @@ cd /home/ubuntu/minewhat/server2/visualsearch
 sudo -u ubuntu sh startVisualServer.sh
 
 cd /home/ubuntu/minewhat/server2/choiceai
-sudo -u ubuntu tar -zxvf node_modules_ubuntu.tar.gz
+wget http://assets.choice.ai.s3.amazonaws.com/node_modules/node_modules_ubuntu_server.tar.gz
 sudo -u ubuntu sh prepare.sh
-sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redislow321.conf
+sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redishigh321.conf
 sudo -u ubuntu sh scripts/startworker.sh
 
 sudo service supervisord stop

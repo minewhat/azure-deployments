@@ -16,7 +16,11 @@ GIT_AUTH="$1"
 MONGO_IP="$2"
 ES_IP="$3"
 
-sudo add-apt-repository -y ppa:nginx/stable
+echo "
+deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
+deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
+" > /etc/apt/sources.list.d/nginx.list
+wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 # mongo install
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -48,7 +52,7 @@ sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 # most common need
 sudo apt-get -y install unzip
 sudo apt-get -y install make
-sudo apt-get -y install git pkg-config autoconf automake
+sudo apt-get -y install pkg-config autoconf automake
 sudo apt-get -y install build-essential maven2
 sudo apt-get -y install libc6-dev-i386
 sudo apt-get -y install libev4 libev-dev
@@ -69,12 +73,12 @@ sudo chown ubuntu:ubuntu /mnt/redisdb
 cd /home/ubuntu
 sudo -u ubuntu mkdir Servers
 cd Servers
-wget http://download.redis.io/releases/redis-2.8.19.tar.gz
-sudo tar zxvf redis-2.8.19.tar.gz
-sudo ln -s redis-2.8.19/ redis
+wget http://download.redis.io/releases/redis-3.0.7.tar.gz
+tar zxvf redis-3.0.7.tar.gz
+ln -s redis-3.0.7/ redis
 sudo chown ubuntu:ubuntu /home/ubuntu
 cd redis
-sudo make 32bit
+sudo iu ubuntu make
 
 # Disable THP
 sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
@@ -160,17 +164,15 @@ cp /home/ubuntu/minewhat/Server/Config/Geo* GeoIP
 sudo -u ubuntu gunzip -f GeoIP/*
 
 cd /home/ubuntu/minewhat/app2/productclues
-cp /home/ubuntu/minewhat/app2/choice/node_modules_ubuntu.tgz .
-sudo -u ubuntu tar -zxvf node_modules_ubuntu.tgz
 sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu gulp dist
 
 
 sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
-cp productclues* /etc/nginx
-cp dhparams.pem /etc/nginx/conf.d
-cp pc_conf_d/* /etc/nginx/conf.d
+sudo cp productclues* /etc/nginx
+sudo cp dhparams.pem /etc/nginx/conf.d
+sudo cp pc_conf_d/* /etc/nginx/conf.d
 sudo service nginx restart
 
 cd /home/ubuntu/minewhat/addons/productClues_Addons
@@ -179,10 +181,10 @@ sudo -u ubuntu sh startshopify.sh
 sudo -u ubuntu sh startbigcommerce.sh
 
 cd /home/ubuntu/minewhat/server2/productclues
-sudo -u ubuntu tar zxvf node_modules_ubuntu.tar.gz
+sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redissession.conf
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redisstatscache1.conf
-sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redislow321.conf
+sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redishigh321.conf
 sudo -u ubuntu sh scripts/startworker.sh
 sudo -u ubuntu sh scripts/startproductclues.sh
 sudo -u ubuntu sh scripts/startnotif.sh
