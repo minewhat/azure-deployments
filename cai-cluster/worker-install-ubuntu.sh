@@ -69,20 +69,14 @@ sudo apt-get --yes --force-yes install git
 
 # create mount folder
 sudo mkdir -p /raid1
-sudo mkdir -p /mnt
 sudo mkdir -p /home/ubuntu/minewhat
 sudo mkdir -p /raid1/supervisorlogs
-sudo mkdir /mnt/storml
-sudo mkdir /mnt/zookeeper2
-sudo mkdir /mnt/kafka-logs
-sudo chown ubuntu:ubuntu /mnt/storml/
-sudo chown ubuntu:ubuntu /mnt/zookeeper2/
-sudo chown ubuntu:ubuntu /mnt/kafka-logs
+sudo mkdir /raid1/storml
+sudo mkdir /raid1/zookeeper2
+sudo mkdir /raid1/kafka-logs
 sudo chown -R ubuntu:ubuntu /raid1
 sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 # give read/write permission to all users
-sudo chown -R ubuntu:ubuntu /raid1
-sudo chown -R ubuntu:ubuntu /mnt
 sudo apt-get -y install unzip
 sudo apt-get -y install make
 sudo apt-get -y install git pkg-config autoconf automake
@@ -93,7 +87,7 @@ sudo apt-get -y install uuid-dev libtool
 sudo apt-get -y install python-setuptools
 sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
-sudo npm install -g forever
+sudo -u ubuntu npm install -g forever
 sudo apt-get -y install lynx
 sudo apt-get -y install software-properties-common
 sudo apt-get --yes install python-dev python-pip
@@ -101,8 +95,8 @@ sudo apt-get --yes install python-software-properties python g++
 sudo pip install supervisor
 
 #prepare folders
-sudo mkdir /mnt/redisdb
-sudo chown ubuntu:ubuntu /mnt/redisdb
+sudo mkdir /raid1/redisdb
+sudo chown ubuntu:ubuntu /raid1/redisdb
 cd /home/ubuntu
 sudo -u ubuntu mkdir Servers
 cd Servers
@@ -367,13 +361,8 @@ sudo -u ubuntu supervisorctl start all
 
 # setup startup and shutdown scripts
 sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/cai/workers/* /home/ubuntu/
-
-cat << EOF > /etc/init/choice.conf
-# choice
-description "start choice specific services"
-
-start on starting
-script
-    /home/ubuntu/startupscripts/basic.sh
-end script
-EOF
+sudo cp /home/ubuntu/minewhat/server2/scripts/mwinit /etc/init.d/mwinit
+sudo chmod +x /etc/init.d/mwinit
+sudo chmod +x /home/ubuntu/startupscripts/basic.sh
+sudo chmod +x /home/ubuntu/shutdownscripts/basic.sh
+sudo update-rc.d mwinit defaults 10

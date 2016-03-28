@@ -53,11 +53,6 @@ sudo apt-get -y install software-properties-common
 sudo apt-get install -y python-software-properties python g++ make
 
 # create mount folder
-sudo mkdir -p /mnt
-
-# give read/write permission to all users
-sudo chmod -R a+w /mnt
-# create mount folder
 sudo mkdir -p /raid1
 sudo mkdir -p /home/ubuntu/minewhat
 sudo chmod -R a+w /raid1
@@ -139,13 +134,9 @@ sudo service dse start
 
 # setup startup and shutdown scripts
 sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/cai/cassa/* /home/ubuntu/
+sudo cp /home/ubuntu/minewhat/server2/scripts/mwinit /etc/init.d/mwinit
+sudo chmod +x /etc/init.d/mwinit
+sudo chmod +x /home/ubuntu/startupscripts/basic.sh
+sudo chmod +x /home/ubuntu/shutdownscripts/basic.sh
+sudo update-rc.d mwinit defaults 10
 
-cat << EOF > /etc/init/choice.conf
-# choice
-description "start choice specific services"
-
-start on starting
-script
-    /home/ubuntu/startupscripts/basic.sh
-end script
-EOF

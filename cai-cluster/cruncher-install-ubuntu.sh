@@ -57,13 +57,8 @@ sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
-sudo npm install -g forever
+sudo -u ubuntu npm install -g forever
 sudo pip install supervisor
-# create mount folder
-sudo mkdir -p /mnt
-
-# give read/write permission to all users
-sudo chmod -R a+w /mnt
 # create mount folder
 sudo mkdir -p /raid1
 sudo mkdir -p /home/ubuntu/minewhat
@@ -147,13 +142,8 @@ sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/cai/cr
 # setup utility scripts
 sudo -u ubuntu cp /home/ubuntu/minewhat/server2/scripts/workerLogs.sh /home/ubuntu/
 sudo -u ubuntu cp /home/ubuntu/minewhat/server2/scripts/queueStatus.sh /home/ubuntu/
-
-cat << EOF > /etc/init/choice.conf
-# choice
-description "start choice specific services"
-
-start on starting
-script
-    /home/ubuntu/startupscripts/basic.sh
-end script
-EOF
+sudo cp /home/ubuntu/minewhat/server2/scripts/mwinit /etc/init.d/mwinit
+sudo chmod +x /etc/init.d/mwinit
+sudo chmod +x /home/ubuntu/startupscripts/basic.sh
+sudo chmod +x /home/ubuntu/shutdownscripts/basic.sh
+sudo update-rc.d mwinit defaults 10
