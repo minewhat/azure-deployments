@@ -53,7 +53,7 @@ sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 # most common need
 sudo apt-get -y install unzip
 sudo apt-get -y install make
-sudo apt-get -y install build-essential maven2
+sudo apt-get -y install build-essential maven2 libkrb5-dev
 sudo apt-get -y install uuid-dev libtool
 sudo apt-get -y install pkg-config autoconf automake
 sudo apt-get -y install libc6-dev-i386
@@ -64,7 +64,7 @@ sudo apt-get -y install software-properties-common
 sudo apt-get install -y python-software-properties python g++ make
 sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
-sudo -u ubuntu npm install -g forever
+sudo npm install -g forever
 sudo pip install supervisor
 
 #prepare folders

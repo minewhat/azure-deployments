@@ -19,14 +19,12 @@ AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
 WORKER_IP="$7"
-sudo apt-get update --yes
-
-# debconf
-sudo apt-get install debconf-utils --yes
-
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 # JDK
 sudo add-apt-repository ppa:webupd8team/java --yes
 sudo apt-get update --yes
+# debconf
+sudo apt-get install debconf-utils --yes
 echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 sudo apt-get install oracle-java7-installer --yes
@@ -46,18 +44,16 @@ echo 0 > /sys/block/sdb/queue/rotational
 # most common need
 sudo apt-get -y install unzip
 sudo apt-get -y install make
-sudo apt-get -y install build-essential maven2
+sudo apt-get -y install build-essential maven2 libkrb5-dev
 sudo apt-get -y install uuid-dev libtool
 sudo apt-get -y install git pkg-config autoconf automake
 sudo apt-get -y install python-setuptools python-pip
 sudo apt-get -y install lynx
 sudo apt-get -y install software-properties-common
 sudo apt-get install -y python-software-properties python g++ make
-sudo add-apt-repository -y ppa:chris-lea/node.js
-sudo apt-get update
 sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
-sudo -u ubuntu npm install -g forever
+sudo npm install -g forever
 sudo pip install supervisor
 # create mount folder
 sudo mkdir -p /raid1
@@ -122,18 +118,16 @@ sudo -u ubuntu ./addcleanuptocron.sh
 
 # change owership of .npm n .forever folders to ubuntu
 sudo chown -R ubuntu:ubuntu /home/ubuntu/.npm/
+forever list
 sudo chown -R ubuntu:ubuntu /home/ubuntu/.forever/
 
 # install node modules
 cd /home/ubuntu/minewhat/Server/stats
-sudo -u ubuntu npm install
+sudo npm install
 cd /home/ubuntu/minewhat/Server/evictor
-sudo -u ubuntu npm install
+sudo npm install
 cd /home/ubuntu/minewhat/Server/listener
-sudo -u ubuntu npm install
-
-# setup kafka queues
-cd /home/ubuntu/minewhat/Server/listener
+sudo npm install
 node createQueues.js
 
 # setup startup and shutdown scripts
@@ -147,3 +141,6 @@ sudo chmod +x /etc/init.d/mwinit
 sudo chmod +x /home/ubuntu/startupscripts/basic.sh
 sudo chmod +x /home/ubuntu/shutdownscripts/basic.sh
 sudo update-rc.d mwinit defaults 10
+
+cd /home/ubuntu
+./startupscripts/basic.sh

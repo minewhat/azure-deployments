@@ -62,7 +62,7 @@ deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
 deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
 " > /etc/apt/sources.list.d/nginx.list
 wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
-sudo add-apt-repository -y ppa:chris-lea/node.js
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 sudo apt-get update --yes
 # installing GIT
 sudo apt-get --yes --force-yes install git
@@ -80,14 +80,14 @@ sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 sudo apt-get -y install unzip
 sudo apt-get -y install make
 sudo apt-get -y install git pkg-config autoconf automake
-sudo apt-get -y install build-essential maven2
+sudo apt-get -y install build-essential maven2 libkrb5-dev
 sudo apt-get -y install libc6-dev-i386
 sudo apt-get -y install libev4 libev-dev
 sudo apt-get -y install uuid-dev libtool
 sudo apt-get -y install python-setuptools
 sudo apt-get install -y nodejs
 sudo apt-get install -y xfsprogs
-sudo -u ubuntu npm install -g forever
+sudo npm install -g forever
 sudo apt-get -y install lynx
 sudo apt-get -y install software-properties-common
 sudo apt-get --yes install python-dev python-pip

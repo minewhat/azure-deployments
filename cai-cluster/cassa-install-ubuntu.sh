@@ -21,6 +21,10 @@ CRUNCHER_IP="$6"
 WORKER_IP="$7"
 # JDK
 sudo add-apt-repository ppa:webupd8team/java --yes
+#Cassandra
+#Installing Cassandra
+echo "deb http://pavan_minewhat.com:nrbvidzc7NzIfWL@debian.datastax.com/enterprise stable main" | tee -a /etc/apt/sources.list.d/datastax.sources.list
+curl -L https://debian.datastax.com/debian/repo_key | apt-key add -
 sudo apt-get update --yes
 # debconf
 sudo apt-get install debconf-utils --yes
@@ -43,7 +47,7 @@ echo 0 > /sys/block/sdb/queue/rotational
 # most common need
 sudo apt-get -y install unzip
 sudo apt-get -y install make
-sudo apt-get -y install build-essential maven2
+sudo apt-get -y install build-essential maven2 libkrb5-dev
 sudo apt-get -y install uuid-dev libtool
 sudo apt-get -y install git pkg-config autoconf automake
 sudo apt-get -y install python-setuptools python-pip
@@ -102,15 +106,6 @@ $WORKER_IP crawler.choice.ai
 
 #goto local Directory
 cd /usr/local
-
-
-#Cassandra
-#Installing Cassandra
-echo "deb http://pavan_minewhat.com:nrbvidzc7NzIfWL@debian.datastax.com/enterprise stable main" | tee -a /etc/apt/sources.list.d/datastax.sources.list
-curl -L https://debian.datastax.com/debian/repo_key | apt-key add -
-
-apt-get update --yes
-
 apt-get install --yes dse-full=4.5.1-1 dse=4.5.1-1 dse-hive=4.5.1-1 dse-pig=4.5.1-1 dse-demos=4.5.1-1 dse-libsolr=4.5.1-1 dse-libtomcat=4.5.1-1 dse-libsqoop=4.5.1-1 dse-liblog4j=4.5.1-1 dse-libmahout=4.5.1-1 dse-libhadoop-native=4.5.1-1 dse-libcassandra=4.5.1-1 dse-libhive=4.5.1-1 dse-libpig=4.5.1-1 dse-libhadoop=4.5.1-1 dse-libspark=4.5.1-1  ## Installs DataStax Enterprise and DataStax Agent.
 apt-get install dse-full=4.5.1-1 opscenter --yes ## Installs DataStax Enterprise, DataStax Agent, and OpsCenter.
 
