@@ -119,6 +119,7 @@ sudo -u ubuntu ./addcleanuptocron.sh
 # change owership of .npm n .forever folders to ubuntu
 sudo chown -R ubuntu:ubuntu /home/ubuntu/.npm/
 forever list
+forever columns add dir
 sudo chown -R ubuntu:ubuntu /home/ubuntu/.forever/
 
 # install node modules
