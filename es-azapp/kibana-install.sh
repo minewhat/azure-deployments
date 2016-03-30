@@ -24,7 +24,8 @@
 #
 # Trent Swanson (Full Scale 180 Inc)
 #
-
+#Script Parameters
+GIT_AUTH="$1"
 # This is temporary - we will change this to use a local client node on this kibana instance
 ELASTICSEARCH_URL="http://10.1.0.127:9200"
 
@@ -67,13 +68,11 @@ script
     /opt/kibana/bin/kibana
 end script
 EOF
-
 chmod +x /etc/init/kibana.conf
 sudo service kibana start
 
 
 # logstash
-
 sudo groupadd -g 999 logstash
 sudo useradd -u 999 -g 999 logstash
 
@@ -82,20 +81,18 @@ curl -o logstash.tar.gz https://download.elastic.co/logstash/logstash/logstash-2
 sudo tar xvf logstash.tar.gz -C /opt/logstash/ --strip-components=1
 
 sudo chown -R logstash: /opt/logstash
-
-cat << EOF > /etc/init/logstash_kafka.conf
-# logstash
-description "Logstash from Kafka to ES Service"
-
-start on starting
-script
-    /opt/logstash/bin/logstash -f /home/ubuntu/minewhat/server2/eslogs/kafka.conf
-end script
-EOF
-
-chmod +x /etc/init/logstash_kafka.conf
-sudo service kibana start
-
-
 #nginx
 apt-get --yes --force-yes install nginx
+
+sudo mkdir -p /home/ubuntu/minewhat
+sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
+cd /home/ubuntu/minewhat
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
+# setup startup and shutdown scripts
+sudo -u ubuntu cp -r /home/ubuntu/minewhat/server2/scripts/machinescripts/cai/logstash/* /home/ubuntu/
+sudo cp /home/ubuntu/minewhat/server2/scripts/mwinit /etc/init.d/mwinit
+sudo chmod +x /etc/init.d/mwinit
+sudo chmod +x /home/ubuntu/startupscripts/basic.sh
+sudo chmod +x /home/ubuntu/shutdownscripts/basic.sh
+sudo update-rc.d mwinit defaults 10
+./home/ubuntu/startupscripts/basic.sh

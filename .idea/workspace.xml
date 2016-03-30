@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5a7edf4-79b4-4b32-9682-c837ff7dde73" name="Default" comment="removed default mongo configuration">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" afterPath="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" afterPath="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
+    <list default="true" id="c5a7edf4-79b4-4b32-9682-c837ff7dde73" name="Default" comment="forever config">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es-azapp/azuredeploy.json" afterPath="$PROJECT_DIR$/es-azapp/azuredeploy.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es-azapp/kibana-install.sh" afterPath="$PROJECT_DIR$/es-azapp/kibana-install.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="azure-deployments.iws" />
@@ -28,11 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="temp-backup" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
+      <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="25" />
+            <state vertical-scroll-proportion="-2.775862">
+              <caret line="352" column="7" selection-start-line="352" selection-start-column="7" selection-end-line="352" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kibana-install.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/es-azapp/kibana-install.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.1841808">
+              <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -41,18 +49,8 @@
       <file leaf-file-name="azuredeploy.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cai-cluster/azuredeploy.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6">
-              <caret line="159" column="1" selection-start-line="159" selection-start-column="1" selection-end-line="159" selection-end-column="1" />
+            <state vertical-scroll-proportion="-4.7413793">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -61,68 +59,8 @@
       <file leaf-file-name="cassa-install-ubuntu.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.7">
-              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aerospike-install-ubuntu.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.5">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mongo-install-ubuntu.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.533333">
-              <caret line="151" column="50" selection-start-line="151" selection-start-column="50" selection-end-line="151" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="worker-install-ubuntu.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.5">
-              <caret line="112" column="50" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cruncher-install-ubuntu.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cai-cluster/cruncher-install-ubuntu.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="122" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kibana-resources.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/es-azapp/kibana-resources.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="elasticsearch-ubuntu-install.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/es-azapp/elasticsearch-ubuntu-install.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+            <state vertical-scroll-proportion="-8.233334">
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="64" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -141,7 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/es-azapp/kibana-install.sh" />
         <option value="$PROJECT_DIR$/es-azapp/elasticsearch-ubuntu-install.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/mw-cw-mongo-resources.json" />
         <option value="$PROJECT_DIR$/cai-cluster/README.md" />
@@ -159,6 +96,8 @@
         <option value="$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh" />
         <option value="$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh" />
+        <option value="$PROJECT_DIR$/es-azapp/azuredeploy.json" />
+        <option value="$PROJECT_DIR$/es-azapp/kibana-install.sh" />
       </list>
     </option>
   </component>
@@ -183,7 +122,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1409" />
     <option name="y" value="46" />
-    <option name="width" value="1702" />
+    <option name="width" value="1692" />
     <option name="height" value="1034" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -209,9 +148,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -850,7 +789,8 @@
       <workItem from="1458971690759" duration="7243000" />
       <workItem from="1459005479544" duration="4077000" />
       <workItem from="1459140750441" duration="12584000" />
-      <workItem from="1459317538766" duration="216000" />
+      <workItem from="1459317538766" duration="248000" />
+      <workItem from="1459318729663" duration="473000" />
     </task>
     <task id="LOCAL-00001" summary="elastic default config">
       <created>1458213218100</created>
@@ -1026,14 +966,20 @@
       <option name="project" value="LOCAL" />
       <updated>1459232340385</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="forever config">
+      <created>1459317834281</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1459317834281</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100826000" />
+    <option name="totallyTimeSpent" value="101331000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1409" y="46" width="1702" height="1034" extended-state="4" />
+    <frame x="1409" y="46" width="1692" height="1034" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1050,7 +996,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20868516" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20813107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1075,7 +1021,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="common machine configuration" />
     <MESSAGE value="removed public ip" />
     <MESSAGE value="hardconding vertual network" />
     <MESSAGE value="script with nginx settings and pip" />
@@ -1100,7 +1045,8 @@
     <MESSAGE value="nginx installation final script" />
     <MESSAGE value="startup script change" />
     <MESSAGE value="cruncher install script changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="cruncher install script changes" />
+    <MESSAGE value="forever config" />
+    <option name="LAST_COMMIT_MESSAGE" value="forever config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1278,13 +1224,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4482758">
-          <caret line="225" column="34" selection-start-line="225" selection-start-column="34" selection-end-line="225" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/es-azapp/data-nodes-1disk-resources.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.25">
@@ -1393,25 +1332,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/es-azapp/kibana-install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23676012">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/temp-backup">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="25" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cai-cluster/azuredeploy.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1442,7 +1366,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cai-cluster/worker-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="112" column="50" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
           <folding />
         </state>
@@ -1450,7 +1374,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pc-cluster/mongo-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.533333">
+        <state vertical-scroll-proportion="0.0">
           <caret line="151" column="50" selection-start-line="151" selection-start-column="50" selection-end-line="151" selection-end-column="50" />
           <folding />
         </state>
@@ -1458,24 +1382,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cai-cluster/aerospike-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="26" column="24" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.7">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cai-cluster/mongo-install-ubuntu.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6">
-          <caret line="159" column="1" selection-start-line="159" selection-start-column="1" selection-end-line="159" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="154" column="40" selection-start-line="154" selection-start-column="40" selection-end-line="154" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cai-cluster/azuredeploy.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.7413793">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es-azapp/azuredeploy.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.775862">
+          <caret line="352" column="7" selection-start-line="352" selection-start-column="7" selection-end-line="352" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cai-cluster/cassa-install-ubuntu.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.233334">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="64" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es-azapp/kibana-install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1841808">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
           <folding />
         </state>
       </provider>
