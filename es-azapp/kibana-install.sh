@@ -32,6 +32,7 @@ ELASTICSEARCH_URL="http://10.1.0.127:9200"
 # Install Oracle Java
 add-apt-repository -y ppa:webupd8team/java
 apt-get -y update  > /dev/null
+sudo apt-get -y install git
 echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 apt-get -y install oracle-java8-installer  > /dev/null
@@ -95,4 +96,4 @@ sudo chmod +x /etc/init.d/mwinit
 sudo chmod +x /home/ubuntu/startupscripts/basic.sh
 sudo chmod +x /home/ubuntu/shutdownscripts/basic.sh
 sudo update-rc.d mwinit defaults 10
-./home/ubuntu/startupscripts/basic.sh
+sh /home/ubuntu/startupscripts/basic.sh
