@@ -152,6 +152,19 @@ sudo -u ubuntu sh scripts/startworker.sh
 sudo service supervisord stop
 echo "
 
+[program:cai_feedWorker]
+command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/feedWorker.py
+user=ubuntu
+autostart=false
+stdout_logfile_maxbytes = 50MB
+stdout_logfile_backups = 1
+autorestart=true
+startsecs=10
+stopsignal=KILL
+logfile = /raid1/supervisorlogs/program:cai_feedWorker.log
+logfile_maxbytes = 50MB
+logfile_backups=1
+
 [program:cai_pgGrouper]
 command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/choiceai/productGrouper.py
 user=ubuntu
