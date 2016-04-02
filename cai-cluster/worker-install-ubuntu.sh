@@ -79,7 +79,7 @@ sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 # give read/write permission to all users
 sudo apt-get -y install unzip
 sudo apt-get -y install make
-sudo apt-get -y install git pkg-config autoconf automake
+sudo apt-get -y install pkg-config autoconf automake
 sudo apt-get -y install build-essential maven2 libkrb5-dev
 sudo apt-get -y install libc6-dev-i386
 sudo apt-get -y install libev4 libev-dev

@@ -49,7 +49,7 @@ sudo apt-get -y install unzip
 sudo apt-get -y install make
 sudo apt-get -y install build-essential maven2 libkrb5-dev
 sudo apt-get -y install uuid-dev libtool
-sudo apt-get -y install git pkg-config autoconf automake
+sudo apt-get -y install pkg-config autoconf automake
 sudo apt-get -y install python-setuptools python-pip
 sudo apt-get -y install lynx
 sudo pip install supervisor
