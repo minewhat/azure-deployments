@@ -122,6 +122,14 @@ forever list
 forever columns add dir
 sudo chown -R ubuntu:ubuntu /home/ubuntu/.forever/
 
+cd /home/ubuntu/minewhat/server2/choiceai
+wget http://assets.choice.ai.s3.amazonaws.com/node_modules/node_modules_ubuntu_server.tar.gz
+sudo -u ubuntu sh prepare.sh
+sudo -u ubuntu sh scripts/startconfig.sh
+rm -rf node_modules/memwatch-next
+rm -rf node_modules/kafka-node
+npm i kafka-node memwatch-next
+
 # install node modules
 cd /home/ubuntu/minewhat/Server/stats
 sudo npm install
