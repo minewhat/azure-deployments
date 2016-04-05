@@ -64,6 +64,8 @@ sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
 cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/app2.git
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/cdnassets.git
 
 echo "
 $MONGO_IP mongo1.choice.ai
@@ -106,6 +108,15 @@ $WORKER_IP crawler.choice.ai
 # setup stormkafkamon
 cd stormkafkamon
 sudo python setup.py install
+
+#cd /home/ubuntu/minewhat/app2/choiceai
+#sudo -u ubuntu sh prepare.sh
+#sudo -u ubuntu gulp dist
+npm install -g gulp
+cd /home/ubuntu/minewhat/cdnassets/mwstoreSample
+sudo -u ubuntu tar zxvf node_modules_ubuntu.tgz
+sudo chown -R ubuntu:ubuntu /home/ubuntu/
+sudo -u ubuntu gulp build
 
 # setup storm cluster
 cd /home/ubuntu/minewhat/Server/Config
