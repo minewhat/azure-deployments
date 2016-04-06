@@ -71,8 +71,12 @@ $WORKER_IP google.choice.ai
 $WORKER_IP search.choice.ai
 $WORKER_IP crawler.choice.ai
 " >> /etc/hosts
-
-
+cd /home/ubuntu/minewhat/Server/Config
+sudo -u ubuntu git checkout MW_V2.3
+#System Tuning Settings
+cat linux/limits.conf | sudo tee -a /etc/security/limits.conf
+cat linux/sysctl.conf | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
 cd /home/ubuntu
 wget -O aerospike.tgz 'http://aerospike.com/download/server/3.7.5/artifact/ubuntu12'
 tar -xvf aerospike.tgz

@@ -85,23 +85,14 @@ sudo echo never > /sys/kernel/mm/transparent_hugepage/enabled
 sudo echo never > /sys/kernel/mm/transparent_hugepage/defrag
 sudo grep -q -F 'transparent_hugepage=never' /etc/default/grub || echo 'transparent_hugepage=never' >> /etc/default/grub
 
-sudo apt-get install -y mongodb-org=3.0.7 mongodb-org-server=3.0.7 mongodb-org-shell=3.0.7 mongodb-org-mongos=3.0.7 mongodb-org-tools=3.0.7
+sudo apt-get install -y mongodb-org=3.0.3 mongodb-org-server=3.0.3 mongodb-org-shell=3.0.3 mongodb-org-mongos=3.0.3 mongodb-org-tools=3.0.3
 sudo service mongod stop
 echo "
-systemLog:
-   destination: file
-   path: /raid1/mongo/log/mongodb.log
-   logAppend: true
-storage:
-  engine: wiredTiger
-  dbPath: /raid1/mongo/data
-processManagement:
-   fork: true
-net:
-  port: 27017
-  bindIp: 0.0.0.0
-replication:
-   replSetName: mw
+dbpath=/raid1/mongo/data
+logpath=/raid1/mongo/log/mongodb.log
+logappend=true
+fork=true
+replSet = mw
 " > /etc/mongod.conf
 sudo -u ubuntu /usr/bin/mongod --config /etc/mongod.conf
 sleep 2
@@ -172,6 +163,10 @@ sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/cdnassets.git
 
 cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
+#System Tuning Settings
+cat linux/limits.conf | sudo tee -a /etc/security/limits.conf
+cat linux/sysctl.conf | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
 cd /home/ubuntu/
 #Copy GEO
 sudo -u ubuntu mkdir GeoIP

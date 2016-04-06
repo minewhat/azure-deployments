@@ -111,6 +111,11 @@ sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/workers.git
 
 cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
+#System Tuning Settings
+cat linux/limits.conf | sudo tee -a /etc/security/limits.conf
+cat linux/sysctl.conf | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+cd /home/ubuntu/
 
 cd /home/ubuntu/minewhat/workers/configs
 sudo cp supervisord.conf /etc/
