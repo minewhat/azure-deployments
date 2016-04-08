@@ -78,9 +78,9 @@ cat linux/limits.conf | sudo tee -a /etc/security/limits.conf
 cat linux/sysctl.conf | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 cd /home/ubuntu
-wget -O aerospike.tgz 'http://aerospike.com/download/server/3.7.5/artifact/ubuntu12'
+wget -O aerospike.tgz 'http://aerospike.com/download/server/3.7.5.1/artifact/ubuntu14'
 tar -xvf aerospike.tgz
-cd aerospike-server-community-3.7.5-ubuntu12.04/
+cd aerospike-server-community-3.7.5.1-ubuntu14.04/
 sudo ./asinstall # will install the .rpm packages
 sudo cp /home/ubuntu/minewhat/server2/choiceai/aerospike.conf /etc/aerospike
 sudo service aerospike start
