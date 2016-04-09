@@ -197,6 +197,7 @@ sudo -u ubuntu ln -s  /home/ubuntu/minewhat/app2/choiceai/dist settings
 sudo apt-get install nginx --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
 sudo cp choice* /etc/nginx
+sudo cp nginx.conf /etc/nginx
 sudo cp dhparams.pem /etc/nginx/conf.d
 sudo cp cai_conf_d/* /etc/nginx/conf.d
 sudo service nginx restart
