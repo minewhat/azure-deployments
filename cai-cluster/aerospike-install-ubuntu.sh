@@ -78,6 +78,7 @@ cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/workers.git
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/app2.git
 echo "
 $MONGO_IP mongo1.choice.ai
 $MONGO_IP mongo2.choice.ai
@@ -151,7 +152,6 @@ rm -rf node_modules/kafka-node
 npm i kafka-node memwatch-next
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redissession.conf
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redisstatscache1.conf
-sudo -u ubuntu sh scripts/startwidget.sh
 sudo -u ubuntu sh scripts/startwidgetData.sh
 
 sudo apt-get install nginx --yes
