@@ -230,10 +230,78 @@ HOSTS_CONFIG="[\"${S// /\",\"}\"]"
 #---------------------------
 #Backup the current Elasticsearch configuration file
 mv /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.bak
+
+echo '
+es.logger.level: INFO
+rootLogger: ${es.logger.level}, console, file
+logger:
+  action: DEBUG
+  deprecation: INFO, deprecation_log_file
+  com.amazonaws: WARN
+
+  com.amazonaws.jmx.SdkMBeanRegistrySupport: ERROR
+  com.amazonaws.metrics.AwsSdkMetrics: ERROR
+
+  org.apache.http: INFO
+  index.search.slowlog: TRACE, index_search_slow_log_file
+  index.indexing.slowlog: TRACE, index_indexing_slow_log_file
+
+additivity:
+  index.search.slowlog: false
+  index.indexing.slowlog: false
+  deprecation: false
+
+appender:
+  console:
+    type: console
+    layout:
+      type: consolePattern
+      conversionPattern: "[%d{ISO8601}][%-5p][%-25c] %m%n"
+
+  file:
+    type: rollingFile
+    file: ${path.logs}/${cluster.name}.log
+    maxFileSize: 10000000
+    maxBackupIndex: 10
+    layout:
+      type: pattern
+      conversionPattern: "[%d{ISO8601}][%-5p][%-25c] %m%n"
+
+  deprecation_log_file:
+    type: rollingFile
+    file: ${path.logs}/${cluster.name}.log
+    maxFileSize: 10000000
+    maxBackupIndex: 10
+    layout:
+      type: pattern
+      conversionPattern: "[%d{ISO8601}][%-5p][%-25c] %m%n"
+
+  index_search_slow_log_file:
+    type: rollingFile
+    file: ${path.logs}/${cluster.name}.log
+    maxFileSize: 10000000
+    maxBackupIndex: 10
+    layout:
+      type: pattern
+      conversionPattern: "[%d{ISO8601}][%-5p][%-25c] %m%n"
+
+  index_indexing_slow_log_file:
+    type: rollingFile
+    file: ${path.logs}/${cluster.name}.log
+    maxFileSize: 10000000
+    maxBackupIndex: 10
+    layout:
+      type: pattern
+      conversionPattern: "[%d{ISO8601}][%-5p][%-25c] %m%n"
+
+' > /etc/elasticsearch/logging.yml
+
 echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
 # Set cluster and machine names - just use hostname for our node.name
-echo "cluster.name: $CLUSTER_NAME" >> /etc/elasticsearch/elasticsearch.yml
-echo "node.name: ${HOSTNAME}" >> /etc/elasticsearch/elasticsearch.yml
+echo "
+cluster.name: $CLUSTER_NAME
+node.name: ${HOSTNAME}
+" >> /etc/elasticsearch/elasticsearch.yml
 
 # Configure paths - if we have data disks attached then use them
 if [ -n "$DATAPATH_CONFIG" ]; then
@@ -243,8 +311,10 @@ fi
 
 # Configure discovery
 log "Update configuration with hosts configuration of $HOSTS_CONFIG"
-echo "discovery.zen.ping.multicast.enabled: false" >> /etc/elasticsearch/elasticsearch.yml
-echo "discovery.zen.ping.unicast.hosts: $HOSTS_CONFIG" >> /etc/elasticsearch/elasticsearch.yml
+echo "
+discovery.zen.ping.multicast.enabled: false
+discovery.zen.ping.unicast.hosts: $HOSTS_CONFIG
+" >> /etc/elasticsearch/elasticsearch.yml
 
 
 # Configure Elasticsearch node type
@@ -252,29 +322,39 @@ log "Configure master/client/data node type flags mater-$MASTER_ONLY_NODE data-$
 
 if [ ${MASTER_ONLY_NODE} -ne 0 ]; then
     log "Configure node as master only"
-    echo "node.master: true" >> /etc/elasticsearch/elasticsearch.yml
-    echo "node.data: false" >> /etc/elasticsearch/elasticsearch.yml
+    echo "
+    node.master: true
+    node.data: false
+    " >> /etc/elasticsearch/elasticsearch.yml
 elif [ ${DATA_NODE} -ne 0 ]; then
     log "Configure node as data only"
-    echo "node.master: false" >> /etc/elasticsearch/elasticsearch.yml
-    echo "node.data: true" >> /etc/elasticsearch/elasticsearch.yml
+    echo "
+    node.master: false
+    node.data: true
+    " >> /etc/elasticsearch/elasticsearch.yml
 elif [ ${CLIENT_ONLY_NODE} -ne 0 ]; then
     log "Configure node as client only"
-    echo "node.master: false" >> /etc/elasticsearch/elasticsearch.yml
-    echo "node.data: false" >> /etc/elasticsearch/elasticsearch.yml
+    echo "
+    node.master: false
+    node.data: false
+    " >> /etc/elasticsearch/elasticsearch.yml
 else
     log "Configure node for master and data"
-    echo "node.master: true" >> /etc/elasticsearch/elasticsearch.yml
-    echo "node.data: true" >> /etc/elasticsearch/elasticsearch.yml
+    echo "
+    node.master: true
+    node.data: true
+    " >> /etc/elasticsearch/elasticsearch.yml
 fi
 
-echo "discovery.zen.minimum_master_nodes: 2" >> /etc/elasticsearch/elasticsearch.yml
-echo "script.inline: on" >> /etc/elasticsearch/elasticsearch.yml
-echo "script.indexed: off" >> /etc/elasticsearch/elasticsearch.yml
-echo "script.update: off" >> /etc/elasticsearch/elasticsearch.yml
-echo "script.mapping: off" >> /etc/elasticsearch/elasticsearch.yml
-echo "script.search: on" >> /etc/elasticsearch/elasticsearch.yml
-echo "script.aggs: on" >> /etc/elasticsearch/elasticsearch.yml
+echo "
+discovery.zen.minimum_master_nodes: 2
+script.inline: on
+script.indexed: off
+script.update: off
+script.mapping: off
+script.search: on
+script.aggs: on
+" >> /etc/elasticsearch/elasticsearch.yml
 
 if [[ "${ES_VERSION}" == \2* ]]; then
     echo "network.host: _non_loopback_" >> /etc/elasticsearch/elasticsearch.yml
