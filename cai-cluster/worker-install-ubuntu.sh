@@ -76,22 +76,9 @@ sudo mkdir /raid1/zookeeper2
 sudo mkdir /raid1/kafka-logs
 sudo chown -R ubuntu:ubuntu /raid1
 sudo chown -R ubuntu:ubuntu /home/ubuntu/minewhat
-# give read/write permission to all users
-sudo apt-get -y install unzip
-sudo apt-get -y install make
-sudo apt-get -y install pkg-config autoconf automake
-sudo apt-get -y install build-essential maven2 libkrb5-dev
-sudo apt-get -y install libc6-dev-i386
-sudo apt-get -y install libev4 libev-dev
-sudo apt-get -y install uuid-dev libtool
-sudo apt-get -y install python-setuptools
+sudo apt-get -y install unzip make pkg-config autoconf automake build-essential maven2 libkrb5-dev libc6-dev-i386 libev4 libev-dev uuid-dev libtool python-setuptools xfsprogs lynx software-properties-common python-dev python-pip python-software-properties python g++
 sudo apt-get install -y nodejs
-sudo apt-get install -y xfsprogs
 sudo npm install -g forever
-sudo apt-get -y install lynx
-sudo apt-get -y install software-properties-common
-sudo apt-get --yes install python-dev python-pip
-sudo apt-get --yes install python-software-properties python g++
 sudo pip install supervisor
 
 #prepare folders
