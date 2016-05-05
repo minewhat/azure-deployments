@@ -209,9 +209,9 @@ logfile = /raid1/supervisorlogs/program:cai_productWorker.log
 logfile_maxbytes = 50MB
 logfile_backups=1
 
-
-[program:cai_identifyTags]
-command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/choiceai/identifyTags.py
+[program:cai_backgroundRemover]
+command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/choiceai/backgroundRemover.py
+directory=/raid1/models
 user=ubuntu
 stdout_logfile_maxbytes = 50MB
 stdout_logfile_backups = 1
@@ -219,7 +219,7 @@ autostart=false
 autorestart=true
 startsecs=10
 stopsignal=KILL
-logfile = /raid1/supervisorlogs/program:cai_identifyTags.log
+logfile = /raid1/supervisorlogs/program:cai_remover.log
 logfile_maxbytes = 50MB
 logfile_backups=1
 
