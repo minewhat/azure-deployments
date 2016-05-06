@@ -144,8 +144,8 @@ sudo -u ubuntu sh scripts/startworker.sh
 sudo service supervisord stop
 echo "
 
-[program:cai_analyticsWorker]
-command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/choiceai/analyticsWorker.py
+[program:cai_customerDataConsumer]
+command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/choiceai/customerDataConsumer.py
 user=ubuntu
 autostart=false
 stdout_logfile_maxbytes = 50MB
@@ -153,7 +153,33 @@ stdout_logfile_backups = 1
 autorestart=true
 startsecs=10
 stopsignal=KILL
-logfile = /raid1/supervisorlogs/program:cai_analyticsWorker.log
+logfile = /raid1/supervisorlogs/program:cai_customerDataConsumer.log
+logfile_maxbytes = 50MB
+logfile_backups=1
+
+[program:cai_eventsDataConsumer]
+command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/choiceai/eventsDataConsumer.py
+user=ubuntu
+autostart=false
+stdout_logfile_maxbytes = 50MB
+stdout_logfile_backups = 1
+autorestart=true
+startsecs=10
+stopsignal=KILL
+logfile = /raid1/supervisorlogs/program:cai_eventsDataConsumer.log
+logfile_maxbytes = 50MB
+logfile_backups=1
+
+[program:cai_metricEventsGenerator]
+command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/choiceai/metricEventsGenerator.py
+user=ubuntu
+autostart=false
+stdout_logfile_maxbytes = 50MB
+stdout_logfile_backups = 1
+autorestart=true
+startsecs=10
+stopsignal=KILL
+logfile = /raid1/supervisorlogs/program:cai_metricEventsGenerator.log
 logfile_maxbytes = 50MB
 logfile_backups=1
 
