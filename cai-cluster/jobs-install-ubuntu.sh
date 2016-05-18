@@ -49,6 +49,7 @@ $CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
 $CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
 $WORKER_IP visual.choice.ai
 $WORKER_IP shopify.choice.ai
+$WORKER_IP mailchimp.choice.ai
 $WORKER_IP bigcommerce.choice.ai
 $WORKER_IP highwire.choice.ai
 $WORKER_IP americommerce.choice.ai

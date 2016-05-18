@@ -49,6 +49,7 @@ $CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
 $CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
 $WORKER_IP visual.choice.ai
 $WORKER_IP shopify.choice.ai
+$WORKER_IP mailchimp.choice.ai
 $WORKER_IP bigcommerce.choice.ai
 $WORKER_IP highwire.choice.ai
 $WORKER_IP americommerce.choice.ai
@@ -131,6 +132,7 @@ cd /home/ubuntu/minewhat/addons/choiceAI_Addons
 sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu sh startshopify.sh
 sudo -u ubuntu sh startbigcommerce.sh
+sudo -u ubuntu sh startmailchimp.sh
 
 cd /home/ubuntu/minewhat/server2/visualsearch
 sudo -u ubuntu sh startVisualServer.sh
@@ -143,6 +145,19 @@ sudo -u ubuntu sh scripts/startworker.sh
 
 sudo service supervisord stop
 echo "
+
+[program:cai_userWorker]
+command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/choiceai/userWorker.py
+user=ubuntu
+autostart=false
+stdout_logfile_maxbytes = 50MB
+stdout_logfile_backups = 1
+autorestart=true
+startsecs=10
+stopsignal=KILL
+logfile = /raid1/supervisorlogs/program:cai_userWorker.log
+logfile_maxbytes = 50MB
+logfile_backups=1
 
 [program:cai_customerDataConsumer]
 command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/choiceai/customerDataConsumer.py
@@ -167,19 +182,6 @@ autorestart=true
 startsecs=10
 stopsignal=KILL
 logfile = /raid1/supervisorlogs/program:cai_eventsDataConsumer.log
-logfile_maxbytes = 50MB
-logfile_backups=1
-
-[program:cai_metricEventsGenerator]
-command=/usr/bin/python /home/ubuntu/minewhat/workers/workers/choiceai/metricEventsGenerator.py
-user=ubuntu
-autostart=false
-stdout_logfile_maxbytes = 50MB
-stdout_logfile_backups = 1
-autorestart=true
-startsecs=10
-stopsignal=KILL
-logfile = /raid1/supervisorlogs/program:cai_metricEventsGenerator.log
 logfile_maxbytes = 50MB
 logfile_backups=1
 
