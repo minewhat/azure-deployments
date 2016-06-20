@@ -19,6 +19,7 @@ AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
 WORKER_IP="$7"
+JOBS_IP="$7"
 echo "
 $MONGO_IP mongo1.choice.ai
 $MONGO_IP mongo2.choice.ai
@@ -48,17 +49,25 @@ $CRUNCHER_IP mwzoo.linodefarm.minewhat.com
 $CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
 $CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
 $WORKER_IP visual.choice.ai
-$WORKER_IP shopify.choice.ai
-$WORKER_IP mailchimp.choice.ai
-$WORKER_IP bigcommerce.choice.ai
-$WORKER_IP highwire.choice.ai
-$WORKER_IP americommerce.choice.ai
+$JOBS_IP shopify.choice.ai
+$JOBS_IP aweber.choice.ai
+$JOBS_IP mailchimp.choice.ai
+$JOBS_IP bigcommerce.choice.ai
+$JOBS_IP highwire.choice.ai
+$JOBS_IP americommerce.choice.ai
 $WORKER_IP google.choice.ai
 $WORKER_IP search.choice.ai
 $WORKER_IP crawler.choice.ai
 " >> /etc/hosts
 
+echo "
+deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
+deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
+" > /etc/apt/sources.list.d/nginx.list
+wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 sudo apt-get update --yes
+
 # installing GIT
 sudo apt-get --yes --force-yes install git
 
@@ -81,6 +90,7 @@ sudo apt-get -y install libev4 libev-dev
 sudo apt-get -y install uuid-dev libtool
 sudo apt-get -y install python-setuptools
 sudo apt-get install -y xfsprogs
+sudo apt-get install -y nodejs
 sudo npm install -g forever
 sudo apt-get -y install lynx
 sudo apt-get -y install software-properties-common
@@ -101,6 +111,7 @@ sudo chown ubuntu:ubuntu /home/ubuntu
 cd redis
 sudo -u ubuntu make
 # change owership of .npm n .forever folders to ubuntu
+sudo chown -R ubuntu:ubuntu /home/ubuntu/.npm/
 forever list
 forever columns add dir
 sudo chown -R ubuntu:ubuntu /home/ubuntu/.forever/
@@ -108,7 +119,7 @@ cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/workers.git
-
+sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/addons.git
 
 cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
@@ -133,6 +144,19 @@ sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redislow321.conf
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redisstatscache1.conf
 
+sudo apt-get install nginx --yes
+cd /home/ubuntu/minewhat/server2/config/nginx
+sudo cp choice* /etc/nginx
+sudo cp dhparams.pem /etc/nginx/conf.d
+sudo cp cai_conf_d/* /etc/nginx/conf.d
+sudo service nginx restart
+
+cd /home/ubuntu/minewhat/addons/choiceAI_Addons
+sudo -u ubuntu sh prepare.sh
+sudo -u ubuntu sh startshopify.sh
+sudo -u ubuntu sh startbigcommerce.sh
+sudo -u ubuntu sh startmailchimp.sh
+sudo -u ubuntu sh startaweber.sh
 
 sudo service supervisord stop
 echo "

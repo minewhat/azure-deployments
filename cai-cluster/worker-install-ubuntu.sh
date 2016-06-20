@@ -19,6 +19,7 @@ AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
 WORKER_IP="$7"
+JOBS_IP="$7"
 echo "
 $MONGO_IP mongo1.choice.ai
 $MONGO_IP mongo2.choice.ai
@@ -48,11 +49,12 @@ $CRUNCHER_IP mwzoo.linodefarm.minewhat.com
 $CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
 $CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
 $WORKER_IP visual.choice.ai
-$WORKER_IP shopify.choice.ai
-$WORKER_IP mailchimp.choice.ai
-$WORKER_IP bigcommerce.choice.ai
-$WORKER_IP highwire.choice.ai
-$WORKER_IP americommerce.choice.ai
+$JOBS_IP shopify.choice.ai
+$JOBS_IP aweber.choice.ai
+$JOBS_IP mailchimp.choice.ai
+$JOBS_IP bigcommerce.choice.ai
+$JOBS_IP highwire.choice.ai
+$JOBS_IP americommerce.choice.ai
 $WORKER_IP google.choice.ai
 $WORKER_IP search.choice.ai
 $WORKER_IP crawler.choice.ai
@@ -103,7 +105,7 @@ cd /home/ubuntu/minewhat
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/Server.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/server2.git
 sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/workers.git
-sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/addons.git
+#sudo -u ubuntu git clone https://$GIT_AUTH@github.com/minewhat/addons.git
 
 cd /home/ubuntu/minewhat/Server/Config
 sudo -u ubuntu git checkout MW_V2.3
@@ -121,18 +123,19 @@ sudo service supervisord start
 cd /home/ubuntu/minewhat/workers/shell_scripts
 sudo -u ubuntu sh setup.sh
 
-sudo apt-get install nginx --yes
+sudo apt-get install nginx=1.9.12-1~trusty --yes
 cd /home/ubuntu/minewhat/server2/config/nginx
 sudo cp choice* /etc/nginx
 sudo cp dhparams.pem /etc/nginx/conf.d
 sudo cp cai_conf_d/* /etc/nginx/conf.d
 sudo service nginx restart
 
-cd /home/ubuntu/minewhat/addons/choiceAI_Addons
-sudo -u ubuntu sh prepare.sh
-sudo -u ubuntu sh startshopify.sh
-sudo -u ubuntu sh startbigcommerce.sh
-sudo -u ubuntu sh startmailchimp.sh
+#cd /home/ubuntu/minewhat/addons/choiceAI_Addons
+#sudo -u ubuntu sh prepare.sh
+#sudo -u ubuntu sh startshopify.sh
+#sudo -u ubuntu sh startbigcommerce.sh
+#sudo -u ubuntu sh startmailchimp.sh
+#sudo -u ubuntu sh startaweber.sh
 
 cd /home/ubuntu/minewhat/server2/visualsearch
 sudo -u ubuntu sh startVisualServer.sh
