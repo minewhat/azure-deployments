@@ -19,6 +19,7 @@ AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
 WORKER_IP="$7"
+JOBS_IP="$8"
 echo "
 deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
 deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
@@ -93,6 +94,7 @@ $CASSA_IP cassaseed6.linodefarm.minewhat.com
 $CASSA_IP cassaseedrealtime.linodefarm.minewhat.com
 $AE_IP aerospike1.choice.ai
 $AE_IP aerospike2.choice.ai
+$AE_IP aerospike3.choice.ai
 $ES_IP elastic.azure.minewhat.com
 $CRUNCHER_IP caizooremote.choice.ai
 $CRUNCHER_IP caicollector1.choice.ai
@@ -108,14 +110,16 @@ $CRUNCHER_IP mwzoo.linodefarm.minewhat.com
 $CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
 $CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
 $WORKER_IP visual.choice.ai
-$WORKER_IP shopify.choice.ai
-$WORKER_IP mailchimp.choice.ai
-$WORKER_IP bigcommerce.choice.ai
-$WORKER_IP highwire.choice.ai
-$WORKER_IP americommerce.choice.ai
 $WORKER_IP google.choice.ai
 $WORKER_IP search.choice.ai
 $WORKER_IP crawler.choice.ai
+$JOBS_IP shopify.choice.ai
+$JOBS_IP aweber.choice.ai
+$JOBS_IP mailchimp.choice.ai
+$JOBS_IP sendgrid.choice.ai
+$JOBS_IP bigcommerce.choice.ai
+$JOBS_IP highwire.choice.ai
+$JOBS_IP americommerce.choice.ai
 " >> /etc/hosts
 
 cd /home/ubuntu/minewhat/Server/Config
@@ -129,10 +133,11 @@ sudo -u ubuntu ./addcleanuptocron.sh
 cat linux/limits.conf | sudo tee -a /etc/security/limits.conf
 cat linux/sysctl.conf | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
+sudo service aerospike stop
 cd /home/ubuntu
-wget -O aerospike.tgz 'http://aerospike.com/download/server/3.7.5.1/artifact/ubuntu14'
+wget -O aerospike.tgz 'http://aerospike.com/download/server/3.8.3/artifact/ubuntu14'
 tar -xvf aerospike.tgz
-cd aerospike-server-community-3.7.5.1-ubuntu14.04/
+cd aerospike-server-community-3.8.3-ubuntu14.04/
 sudo ./asinstall # will install the .rpm packages
 sudo cp /home/ubuntu/minewhat/server2/choiceai/aerospike.conf /etc/aerospike
 sudo service aerospike start

@@ -19,7 +19,7 @@ AE_IP="$4"
 CASSA_IP="$5"
 CRUNCHER_IP="$6"
 WORKER_IP="$7"
-JOBS_IP="$7"
+JOBS_IP="$8"
 echo "
 $MONGO_IP mongo1.choice.ai
 $MONGO_IP mongo2.choice.ai
@@ -34,6 +34,7 @@ $CASSA_IP cassaseed6.linodefarm.minewhat.com
 $CASSA_IP cassaseedrealtime.linodefarm.minewhat.com
 $AE_IP aerospike1.choice.ai
 $AE_IP aerospike2.choice.ai
+$AE_IP aerospike3.choice.ai
 $ES_IP elastic.azure.minewhat.com
 $CRUNCHER_IP caizooremote.choice.ai
 $CRUNCHER_IP caicollector1.choice.ai
@@ -49,15 +50,16 @@ $CRUNCHER_IP mwzoo.linodefarm.minewhat.com
 $CRUNCHER_IP mwzoo2.linodefarm.minewhat.com
 $CRUNCHER_IP mwzooorder.linodefarm.minewhat.com
 $WORKER_IP visual.choice.ai
-$JOBS_IP shopify.choice.ai
-$JOBS_IP aweber.choice.ai
-$JOBS_IP mailchimp.choice.ai
-$JOBS_IP bigcommerce.choice.ai
-$JOBS_IP highwire.choice.ai
-$JOBS_IP americommerce.choice.ai
 $WORKER_IP google.choice.ai
 $WORKER_IP search.choice.ai
 $WORKER_IP crawler.choice.ai
+$JOBS_IP shopify.choice.ai
+$JOBS_IP aweber.choice.ai
+$JOBS_IP mailchimp.choice.ai
+$JOBS_IP sendgrid.choice.ai
+$JOBS_IP bigcommerce.choice.ai
+$JOBS_IP highwire.choice.ai
+$JOBS_IP americommerce.choice.ai
 " >> /etc/hosts
 
 echo "
