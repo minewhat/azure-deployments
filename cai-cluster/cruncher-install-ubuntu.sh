@@ -20,7 +20,7 @@ CASSA_IP="$5"
 CRUNCHER_IP="$6"
 WORKER_IP="$7"
 JOBS_IP="$8"
-curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 # JDK
 sudo add-apt-repository ppa:webupd8team/java --yes
 sudo apt-get update --yes

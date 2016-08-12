@@ -67,7 +67,7 @@ deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
 deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
 " > /etc/apt/sources.list.d/nginx.list
 wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
-curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get update --yes
 
 # installing GIT
