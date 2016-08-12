@@ -144,7 +144,9 @@ sudo -u ubuntu sh prepare.sh
 sudo -u ubuntu sh scripts/startconfig.sh
 rm -rf node_modules/memwatch-next
 rm -rf node_modules/kafka-node
-npm i kafka-node memwatch-next
+rm -rf node_modules/bcrypt
+npm remove bunyan
+npm i kafka-node memwatch-next bcrypt bunyan
 
 # install node modules
 cd /home/ubuntu/minewhat/Server/stats

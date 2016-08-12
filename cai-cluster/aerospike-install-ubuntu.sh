@@ -155,7 +155,9 @@ wget http://assets.choice.ai.s3.amazonaws.com/node_modules/node_modules_ubuntu_s
 sudo -u ubuntu sh prepare.sh
 rm -rf node_modules/memwatch-next
 rm -rf node_modules/kafka-node
-npm i kafka-node memwatch-next
+rm -rf node_modules/bcrypt
+npm remove bunyan
+npm i kafka-node memwatch-next bcrypt bunyan
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redissession.conf
 sudo -u ubuntu /home/ubuntu/Servers/redis/src/redis-server /home/ubuntu/minewhat/Server/Config/redis/redisstatscache1.conf
 sudo -u ubuntu sh scripts/startwidgetData.sh
