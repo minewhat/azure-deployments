@@ -323,26 +323,26 @@ log "Configure master/client/data node type flags mater-$MASTER_ONLY_NODE data-$
 if [ ${MASTER_ONLY_NODE} -ne 0 ]; then
     log "Configure node as master only"
     echo "
-    node.master: true
-    node.data: false
+node.master: true
+node.data: false
     " >> /etc/elasticsearch/elasticsearch.yml
 elif [ ${DATA_NODE} -ne 0 ]; then
     log "Configure node as data only"
     echo "
-    node.master: false
-    node.data: true
+node.master: false
+node.data: true
     " >> /etc/elasticsearch/elasticsearch.yml
 elif [ ${CLIENT_ONLY_NODE} -ne 0 ]; then
     log "Configure node as client only"
     echo "
-    node.master: false
-    node.data: false
+node.master: false
+node.data: false
     " >> /etc/elasticsearch/elasticsearch.yml
 else
     log "Configure node for master and data"
     echo "
-    node.master: true
-    node.data: true
+node.master: true
+node.data: true
     " >> /etc/elasticsearch/elasticsearch.yml
 fi
 
@@ -363,7 +363,7 @@ fi
 # DNS Retry
 echo "options timeout:1 attempts:5" >> /etc/resolvconf/resolv.conf.d/head
 resolvconf -u
-
+chmod -R 755 /etc/elasticsearch
 # Increase maximum mmap count
 echo "vm.max_map_count = 262144" >> /etc/sysctl.conf
 

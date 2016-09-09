@@ -323,26 +323,26 @@ log "Configure master/client/data node type flags mater-$MASTER_ONLY_NODE data-$
 if [ ${MASTER_ONLY_NODE} -ne 0 ]; then
     log "Configure node as master only"
     echo "
-    node.master: true
-    node.data: false
+node.master: true
+node.data: false
     " >> /etc/elasticsearch/elasticsearch.yml
 elif [ ${DATA_NODE} -ne 0 ]; then
     log "Configure node as data only"
     echo "
-    node.master: false
-    node.data: true
+node.master: false
+node.data: true
     " >> /etc/elasticsearch/elasticsearch.yml
 elif [ ${CLIENT_ONLY_NODE} -ne 0 ]; then
     log "Configure node as client only"
     echo "
-    node.master: false
-    node.data: false
+node.master: false
+node.data: false
     " >> /etc/elasticsearch/elasticsearch.yml
 else
     log "Configure node for master and data"
     echo "
-    node.master: true
-    node.data: true
+node.master: true
+node.data: true
     " >> /etc/elasticsearch/elasticsearch.yml
 fi
 
@@ -366,7 +366,7 @@ resolvconf -u
 
 # Increase maximum mmap count
 echo "vm.max_map_count = 262144" >> /etc/sysctl.conf
-
+chmod -R 755 /etc/elasticsearch
 #"action.disable_delete_all_indices: ${DISABLE_DELETE_ALL}" >> /etc/elasticsearch/elasticsearch.yml
 #"action.auto_create_index: ${AUTOCREATE_INDEX}" >> /etc/elasticsearch/elasticsearch.yml
 
