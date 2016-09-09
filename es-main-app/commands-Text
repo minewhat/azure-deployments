@@ -1,0 +1,9 @@
+https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Felasticsearch%2Fazuredeploy.json
+
+
+azure group deployment create --resource-group es-main-cluster es-main-cluster-01 -f azuredeploy.json
+azure group template validate --resource-group es-main-cluster --template-uri https://raw.githubusercontent.com/minewhat/azure-deployments/master/es-main-app/azuredeploy.json
+
+elasticsearch.url: "http://10.0.1.4:9200"
+
+curl -XGET 'http://10.0.1.4:9200/_cluster/health?pretty=true'
