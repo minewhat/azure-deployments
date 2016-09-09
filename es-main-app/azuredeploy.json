@@ -151,7 +151,7 @@
         "North Europe":"[parameters('location')]"
     },
     "location":"[variables('locationMap')[parameters('location')]]",
-    "storageAccountPrefix": "elasticgen",
+    "storageAccountPrefix": "esgen",
     "storageAccountNameShared": "[concat(variables('storageAccountPrefix'), 's', uniqueString(resourceGroup().id, deployment().name))]",
     "masterNodesIpPrefix": "10.1.100.2",
     "networkSettings": {
