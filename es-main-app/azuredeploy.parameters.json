@@ -23,15 +23,6 @@
     "vmSizeDataNodes": {
       "value": "Standard_DS12"
     },
-    "vmClientNodeCount": {
-      "value": 0
-    },
-    "marvel": {
-      "value": "no"
-    },
-    "kibana": {
-      "value": "no"
-    },
     "OS": {
       "value": "ubuntu"
     }
