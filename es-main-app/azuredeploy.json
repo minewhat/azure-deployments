@@ -195,16 +195,12 @@
     "scriptParams": [
       "[concat('version=', parameters('esVersion'), ';')]",
       "[concat('clusterName=', parameters('esClusterName'), ';')]",
-      "[concat('discoveryHosts=', variables('masterNodesIpPrefix'), '-3', ';')]",
-      "[concat('installMarvel=', parameters('marvel'), ';')]"
+      "[concat('discoveryHosts=', variables('masterNodesIpPrefix'), '-3', ';')]"
     ],
-    "scriptParamString":"[concat(variables('scriptParams')[0], variables('scriptParams')[1], variables('scriptParams')[2], variables('scriptParams')[3] )]",
+    "scriptParamString":"[concat(variables('scriptParams')[0], variables('scriptParams')[1], variables('scriptParams')[2] )]",
     "ubuntuScripts": [
       "[concat(variables('templateBaseUrl'), 'elasticsearch-ubuntu-install.sh')]",
       "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh"
-    ],
-    "windowsScripts": [
-      "[concat(variables('templateBaseUrl'), 'elasticsearch-windows-install.ps1')]"
     ],
     "ubuntuSettings": {
       "imageReference":{
@@ -221,7 +217,7 @@
             "typeHandlerVersion": "1.2",
             "settings": {
               "fileUris": "[variables('ubuntuScripts')]",
-              "commandToExecute": "[concat('bash elasticsearch-ubuntu-install.sh -xn ', variables('esSettings').clusterName, ' -v ', variables('esSettings').version, ' -d ', variables('esSettings').discoveryHosts, variables('marvelParamValue'))]"
+              "commandToExecute": "[concat('bash elasticsearch-ubuntu-install.sh -xn ', variables('esSettings').clusterName, ' -v ', variables('esSettings').version, ' -d ', variables('esSettings').discoveryHosts)]"
             }
           },
         "data": {
@@ -230,7 +226,7 @@
           "typeHandlerVersion": "1.2",
           "settings": {
             "fileUris": "[variables('ubuntuScripts')]",
-            "commandToExecute": "[concat('bash elasticsearch-ubuntu-install.sh -zn ', variables('esSettings').clusterName, ' -v ', variables('esSettings').version, ' -d ', variables('esSettings').discoveryHosts, variables('marvelParamValue'))]"
+            "commandToExecute": "[concat('bash elasticsearch-ubuntu-install.sh -zn ', variables('esSettings').clusterName, ' -v ', variables('esSettings').version, ' -d ', variables('esSettings').discoveryHosts)]"
           }
         }
       }
@@ -445,9 +441,6 @@
           },
           "masterNodesIpPrefix": {
             "value": "[variables('masterNodesIpPrefix')]"
-          },
-          "namespace": {
-            "value": "esgenmaster"
           },
           "location": {
             "value": "[variables('location')]"
