@@ -151,9 +151,9 @@
         "North Europe":"[parameters('location')]"
     },
     "location":"[variables('locationMap')[parameters('location')]]",
-    "storageAccountPrefix": "elastic",
+    "storageAccountPrefix": "elasticgen",
     "storageAccountNameShared": "[concat(variables('storageAccountPrefix'), 's', uniqueString(resourceGroup().id, deployment().name))]",
-    "masterNodesIpPrefix": "10.1.100.19",
+    "masterNodesIpPrefix": "10.1.100.2",
     "networkSettings": {
       "virtualNetworkName": "[parameters('virtualNetworkName')]",
       "subnet": {
@@ -488,7 +488,8 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[concat('Microsoft.Resources/deployments/', 'shared')]"
+        "[concat('Microsoft.Resources/deployments/', 'shared')]",
+        "[concat('Microsoft.Resources/deployments/', 'master-nodes')]"
       ],
       "properties": {
         "mode": "Incremental",
