@@ -331,6 +331,7 @@ elif [ ${DATA_NODE} -ne 0 ]; then
     echo "
 node.master: false
 node.data: true
+indices.store.throttle.max_bytes_per_sec : 100mb
     " >> /etc/elasticsearch/elasticsearch.yml
 elif [ ${CLIENT_ONLY_NODE} -ne 0 ]; then
     log "Configure node as client only"
@@ -343,6 +344,7 @@ else
     echo "
 node.master: true
 node.data: true
+indices.store.throttle.max_bytes_per_sec : 100mb
     " >> /etc/elasticsearch/elasticsearch.yml
 fi
 
