@@ -39,16 +39,6 @@
     }
   },
   "variables": {
-    "externalFELBConfig": [
-      {
-        "name": "LBFE",
-        "properties": {
-          "publicIPAddress": {
-            "id": "[resourceId('Microsoft.Network/publicIPAddresses','publicIp')]"
-          }
-        }
-      }
-    ],
     "internalFELBConfig": [
       {
         "Name": "LBFE",
@@ -75,48 +65,10 @@
     },
     {
       "apiVersion": "2015-06-15",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "publicIp",
-      "location": "[parameters('location')]",
-      "properties": {
-        "publicIPAllocationMethod": "Dynamic"
-      }
-    },
-    {
-      "apiVersion": "2015-06-15",
-      "type": "Microsoft.Network/virtualNetworks",
-      "name": "[parameters('networkSettings').virtualNetworkName]",
-      "location": "[parameters('location')]",
-      "properties": {
-        "addressSpace": {
-          "addressPrefixes": [
-            "[parameters('networkSettings').addressPrefix]"
-          ]
-        },
-        "subnets": [
-          {
-            "name": "[parameters('networkSettings').subnet.master.name]",
-            "properties": {
-              "addressPrefix": "[parameters('networkSettings').subnet.master.prefix]"
-            }
-          },
-          {
-            "name": "[parameters('networkSettings').subnet.data.name]",
-            "properties": {
-              "addressPrefix": "[parameters('networkSettings').subnet.data.prefix]"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "apiVersion": "2015-06-15",
-      "name": "loadBalancer",
+      "name": "esGenLoadBalancer",
       "type": "Microsoft.Network/loadBalancers",
       "location": "[parameters('location')]",
-      "dependsOn": [
-        "[concat('Microsoft.Network/publicIPAddresses/', 'publicIp')]"
-      ],
+      "dependsOn": [],
       "properties": {
         "frontendIPConfigurations": "[variables('feLoadBalancerConfig')]",
         "backendAddressPools": [
@@ -129,10 +81,10 @@
             "name": "es",
             "properties": {
               "frontendIPConfiguration": {
-                "id": "[concat(resourceId('Microsoft.Network/loadBalancers','loadBalancer'),'/frontendIPConfigurations/LBFE')]"
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers','esGenLoadBalancer'),'/frontendIPConfigurations/LBFE')]"
               },
               "backendAddressPool": {
-                "id": "[concat(resourceId('Microsoft.Network/loadBalancers','loadBalancer'),'/backendAddressPools/LBBE')]"
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers','esGenLoadBalancer'),'/backendAddressPools/LBBE')]"
               },
               "protocol": "tcp",
               "frontendPort": 9200,
@@ -140,7 +92,7 @@
               "enableFloatingIP": false,
               "idleTimeoutInMinutes": 5,
               "probe": {
-                "id": "[concat(resourceId('Microsoft.Network/loadBalancers','loadBalancer'),'/probes/esProbe')]"
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers','esGenLoadBalancer'),'/probes/esProbe')]"
               }
             }
           },
@@ -148,10 +100,10 @@
             "name": "estransport",
             "properties": {
               "frontendIPConfiguration": {
-                "id": "[concat(resourceId('Microsoft.Network/loadBalancers','loadBalancer'),'/frontendIPConfigurations/LBFE')]"
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers','esGenLoadBalancer'),'/frontendIPConfigurations/LBFE')]"
               },
               "backendAddressPool": {
-                "id": "[concat(resourceId('Microsoft.Network/loadBalancers','loadBalancer'),'/backendAddressPools/LBBE')]"
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers','esGenLoadBalancer'),'/backendAddressPools/LBBE')]"
               },
               "protocol": "tcp",
               "frontendPort": 9300,

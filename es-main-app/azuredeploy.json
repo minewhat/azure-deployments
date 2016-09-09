@@ -156,16 +156,13 @@
     "masterNodesIpPrefix": "10.1.100.19",
     "networkSettings": {
       "virtualNetworkName": "[parameters('virtualNetworkName')]",
-      "addressPrefix": "10.1.100.0/24",
       "subnet": {
         "master": {
           "name": "master",
-          "prefix": "10.1.100.16/29",
           "vnet": "[parameters('virtualNetworkName')]"
         },
         "data": {
           "name": "data",
-          "prefix": "10.1.100.136/29",
           "vnet": "[parameters('virtualNetworkName')]"
         }
       }
@@ -180,7 +177,7 @@
     "lbBackEndPoolsAdded": {
       "backendPools": [
         {
-          "id": "[concat(resourceId('Microsoft.Network/loadBalancers','loadBalancer'),'/backendAddressPools/LBBE')]"
+          "id": "[concat(resourceId('Microsoft.Network/loadBalancers','esGenLoadBalancer'),'/backendAddressPools/LBBE')]"
         }
       ]
     },
@@ -481,7 +478,7 @@
             "value": "[parameters('loadBalancerType')]"
           },
           "ilbIpAddress": {
-            "value": "10.1.100.200"
+            "value": "10.1.100.21"
           }
         }
       }
