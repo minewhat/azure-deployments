@@ -14,12 +14,6 @@
         "description": "Admin password used when provisioning virtual machines"
       }
     },
-    "gitCredentials": {
-      "type": "securestring",
-      "metadata": {
-        "description": "Git credentials to download git repos"
-      }
-    },
     "location": {
       "type": "string",
       "allowedValues": [
